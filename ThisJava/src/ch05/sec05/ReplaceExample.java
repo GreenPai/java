@@ -1,10 +1,9 @@
 package ch05.sec05;
 
-/**
- * 날짜 : 2025-01-07
- * 이름 : 우상호
- * 내용 : replace 문자열 대체
- * 
+/*
+ * 우상호
+ * 장제목: 5장 참조타입 p162
+ * 작성일: 2025.01.07
  */
 
 public class ReplaceExample {

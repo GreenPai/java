@@ -1,5 +1,11 @@
 package ch05.sec05;
 
+/*
+ * 우상호
+ * 장제목: 5장 참조타입 p170
+ * 작성일: 2025.01.07
+ */
+
 public class ArrayCreateByValueListExample1 {
 	public static void main(String[] args) {
 		String[] season = {"Spring", "Summer", "Fall", "Winter"};

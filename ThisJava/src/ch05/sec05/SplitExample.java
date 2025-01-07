@@ -1,11 +1,11 @@
 package ch05.sec05;
 
-/**
- * 날짜 : 2025-01-07
- * 이름 : 우상호
- * 내용 : split을 이용한 문자열 나누기
- * 
+/*
+ * 우상호
+ * 장제목: 5장 참조타입 p166
+ * 작성일: 2025.01.07
  */
+
 public class SplitExample {
 
 	public static void main(String[] args) {
