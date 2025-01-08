@@ -74,5 +74,47 @@ public class EncapsuleTest {
 		we.show();
 		
 		
+		/*
+		 * 도서관 관리 시스템의 일부로 Book 클래스를 정의하세요
+		 */
+		
+		Book book1 = new Book("삼국지", "나관중", "10001", 10);
+		book1.show();
+		System.out.println();
+		
+		boolean isOk = book1.borrowBook();
+		if(isOk) {
+			System.out.println("도서 대출 성공!");
+		}else {
+			System.out.println("도서 대출 실패!");
+		}
+		
+		book1.show();
+		
+		book1.returnBook();
+		book1.show();
+		
+		Book book2 = new Book("이것이 자바다","신용건","10002",0);
+		book2.show();
+		
+		if(book2.borrowBook()) {
+			System.out.println(book2.getTitle() + " 도서 대출 성공!");
+		}else {
+			System.out.println(book2.getTitle() + " 도서 대출 실패!");
+		}
+		
+		System.out.println("---------------------");
+		/*
+		 * 영화 관리 시스템 일부로 Movie 클래스를 정의하세요
+		 * 
+		 */
+		
+		Movie movie  = new Movie("타이타닉", "제임스카메론", 5.0, 10);
+		if(movie.reserveSeat()) System.out.println("예약 가능합니다!!");;
+		movie.cancelReservaton();
+		movie.showDetails();
+	
+		
+		
 	}
 }
