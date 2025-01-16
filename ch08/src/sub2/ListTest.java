@@ -109,5 +109,7 @@ public class ListTest {
 		cities.set(0, "북한");
 		System.out.println(cities);
 		
+		
+		
 	}
 }

@@ -12,10 +12,11 @@ public class ReadExample {
 		// 문자씩 열기
 		try {
 			Reader reader = null;
-			reader = new FileReader("C:/Temp/test.txt");
+			reader = new FileReader("C:/Temp/test2.db");
 			
 			while(true) {
 				int data = reader.read();
+				
 				if(data == -1) break;
 				System.out.println((char)data);
 			}
@@ -24,7 +25,7 @@ public class ReadExample {
 			System.out.println();
 			
 			//문자 배열로 읽기
-			reader = new FileReader("C:/Temp/test.txt");
+			reader = new FileReader("C:/Temp/test2.db");
 			char[] data = new char[100];
 			while(true) {
 				int num = reader.read(data);
