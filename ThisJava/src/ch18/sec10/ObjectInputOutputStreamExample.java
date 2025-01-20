@@ -12,7 +12,7 @@ public class ObjectInputOutputStreamExample {
 		ObjectOutputStream oos = new ObjectOutputStream(fos);
 		
 		//객체 생성
-		Member m1 = new Member("fall","단풍이");
+		// Member m1 = new Member("fall","단풍이");
 		
 	}
-}
+}	
