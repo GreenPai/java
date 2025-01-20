@@ -41,10 +41,19 @@ public class RunnableTest {
 		// Thread 생성
 		Thread t1 = new Thread(run1);
 		Thread t2 = new Thread(run2);
+		Thread t3 = new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				System.out.println(" 스레드 실행 중...??");			
+			}
+			
+		});
 		
 		// Thread 실행
 		t1.start();
 		t2.start();
+		t3.start();
 		
 		// 메인 스레드 작업 실행
 		for(int i=0; i<10; i++) {
