@@ -45,8 +45,11 @@ public class AppMain {
 		String owner = scanner.nextLine();
 		
 		System.out.print("초기입금액: ");
-		int balance = scanner.nextInt();
-		scanner.nextLine(); // 버퍼 잔처리
+		
+		//int balance = scanner.nextInt();
+		//scanner.nextLine(); // 버퍼 잔처리
+		
+		int balance = Integer.parseInt(scanner.nextLine());
 		
 		Account account = new Account(ano,owner,balance);
 		accounts.add(account);
