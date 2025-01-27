@@ -19,6 +19,7 @@ public class Employee extends Person{
 	}
 	
 	public void changeDept(String dept) {
+		System.out.println("부서 변경");
 		this.dept = dept;
 	}
 	
