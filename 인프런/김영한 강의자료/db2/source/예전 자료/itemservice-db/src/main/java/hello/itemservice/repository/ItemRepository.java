@@ -13,11 +13,6 @@ public interface ItemRepository {
 
     Optional<Item> findById(Long id);
 
-    // ItemSearchCond -> 검색 조건
-    /*
-    * private String itemName; private Integer maxPrice;
-    * 이름과 최대 가격을 받는 변수
-    * */
     List<Item> findAll(ItemSearchCond cond);
 
 }
