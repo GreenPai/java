@@ -27,6 +27,7 @@ class ItemRepositoryTest {
         }
     }
 
+    // 상품 저장 후 검증
     @Test
     void save() {
         //given
@@ -40,6 +41,7 @@ class ItemRepositoryTest {
         assertThat(findItem).isEqualTo(savedItem);
     }
 
+    // 상품 변경 후 검증
     @Test
     void updateItem() {
         //given
@@ -58,6 +60,7 @@ class ItemRepositoryTest {
         assertThat(findItem.getQuantity()).isEqualTo(updateParam.getQuantity());
     }
 
+    // 상품을 찾고 검증
     @Test
     void findItems() {
         //given
