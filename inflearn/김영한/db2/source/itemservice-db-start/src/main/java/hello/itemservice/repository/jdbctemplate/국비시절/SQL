@@ -101,7 +101,8 @@ public class SQL {
 
 
 	public static final String INSERT_ARTICLE = "insert into `article` set "
-													+ "`title`=?,"
+													+ "`title`=?,"./
+
 													+ "`content`=?,"
 													+ "`file`=?,"
 													+ "`writer`=?,"
