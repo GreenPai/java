@@ -13,6 +13,18 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * 테스트를 할 때 데이터베이스를 연결하기 위한
+ * test 폴더의 resources의 application.properties에서 다시 설정
+ *
+ */
+
+/**
+ * SpringBootTest는 @SpringBootApplication를 찾아서 설정으로 사용한다.
+ *
+ */
+
+
 @SpringBootTest
 class ItemRepositoryTest {
 
