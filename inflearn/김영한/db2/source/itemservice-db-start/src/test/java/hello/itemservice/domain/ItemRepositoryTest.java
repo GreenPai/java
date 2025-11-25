@@ -5,9 +5,13 @@ import hello.itemservice.repository.ItemSearchCond;
 import hello.itemservice.repository.ItemUpdateDto;
 import hello.itemservice.repository.memory.MemoryItemRepository;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 import java.util.List;
 
@@ -30,6 +34,29 @@ class ItemRepositoryTest {
 
     @Autowired
     ItemRepository itemRepository;
+    
+    @Autowired
+    PlatformTransactionManager transactionManager;
+    TransactionStatus status;
+
+    /**
+     * 트랜잭션 관리자는 PlatformTransactionManager 를 주입 받아서 사용하면 된다.
+     * 스프링 부트는 자동으로 트랜잭션 매니저를 스프링 빈으로 등록해준다.
+     * 
+     * @BeforeEach : 각각의 테스트 케이스를 실행하기 직전에 호출된다. 
+     * transactionManager.getTransaction(new DefaultTransactionDefinition()); : 트랜잭션 실행
+     * 
+     * @AfterEach : 각각의 테스트 케이스가 완료된 직후에 호출된다. 여기서 트랜잭션을 롤백
+     * transactionManager.rollback(status); : 트랜잭션을 롤백
+     * 
+     */
+
+
+    @BeforeEach
+    void beforeEach() {
+        // 트랙잰션 시작
+        status = transactionManager.getTransaction(new DefaultTransactionDefinition());
+    }
 
     @AfterEach
     void afterEach() {
@@ -37,6 +64,9 @@ class ItemRepositoryTest {
         if (itemRepository instanceof MemoryItemRepository) {
             ((MemoryItemRepository) itemRepository).clearStore();
         }
+        
+        // 트랜잭션 롤백
+        transactionManager.rollback(status);
     }
 
     // 상품 저장 후 검증
