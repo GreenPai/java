@@ -46,6 +46,7 @@ public class ItemServiceApplication {
      * DB_CLOSE_DELAY=-1 : 임베디드 모드에서 데이터베이스 커넥션 연결이 모두 끊어지면 데이터베이스도 종료되는데 그것을 방지하는 서정
      */
 
+
     /**
      * 테스트케이스에서 임베디드 모드를 사용 할 때
      * 생길 수 있는 문제점
@@ -53,11 +54,12 @@ public class ItemServiceApplication {
      * test/resources/schema.sql 에서 생성을 할 수 있다/
      * */
 
-
-
+/*
     @Bean
     @Profile("test")
     public DataSource dataSource(){
+
+
         log.info("메모리 데이터베이스 초기화");
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.h2.Driver");
@@ -66,5 +68,6 @@ public class ItemServiceApplication {
         dataSource.setPassword("");
         return dataSource;
     }
+*/
 
 }
