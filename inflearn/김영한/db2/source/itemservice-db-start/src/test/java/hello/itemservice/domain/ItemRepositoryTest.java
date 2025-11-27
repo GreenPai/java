@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 import java.util.List;
@@ -28,28 +29,44 @@ import static org.assertj.core.api.Assertions.assertThat;
  *
  */
 
+/**
+ *  @Transactional
+ *  스프링이 제공하는 @Transactional 어노테이션은 로직이 수행되면 커밋하도록 동작한다.
+ *  애노테이션을 테스트에서 사용하면 테스트가 끝났을 때 롤백하는 기능을 제공한다.
+ *
+ *  만약 전체에 적용을 하고 싶다면
+ *  @Transactional
+ *  @SpringBootTest
+ *
+ *  하나씩 적용하고 싶다면
+ *  @Test
+ *  @SpringBootTest
+*     void save() {
+*      }
+ */
 
+@Transactional
 @SpringBootTest
 class ItemRepositoryTest {
 
     @Autowired
     ItemRepository itemRepository;
-    
-    @Autowired
-    PlatformTransactionManager transactionManager;
-    TransactionStatus status;
 
     /**
      * 트랜잭션 관리자는 PlatformTransactionManager 를 주입 받아서 사용하면 된다.
      * 스프링 부트는 자동으로 트랜잭션 매니저를 스프링 빈으로 등록해준다.
-     * 
-     * @BeforeEach : 각각의 테스트 케이스를 실행하기 직전에 호출된다. 
+     *
+     * @BeforeEach : 각각의 테스트 케이스를 실행하기 직전에 호출된다.
      * transactionManager.getTransaction(new DefaultTransactionDefinition()); : 트랜잭션 실행
-     * 
+     *
      * @AfterEach : 각각의 테스트 케이스가 완료된 직후에 호출된다. 여기서 트랜잭션을 롤백
      * transactionManager.rollback(status); : 트랜잭션을 롤백
-     * 
      */
+
+    /*
+    @Autowired
+    PlatformTransactionManager transactionManager;
+    TransactionStatus status;
 
 
     @BeforeEach
@@ -57,6 +74,7 @@ class ItemRepositoryTest {
         // 트랙잰션 시작
         status = transactionManager.getTransaction(new DefaultTransactionDefinition());
     }
+*/
 
     @AfterEach
     void afterEach() {
@@ -66,7 +84,7 @@ class ItemRepositoryTest {
         }
         
         // 트랜잭션 롤백
-        transactionManager.rollback(status);
+        // transactionManager.rollback(status);
     }
 
     // 상품 저장 후 검증
