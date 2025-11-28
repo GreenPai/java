@@ -54,6 +54,9 @@ public class ItemServiceApplication {
      * test/resources/schema.sql 에서 생성을 할 수 있다/
      * */
 
+    /**
+     * 밑의 코드를 사용하지 않고 test 폴더의 application.properties 에서 설정해도 된다.
+     */
 /*
     @Bean
     @Profile("test")
