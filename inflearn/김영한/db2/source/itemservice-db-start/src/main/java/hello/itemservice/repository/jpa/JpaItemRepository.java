@@ -14,6 +14,12 @@ import org.springframework.util.StringUtils;
 import java.util.List;
 import java.util.Optional;
 
+
+/***
+ * 트랜잭션은 서비스 계층에서 걸어주는 것이 맞다.
+ * 현재는 서비스 계층이 없기 때문에 리포지토리에 트랜잭션을 걸어줬다.
+ */
+
 @Slf4j
 @Repository
 @Transactional
@@ -25,6 +31,9 @@ public class JpaItemRepository implements ItemRepository {
         this.em = em;
     }
 
+    /**
+     * persist를 사용해서 저장.
+     */
     @Override
     public Item save(Item item) {
         em.persist(item);
@@ -44,12 +53,22 @@ public class JpaItemRepository implements ItemRepository {
         findItem.setQuantity(updateParam.getQuantity());
     }
 
+    /**
+     * 단건 조회
+     * JPA에서 엔티티 객체를 PK 기준으로 조회할 때는 find() 를 사용하고 조회 타입과. PK값을 주면 된다.
+     */
     @Override
     public Optional<Item> findById(Long id) {
         Item item = em.find(Item.class, id);
         return Optional.ofNullable(item);
     }
 
+    /**
+     * 목록 조회
+     * JPA는 JPQL(Java Persistence Query Language)이라는 객체지향 쿼리 언어를 제공한다.
+     *
+     * JPA를 사용해도 동적 쿼리 문제가 발생한다. 이 땨ㅐ Querydsl도 함께 사용한다.
+     */
     @Override
     public List<Item> findAll(ItemSearchCond cond) {
         String jpql = "select i from Item i";
