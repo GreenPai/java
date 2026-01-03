@@ -19,7 +19,8 @@ import javax.sql.DataSource;
 //@Import(MyBatisConfig.class)
 //@Import(JpaConfig.class)
 //@Import(SpringDataJpaConfig.class)
-@Import(QuerydslConfig.class)
+//@Import(QuerydslConfig.class)
+@Import(V2Config.class)
 /**
  * @SpringBootApplication(scanBasePackages = "hello.itemservice.web")
  * 스프링 부트 애플리케이션의 시작점임을 표시.
