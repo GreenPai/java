@@ -2,6 +2,8 @@ package hellojpa;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 public class JpaMain {
 
     public static void main(String[] args) {
@@ -60,6 +62,7 @@ public class JpaMain {
         }
          */
 
+        /*
         // 회원 수정
         try{
             Member findMember = em.find(Member.class, 3L);
@@ -71,7 +74,27 @@ public class JpaMain {
         }finally {
             em.close();
         }
+         */
 
+        // 회원 수정
+        try{
+
+            // Member findMember = em.find(Member.class, 3L);
+            List<Member> result = em.createQuery("select m from Member as m", Member.class)
+                            .setFirstResult(0)
+                                    .setMaxResults(10)
+                                            .getResultList();
+
+            for(Member member : result){
+                System.out.println(member.getName());
+            }
+
+            tx.commit();
+        }catch(Exception e){
+            tx.rollback();
+        }finally {
+            em.close();
+        }
 
         
         emf.close();
