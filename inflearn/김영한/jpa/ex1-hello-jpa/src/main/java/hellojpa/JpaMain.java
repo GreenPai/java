@@ -164,7 +164,6 @@ public class JpaMain {
          * 수정을 하는 경우에 따로 persist나 update 해주지 않아도
          * 조회한 값을 수정하는 경우에
          * 마지막에 update 쿼리가 실행이 된다.
-         *
          */
 
         try{
@@ -182,7 +181,6 @@ public class JpaMain {
         }finally {
             em.close();
         }
-
 
         emf.close();
     }
