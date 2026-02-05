@@ -1,7 +1,10 @@
 package hellojpa;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * Entity 속성:
@@ -10,35 +13,36 @@ import jakarta.persistence.Id;
  */
 
 @Entity
+@Table(name = "MBR")
 public class Member {
-
-
-    public Member(){
-
-    }
-
-    public Member(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
 
     @Id
     private Long id;
-    private String name;
 
-    public Long getId() {
-        return id;
+    @Column(name = "name")
+    private String username;
+
+    private Integer age;
+
+    @Enumerated(EnumType.STRING)
+    private RoleType roleType;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdDate;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lastModifiedDate;
+
+    // 최신 버전에서는 @Temporal(TemporalType.TIMESTAMP) 를 하지 않아도 지원
+    private LocalDate testLocalDate;
+
+    private LocalDateTime testLocalDateTime;
+
+    @Lob
+    private String description;
+
+    public Member() {
+
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
