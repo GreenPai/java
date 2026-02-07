@@ -170,7 +170,7 @@ public class JpaMain {
 
             // 영속
             Member member1 = em.find(Member.class, 150L);
-            member1.setName("ZZZZ");
+            // member1.setName("ZZZZ");
 
             System.out.println("==================");
 

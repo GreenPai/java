@@ -20,29 +20,13 @@ public class Member {
     private Long id;
 
     @Column(name = "name")
-    private String username;
+    // private String username;
 
     private Integer age;
-
-    @Enumerated(EnumType.STRING)
-    private RoleType roleType;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdDate;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date lastModifiedDate;
-
-    // 최신 버전에서는 @Temporal(TemporalType.TIMESTAMP) 를 하지 않아도 지원
-    private LocalDate testLocalDate;
-
-    private LocalDateTime testLocalDateTime;
-
-    @Lob
-    private String description;
-
     public Member() {
 
     }
+
+
 
 }
