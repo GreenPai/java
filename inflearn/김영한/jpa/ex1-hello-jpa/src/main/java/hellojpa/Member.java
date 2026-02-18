@@ -13,20 +13,43 @@ import java.util.Date;
  */
 
 @Entity
-@Table(name = "MBR")
 public class Member {
 
-    @Id
+    @Id @GeneratedValue
     private Long id;
 
     @Column(name = "name")
-    // private String username;
+    private String username;
 
-    private Integer age;
-    public Member() {
+    // 하나의 팀에 여러명의 인원
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "TEAM_ID")
+    private Team team;
 
+    // @Column(name = "TEAM_ID")
+    // private Long teamId;
+
+    public Long getId() {
+        return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
+    public String getUsername() {
+        return username;
+    }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
+    }
 }
