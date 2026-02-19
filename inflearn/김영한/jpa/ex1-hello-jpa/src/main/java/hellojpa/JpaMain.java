@@ -22,22 +22,32 @@ public class JpaMain {
             team.setName("TeamA");
             em.persist(team);
 
+            /**
+             * 연관관계 주인: Member
+             * FK가 있는 쪽이 주인. 주로 다(N)
+             */
+            
             Member member = new Member();
             member.setUsername("member1");
-            member.setTeam(team);
+
+            team.addMember(member);
+
+            // 연관관계 편의 메서드
             em.persist(member);
+
+
+            // team.getMembers().add(member);
 
             // find를 해도 db 쿼리문이 나오지 않는다. 이것은 캐시 때문.
             // 만약 쿼리를 보고 싶다면 영속성 컨텍스트를 초기화 시켜주면 된다.
-            // em.flush();
-            // em.clear();
+            em.flush();
+            em.clear();
 
+            Team findTeam = em.find(Team.class, team.getId());
+            List<Member> members = findTeam.getMembers();
 
-            Member findMember = em.find(Member.class, member.getId());
-            List<Member> members = findMember.getTeam().getMembers();
-
-            for(Member member1 : members){
-                System.out.println("m = " + member.getUsername());
+            for(Member m : members){
+                System.out.println("member : " + m.getUsername());
             }
 
 

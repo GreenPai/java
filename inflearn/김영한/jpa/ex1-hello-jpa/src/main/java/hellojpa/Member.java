@@ -33,6 +33,10 @@ public class Member {
         return id;
     }
 
+    public void setTeam(Team team) {
+        this.team = team;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -49,7 +53,9 @@ public class Member {
         return team;
     }
 
-    public void setTeam(Team team) {
+    // 연관관계 편의 메서드
+    public void changeTeam(Team team) {
         this.team = team;
+        team.getMembers().add(this);
     }
 }
