@@ -13,15 +13,8 @@ public class Team {
     private Long id;
     private String name;
 
-    // 읽기 전용
-    // UPDATE나 INSERT 할 때 보지 않는다.
-    @OneToMany(mappedBy = "team") // 반대편의 걸려있는 변수명 private Team team;
+    @OneToMany(mappedBy = "team") // team은 Member에서 team의 변수명
     private List<Member> members = new ArrayList<>();
-
-    public void addMember(Member member) {
-        member.setTeam(this);
-        members.add(member);
-    }
 
     public Long getId() {
         return id;
@@ -39,13 +32,6 @@ public class Team {
         this.name = name;
     }
 
-    public List<Member> getMembers() {
-        return members;
-    }
-
-    public void setMembers(List<Member> members) {
-        this.members = members;
-    }
 
 
 }
