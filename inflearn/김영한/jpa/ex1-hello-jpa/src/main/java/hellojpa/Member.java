@@ -22,20 +22,18 @@ public class Member {
     @Column(name = "USERNAME")
     private String username;
 
-    // 하나의 팀에 여러명의 인원
+    // JoinColumn에 insertable = false, updatable = false를 하지 않으면 둘 다 연관관계 주인이므로
+    // 오류가 생긴다. insertable = false, updatable = false 를 넣음으로서 읽고 전용으로 설정해야된다.
     @ManyToOne
-    @JoinColumn(name = "TEAM_ID")
+    @JoinColumn(name = "TEAM_ID", insertable = false, updatable = false)
     private Team team;
 
-    // @Column(name = "TEAM_ID")
-    // private Long teamId;
+    @OneToOne
+    @JoinColumn(name = "LOCKER_ID")
+    private Locker locker;
 
     public Long getId() {
         return id;
-    }
-
-    public void setTeam(Team team) {
-        this.team = team;
     }
 
     public void setId(Long id) {
@@ -50,13 +48,5 @@ public class Member {
         this.username = username;
     }
 
-    public Team getTeam() {
-        return team;
-    }
 
-    // 연관관계 편의 메서드
-    public void changeTeam(Team team) {
-        this.team = team;
-        team.getMembers().add(this);
-    }
 }
