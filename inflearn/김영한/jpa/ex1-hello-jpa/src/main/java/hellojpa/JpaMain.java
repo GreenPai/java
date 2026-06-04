@@ -18,23 +18,31 @@ public class JpaMain {
 
         try{
 
+            Team team = new Team();
+            team.setName("teamA");
+            em.persist(team);
+
+            System.out.println("team : " + team);
+
             Member member1 = new Member();
             member1.setUsername("member1");
+            member1.setTeam(team);
+
+            System.out.println("team : " + member1);
             em.persist(member1);
 
             em.flush();
             em.clear();
 
-            Member refMember = em.getReference(Member.class, member1.getId());
-            System.out.println("m1 = " + refMember.getClass());
-
-            Member findMember = em.find(Member.class, member1.getId());
-            System.out.println(findMember.getClass());
-
-            System.out.println("a == a "  + (refMember == findMember));
+            // Member m = em.find(Member.class, member1.getId());
+            
+            // N+1 문제 -> EAGER을 했을때 나오는 문제
+            List<Member> members = em.createQuery("select m from Member m", Member.class)
+                            .getResultList();
 
             tx.commit();
         }catch(Exception e){
+            e.printStackTrace();
             tx.rollback();
         }finally {
             em.close();

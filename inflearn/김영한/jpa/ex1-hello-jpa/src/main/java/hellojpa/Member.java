@@ -26,8 +26,9 @@ public class Member extends BaseEntity{
 
     // JoinColumn에 insertable = false, updatable = false를 하지 않으면 둘 다 연관관계 주인이므로
     // 오류가 생긴다. insertable = false, updatable = false 를 넣음으로서 읽고 전용으로 설정해야된다.
-    @ManyToOne
-    @JoinColumn(name = "TEAM_ID", insertable = false, updatable = false)
+    
+    @ManyToOne(fetch = FetchType.EAGER) // Member 객체만 DB에서 조회한다. / Team을 프록시로
+    @JoinColumn
     private Team team;
 
     public Long getId() {
@@ -52,5 +53,14 @@ public class Member extends BaseEntity{
 
     public void setTeam(Team team) {
         this.team = team;
+    }
+
+    @Override
+    public String toString() {
+        return "Member{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", team=" + team +
+                '}';
     }
 }
