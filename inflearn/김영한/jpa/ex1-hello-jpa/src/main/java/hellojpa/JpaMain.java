@@ -18,15 +18,20 @@ public class JpaMain {
 
         try{
 
-            Member member = new Member();
-            member.setUsername("user1");
-            member.setCreateBy("kim");
-            member.setCreatedDate(LocalDateTime.now());
-
-            em.persist(member);
+            Member member1 = new Member();
+            member1.setUsername("member1");
+            em.persist(member1);
 
             em.flush();
             em.clear();
+
+            Member refMember = em.getReference(Member.class, member1.getId());
+            System.out.println("m1 = " + refMember.getClass());
+
+            Member findMember = em.find(Member.class, member1.getId());
+            System.out.println(findMember.getClass());
+
+            System.out.println("a == a "  + (refMember == findMember));
 
             tx.commit();
         }catch(Exception e){
@@ -36,5 +41,17 @@ public class JpaMain {
         }
 
         emf.close();
+    }
+
+    private static void printMember(Member member) {
+        System.out.println("member = "  + member.getUsername());
+    }
+
+    private static void printMemberAndTeam(Member member) {
+        String username = member.getUsername();
+        System.out.println("username = " + username );
+
+        Team team = member.getTeam();
+        System.out.println("team = " + team.getName());
     }
 }
