@@ -15,7 +15,7 @@ import java.util.List;
  */
 
 @Entity
-public class Member extends BaseEntity{
+public class Member{
 
     @Id @GeneratedValue
     @Column(name = "MEMBER_ID")
@@ -24,12 +24,14 @@ public class Member extends BaseEntity{
     @Column(name = "USERNAME")
     private String username;
 
-    // JoinColumn에 insertable = false, updatable = false를 하지 않으면 둘 다 연관관계 주인이므로
-    // 오류가 생긴다. insertable = false, updatable = false 를 넣음으로서 읽고 전용으로 설정해야된다.
-    
-    @ManyToOne(fetch = FetchType.EAGER) // Member 객체만 DB에서 조회한다. / Team을 프록시로
-    @JoinColumn
-    private Team team;
+    // 기간 Period
+    @Embedded
+    private Period workPeriod;
+
+    // 주소
+    @Embedded
+    private Address address;
+
 
     public Long getId() {
         return id;
@@ -47,20 +49,19 @@ public class Member extends BaseEntity{
         this.username = username;
     }
 
-    public Team getTeam() {
-        return team;
+    public Period getWorkPeriod() {
+        return workPeriod;
     }
 
-    public void setTeam(Team team) {
-        this.team = team;
+    public void setWorkPeriod(Period workPeriod) {
+        this.workPeriod = workPeriod;
     }
 
-    @Override
-    public String toString() {
-        return "Member{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", team=" + team +
-                '}';
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }
