@@ -1,5 +1,8 @@
 package oop1.ex;
 
+/**
+ * 절차 지향 프로그래밍 : 2026/06/06
+ */
 public class Rectangle {
     int width;
     int height;
@@ -15,5 +18,6 @@ public class Rectangle {
     boolean isSquare() {
         return width == height;
     }
+
 
 }

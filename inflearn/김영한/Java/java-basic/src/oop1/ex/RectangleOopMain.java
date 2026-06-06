@@ -1,5 +1,8 @@
 package oop1.ex;
 
+/**
+ * 절차 지향 프로그래밍 : 2026/06/06
+ */
 public class RectangleOopMain {
 
     public static void main(String[] args) {
@@ -15,5 +18,6 @@ public class RectangleOopMain {
 
         boolean square = rectangle.isSquare();
         System.out.println("정사각형 여부: " + square);
+
     }
 }
