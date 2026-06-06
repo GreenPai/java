@@ -1,5 +1,9 @@
 package ref;
 
+/**
+ * 기본형과 참조형 : 2026/06/06
+ * 생성하는 부분을 static으로 좀 더 편하게 바꾼 버전이다.
+ */
 public class Method2 {
 
     public static void main(String[] args) {

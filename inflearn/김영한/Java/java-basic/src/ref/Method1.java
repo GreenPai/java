@@ -1,5 +1,8 @@
 package ref;
 
+/**
+ * 기본형과 참조형 : 2026/06/06
+ */
 public class Method1 {
 
     public static void main(String[] args) {
@@ -9,8 +12,8 @@ public class Method1 {
         Student student2 = new Student(); //x002
         initStudent(student2, "학생2", 16, 80);
 
-        printStudent(student1);
-        printStudent(student2);
+        printStudent(student1); //이름:학생1 나이:15 성적:90
+        printStudent(student2); //이름:학생2 나이:16 성적:80
     }
 
     static void initStudent(Student student, String name, int age, int grade) {

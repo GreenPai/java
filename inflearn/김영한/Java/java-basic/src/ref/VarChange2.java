@@ -1,8 +1,13 @@
 package ref;
 
+/**
+ * 기본형과 참조형 : 2026/06/06
+ * 참조형은 객체의 참조값만 복사 된다.
+ */
 public class VarChange2 {
 
     public static void main(String[] args) {
+        // Data : 필드 value
         Data dataA = new Data();
         dataA.value = 10;
         Data dataB = dataA;
