@@ -1,5 +1,11 @@
 package class1;
 
+/**
+ * 클래스와 데이터 : 2026/06/06
+ * 배열에 참조값을 대입해서
+ * student1, 2 의 참조값을 배열을 가지고 있다.
+ */
+
 public class ClassStart4 {
 
     public static void main(String[] args) {

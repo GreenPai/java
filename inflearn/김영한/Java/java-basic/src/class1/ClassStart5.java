@@ -1,5 +1,12 @@
 package class1;
 
+/**
+ * 클래스와 데이터 : 2026/06/06
+ * 리펙토링
+ * for문을 통해서 배열의 student 출력
+ * */
+
+
 public class ClassStart5 {
 
     public static void main(String[] args) {

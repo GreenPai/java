@@ -1,5 +1,11 @@
 package class1;
 
+/**
+ * 클래스와 데이터 : 2026/06/06
+ * 배열 코드의 문제점:
+ * 데이터가 변경 될 때 어려움이 있다.
+ * 학생2의 요소를 제거하려면 학생2의 요소를 정확하게 찾아서 제거해줘야된다.
+ */
 public class ClassStart2 {
 
     public static void main(String[] args) {
