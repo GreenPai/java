@@ -1,5 +1,9 @@
 package extends1.super2;
 
+/**
+ *  상속 super : 2026/06/08
+ *
+ */
 public class ClassB extends ClassA {
 
     public ClassB(int a) {
@@ -8,7 +12,7 @@ public class ClassB extends ClassA {
     }
 
     public ClassB(int a, int b) {
-        super(); //기본 생성자 생략 가능
+        // super(); //기본 생성자 생략 가능
         System.out.println("ClassB 생성자 a=" + a + " b=" + b);
     }
 }

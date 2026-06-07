@@ -1,5 +1,9 @@
 package extends1.access.parent;
 
+/**
+ *  상속 : 2026/06/08
+ *
+ */
 public class Parent {
 
     public int publicValue;

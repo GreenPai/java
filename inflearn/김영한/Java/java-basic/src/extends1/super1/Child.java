@@ -1,5 +1,9 @@
 package extends1.super1;
 
+/**
+ *  상속 super : 2026/06/08
+ *
+ */
 public class Child extends Parent {
 
     public String value = "child";

@@ -2,6 +2,10 @@ package extends1.access.child;
 
 import extends1.access.parent.Parent;
 
+/**
+ *  상속 : 2026/06/08
+ *
+ */
 public class Child extends Parent {
 
     public void call() {

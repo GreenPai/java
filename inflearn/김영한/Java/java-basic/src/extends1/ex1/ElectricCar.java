@@ -1,5 +1,8 @@
 package extends1.ex1;
 
+/**
+ *  상속  : 2026/06/07
+ */
 public class ElectricCar {
 
     public void move() {
