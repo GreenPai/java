@@ -1,5 +1,8 @@
 package com.helloshop.product;
 
+/**
+ *  패키지 : 2026/06/07
+ */
 public class Product {
     String productId;
     int price;
