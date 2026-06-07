@@ -1,5 +1,9 @@
 package construct;
 
+/**
+ * 생성자 : 2026/06/07
+ *
+ */
 public class MemberInit {
     String name;
     int age;
@@ -11,4 +15,5 @@ public class MemberInit {
         this.age = age;
         this.grade = grade;
     }
+
 }

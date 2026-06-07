@@ -1,5 +1,9 @@
 package construct;
 
+/**
+ * 생성자 : 2026/06/07
+ * 메서드를 통해서 초기값을 설정하는 부분을 추가
+ */
 public class MethodInitMain2 {
 
     public static void main(String[] args) {

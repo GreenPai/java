@@ -1,5 +1,9 @@
 package construct.ex;
 
+/**
+ *  생성자 : 2026/06/07
+ *  오버로딩으로 3가지 생성자 사용
+ */
 public class BookMain {
     public static void main(String[] args) {
         // 기본 생성자 사용

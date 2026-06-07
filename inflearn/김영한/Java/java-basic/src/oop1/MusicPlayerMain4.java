@@ -1,5 +1,8 @@
 package oop1;
 
+/**
+ * 객체 지향 프로그래밍 : 2026/06/06
+ */
 public class MusicPlayerMain4 {
 
     public static void main(String[] args) {

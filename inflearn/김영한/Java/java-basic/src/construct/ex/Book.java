@@ -1,5 +1,10 @@
 package construct.ex;
 
+/**
+ *  생성자 : 2026/06/07
+ *  생성자 사용
+ *  오버로딩으로 다양한 생성자 생성
+ */
 public class Book {
 
     String title; //제목

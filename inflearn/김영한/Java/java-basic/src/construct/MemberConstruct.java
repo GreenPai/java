@@ -1,5 +1,10 @@
 package construct;
 
+/**
+ *  생성자 : 2026/06/07
+ *  생성자의 이름은 클래스 이름과 같아야 한다. 따라서 첫 글자도 대문자
+ *  생성자는 반환타입이 없다.
+ */
 public class MemberConstruct {
     String name;
     int age;

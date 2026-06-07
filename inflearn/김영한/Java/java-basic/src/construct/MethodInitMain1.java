@@ -1,5 +1,9 @@
 package construct;
 
+/**
+ * 생성자 : 2026/06/07
+ * 초기 값을 설정하는 부분이 반복된다.
+ */
 public class MethodInitMain1 {
 
     public static void main(String[] args) {
