@@ -5,6 +5,9 @@ package static2.ex;
  */
 public class MathArrayUtils {
 
+    // private 생성자를 생성하지 않도록 막는다.
+    // 기능만 제공을 위한 클래스이기때문에 생성자를 만들었을때 메모리만 차지하게 된다. 
+    
     private MathArrayUtils() {
         //private 인스턴스 생성을 막는다.
     }
