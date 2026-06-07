@@ -1,5 +1,8 @@
 package access.a;
 
+/**
+ *  접근제어자 : 2026/06/07
+ */
 public class AccessData {
 
     public int publicField;

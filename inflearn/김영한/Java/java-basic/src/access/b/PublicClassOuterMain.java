@@ -1,6 +1,9 @@
 package access.b;
 
 //import access.a.DefaultClass1;
+/**
+ *  접근제어자 : 2026/06/07
+ */
 import access.a.PublicClass;
 
 public class PublicClassOuterMain {

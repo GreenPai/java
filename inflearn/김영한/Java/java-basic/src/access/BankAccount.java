@@ -1,5 +1,8 @@
 package access;
 
+/**
+ *  접근제어자 : 2026/06/07
+ */
 public class BankAccount {
 
     private int balance;

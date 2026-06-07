@@ -1,5 +1,8 @@
 package access;
 
+/**
+ *  접근제어자 : 2026/06/07
+ */
 public class Speaker {
     private int volume;
 
