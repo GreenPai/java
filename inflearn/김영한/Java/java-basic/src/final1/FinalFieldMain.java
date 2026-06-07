@@ -1,5 +1,10 @@
 package final1;
 
+/**
+ *  Final : 2026/06/07
+ *  FieldInit 에서 value를 여러개 가지고 있는건 메모리 낭비다.
+ *  이 때 static final을 통해서 하나만 가지고 있는 것이 좋다.
+ */
 public class FinalFieldMain {
 
     public static void main(String[] args) {

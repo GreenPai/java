@@ -1,5 +1,8 @@
 package final1;
 
+/**
+ *  Final 변수와 상수 : 2026/06/07
+ */
 public class ConstantMain1 {
 
     public static void main(String[] args) {
