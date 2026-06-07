@@ -1,5 +1,8 @@
 package memory;
 
+/**
+ *  스택 영역과 힙 영역 : 2026/06/07
+ */
 public class JavaMemoryMain1 {
 
     public static void main(String[] args) {

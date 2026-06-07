@@ -1,5 +1,8 @@
 package static2.ex;
 
+/**
+ *  static 문제와 풀이 : 2026/06/07
+ */
 public class MathArrayUtils {
 
     private MathArrayUtils() {

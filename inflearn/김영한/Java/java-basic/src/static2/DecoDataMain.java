@@ -1,13 +1,17 @@
 package static2;
 
 //import static static2.DecoData.staticCall;
-//import static static2.DecoData.*;
+import static static2.DecoData.*;
 
+/**
+ *  static 메서드2 : 2026/06/07
+ *
+ */
 public class DecoDataMain {
 
     public static void main(String[] args) {
         System.out.println("1. 정적 호출");
-        DecoData.staticCall();
+        staticCall();
 
         System.out.println("2. 인스턴스 호출1");
         DecoData data1 = new DecoData();

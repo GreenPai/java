@@ -1,5 +1,9 @@
 package static2.ex;
 
+/**
+ *  static 문제와 풀이 : 2026/06/07
+ *  Car.show~ -> 클래스 메서드 -> static
+ */
 public class CarMain {
 
     public static void main(String[] args) {

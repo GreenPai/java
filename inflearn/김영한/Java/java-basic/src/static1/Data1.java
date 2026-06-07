@@ -1,5 +1,9 @@
 package static1;
 
+/**
+ *  static : 2026/06/07
+ *
+ */
 public class Data1 {
     public String name;
     public int count;

@@ -2,6 +2,10 @@ package static2.ex;
 
 import static static2.ex.MathArrayUtils.*;
 
+/**
+ *  static 문제와 풀이 : 2026/06/07
+ *  static import -> MathArrayUtils
+ */
 public class MathArrayUtilsMain {
 
     public static void main(String[] args) {

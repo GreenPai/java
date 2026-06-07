@@ -1,5 +1,9 @@
 package static1;
 
+/**
+ *  static : 2026/06/07
+ *  int를 static으로 관리
+ */
 public class DataCountMain3 {
 
     public static void main(String[] args) {
