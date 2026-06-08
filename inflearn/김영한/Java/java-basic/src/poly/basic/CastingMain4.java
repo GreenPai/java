@@ -1,6 +1,9 @@
 package poly.basic;
 
 //다운캐스팅을 자동으로 하지 않는 이유
+/**
+ *  다형성 : 2026/06/08
+ */
 public class CastingMain4 {
 
     public static void main(String[] args) {

@@ -1,6 +1,9 @@
 package poly.basic;
 
 //upcasting vs downcasting
+/**
+ *  다형성 : 2026/06/08
+ */
 public class CastingMain3 {
 
     public static void main(String[] args) {

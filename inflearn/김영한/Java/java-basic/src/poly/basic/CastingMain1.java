@@ -1,5 +1,9 @@
 package poly.basic;
 
+/**
+ *  다형성과 캐스팅 : 2026/06/08
+ *  다운 캐스팅
+ */
 public class CastingMain1 {
 
     public static void main(String[] args) {

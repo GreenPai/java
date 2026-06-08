@@ -1,5 +1,8 @@
 package poly.overriding;
 
+/**
+ *  다형성 / 오버라이딩 : 2026/06/08
+ */
 public class OverridingMain {
 
     public static void main(String[] args) {
@@ -18,7 +21,9 @@ public class OverridingMain {
         //부모 변수가 자식 인스턴스 참조(다형적 참조)
         Parent poly = new Child();
         System.out.println("Parent -> Child");
-        System.out.println("value = " + poly.value); //변수는 오버라이딩X
-        poly.method(); //메서드 오버라이딩!
+        System.out.println("value = " + poly.value); //변수는 오버라이딩X // parent
+        poly.method(); //메서드 오버라이딩! //child
+
+        // 오버라이딩 된 메서드는 항상 우선권을 가진다.
     }
 }

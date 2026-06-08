@@ -1,5 +1,8 @@
 package poly.basic;
 
+/**
+ *  다형성 : 2026/06/08
+ */
 public class CastingMain5 {
 
     public static void main(String[] args) {

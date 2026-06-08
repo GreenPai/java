@@ -1,5 +1,8 @@
 package poly.basic;
 
+/**
+ *  다형성 : 2026/06/08
+ */
 public class PolyMain {
 
     public static void main(String[] args) {
@@ -18,8 +21,10 @@ public class PolyMain {
         System.out.println("Parent -> Child");
         Parent poly = new Child();
         poly.parentMethod();
+        // 자식에서 오버라이딩을 하면 오버라이딩한 메서드가 나온다.
 
         //Child child1 = new Parent(); //자식은 부모를 담을 수 없다.
+
 
         //자식의 기능은 호출할 수 없다. 컴파일 오류 발생
         //poly.childMethod();

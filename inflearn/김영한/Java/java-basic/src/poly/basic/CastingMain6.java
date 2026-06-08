@@ -1,5 +1,8 @@
 package poly.basic;
 
+/**
+ *  다형성 : 2026/06/08
+ */
 public class CastingMain6 {
 
     public static void main(String[] args) {
@@ -10,6 +13,9 @@ public class CastingMain6 {
         Parent parent2 = new Child();
         System.out.println("parent2 호출");
         call(parent2);
+
+        System.out.println(parent1.getClass()); // parent
+        System.out.println(parent2.getClass()); // child
     }
 
     private static void call(Parent parent) {
