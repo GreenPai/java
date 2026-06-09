@@ -2,6 +2,9 @@ package poly.ex.pay1;
 
 import java.util.Scanner;
 
+/**
+ *  다형성과 설계 : 2026/06/09
+ */
 public class PayMain2 {
 
     public static void main(String[] args) {

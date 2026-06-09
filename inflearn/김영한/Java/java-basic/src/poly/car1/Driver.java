@@ -1,5 +1,9 @@
 package poly.car1;
 
+/**
+ *  다형성 - 역할과 구현 예제 : 2026/06/09
+ *  k3 , Modal3Car 대신 Car을 알고 있음.
+ */
 public class Driver {
 
     private Car car;

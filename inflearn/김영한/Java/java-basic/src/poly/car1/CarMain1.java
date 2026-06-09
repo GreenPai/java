@@ -1,5 +1,9 @@
 package poly.car1;
 
+/**
+ *  다형성 - 역할과 구현 예제 : 2026/06/09
+ *  드라이버는 차량만 선택하면 된다.
+ */
 public class CarMain1 {
     public static void main(String[] args) {
         Driver driver = new Driver();

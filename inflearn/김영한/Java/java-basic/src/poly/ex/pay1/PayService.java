@@ -1,5 +1,10 @@
 package poly.ex.pay1;
 
+/**
+ *  다형성과 설계 : 2026/06/09
+ *  새로운 결제가 만들어져도 서비스는 바뀌지 않는다.
+ *  PayStore만 바뀐다.
+ */
 public class PayService {
 
     public void processPay(String option, int amount) {

@@ -1,5 +1,8 @@
 package poly.ex.pay1;
 
+/**
+ *  다형성과 설계 : 2026/06/09
+ */
 public class NewPay implements Pay {
     @Override
     public boolean pay(int amount) {

@@ -1,5 +1,9 @@
 package poly.ex.pay1;
 
+/**
+ *  다형성과 설계 : 2026/06/09
+ *  바뀌는 부분
+ */
 public abstract class PayStore {
 
     //변하는 부분
@@ -10,6 +14,8 @@ public abstract class PayStore {
             return new NaverPay();
         } else if (option.equals("new")) {
             return new NewPay();
+        } else if (option.equals("maple")){
+            return new MaplePay();
         } else {
             return new DefaultPay();
         }

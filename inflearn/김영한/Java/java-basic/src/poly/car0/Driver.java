@@ -1,7 +1,11 @@
 package poly.car0;
 
+/**
+ *  다형성 - 역할과 구현 예제 : 2026/06/09
+ */
 public class Driver {
 
+    // 차에 대해 의존한다. / 의존한다.
     private K3Car k3Car;
     private Model3Car model3Car; //추가
 
