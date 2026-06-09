@@ -1,5 +1,10 @@
 package poly.ex2;
 
+/**
+ *  다형성 / 오버라이딩 : 2026/06/08
+ *
+ *  Animal 부모를 클래스로 배열을 돌려 불필요한 코드를 줄일 수 있다.
+ */
 public class AnimalPolyMain2 {
 
     public static void main(String[] args) {

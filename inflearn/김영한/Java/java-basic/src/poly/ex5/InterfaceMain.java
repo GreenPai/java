@@ -1,9 +1,12 @@
 package poly.ex5;
 
+/**
+ *  다형성 / 인터페이스 : 2026/06/09
+ */
 public class InterfaceMain {
 
     public static void main(String[] args) {
-        //인터페이스 생성 불가
+        //인터페이스 생성 불가 (완전 추상)
         //InterfaceAnimal interfaceAnimal = new InterfaceAnimal();
 
         Cat cat = new Cat();

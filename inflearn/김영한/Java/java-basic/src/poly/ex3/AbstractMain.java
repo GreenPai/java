@@ -1,5 +1,12 @@
 package poly.ex3;
 
+/**
+ *  다형성 / 오버라이딩 : 2026/06/09
+ *  추상 클래스
+ *  
+ *  추상 클래스는 새로운 동물을 만들 때 실수하는 부분을 방지해준다.
+ *  예) Duck을 만들고 추상 메서드를 만든 부분을 오버라이딩 하지 않으면 오류
+ */
 public class AbstractMain {
 
     public static void main(String[] args) {
