@@ -1,5 +1,9 @@
 package lang.object.tostring;
 
+/**
+ * Object 클래스 - 2026 6월 10일
+ * toString
+ */
 public class ObjectPrinter {
     public static void print(Object obj) {
         String string = "객체 정보 출력: " + obj.toString();

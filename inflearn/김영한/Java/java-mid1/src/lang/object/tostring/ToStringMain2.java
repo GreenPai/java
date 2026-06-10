@@ -1,5 +1,9 @@
 package lang.object.tostring;
 
+/**
+ * Object 클래스 - 2026 6월 10일
+ * toString
+ */
 public class ToStringMain2 {
 
     public static void main(String[] args) {

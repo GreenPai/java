@@ -1,5 +1,8 @@
 package lang.object.poly;
 
+/**
+ * Object 클래스 배열 - 2026 6월 10일
+ */
 public class ObjectPolyExample2 {
 
     public static void main(String[] args) {
