@@ -1,5 +1,8 @@
 package lang.object.test;
 
+/**
+ * Object 클래스 - 2026 6월 11일
+ */
 public class RectangleMain {
 
     public static void main(String[] args) {

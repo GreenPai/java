@@ -2,6 +2,9 @@ package lang.object.test;
 
 import java.util.Objects;
 
+/**
+ * Object 클래스 - 2026 6월 11일
+ */
 public class Rectangle {
     private int width;
     private int height;
@@ -21,10 +24,13 @@ public class Rectangle {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Rectangle rectangle = (Rectangle) o;
         return width == rectangle.width && height == rectangle.height;
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(width, height);
+    }
 }
