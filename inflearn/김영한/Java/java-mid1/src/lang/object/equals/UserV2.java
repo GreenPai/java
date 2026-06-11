@@ -2,6 +2,9 @@ package lang.object.equals;
 
 import java.util.Objects;
 
+/**
+ * Object 클래스 - 2026 6월 11일
+ */
 public class UserV2 {
 
     private String id;
