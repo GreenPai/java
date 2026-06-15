@@ -1,5 +1,10 @@
 package lang.string.equals;
 
+/**
+ * String 클래스 - 2026 6월 15일
+ * String은 문자열 풀에 자바 실행 시점에 만들어지므로
+ * hello 같은 값은 새로 만들지 않고 기존에 잇는것을 사용한다.
+ */
 public class StringEqualsMain1 {
 
     public static void main(String[] args) {

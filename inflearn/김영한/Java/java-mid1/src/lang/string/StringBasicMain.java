@@ -1,5 +1,8 @@
 package lang.string;
 
+/**
+ * String 클래스 - 2026 6월 15일
+ */
 public class StringBasicMain {
 
     public static void main(String[] args) {
