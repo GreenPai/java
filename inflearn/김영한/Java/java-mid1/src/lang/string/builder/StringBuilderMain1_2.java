@@ -1,5 +1,8 @@
 package lang.string.builder;
 
+/**
+ * String 메서드 체이닝 - 2026 6월 16일
+ */
 public class StringBuilderMain1_2 {
 
     public static void main(String[] args) {
