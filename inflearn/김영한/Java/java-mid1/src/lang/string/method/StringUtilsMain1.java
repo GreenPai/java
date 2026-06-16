@@ -1,5 +1,8 @@
 package lang.string.method;
 
+/**
+ * String 클래스 - 2026 6월 16일
+ */
 public class StringUtilsMain1 {
 
     public static void main(String[] args) {
@@ -11,7 +14,7 @@ public class StringUtilsMain1 {
         // valueOf 메서드
         String numString = String.valueOf(num);
         System.out.println("숫자의 문자열 값: " + numString);
-        String boolString = String.valueOf(bool);
+        String boolString = String.valueOf(bool); // 문자 true
         System.out.println("불리언의 문자열 값: " + boolString);
         String objString = String.valueOf(obj);
         System.out.println("객체의 문자열 값: " + objString);

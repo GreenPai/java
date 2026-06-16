@@ -1,5 +1,8 @@
 package lang.string.method;
 
+/**
+ * String 클래스 - 2026 6월 16일
+ */
 public class StringComparisonMain {
 
     public static void main(String[] args) {

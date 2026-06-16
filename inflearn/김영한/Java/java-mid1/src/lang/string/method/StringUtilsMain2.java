@@ -1,5 +1,8 @@
 package lang.string.method;
 
+/**
+ * String 클래스 - 2026 6월 16일
+ */
 public class StringUtilsMain2 {
 
     public static void main(String[] args) {
@@ -20,5 +23,8 @@ public class StringUtilsMain2 {
         // matches 메서드
         String regex = "Hello, (Java!|World)";
         System.out.println("'str'이 패턴과 일치하는가? " + str.matches(regex));
+
+        String regex2 = "Hello, (Java!|World2)";
+        System.out.println(str.matches(regex2));
     }
 }
