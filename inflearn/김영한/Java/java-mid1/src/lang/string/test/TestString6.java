@@ -12,6 +12,7 @@ public class TestString6 {
         int count = 0;
         int index = str.indexOf(key);
         while (index >= 0) {
+            System.out.println(str.indexOf(key, index + 1));
             index = str.indexOf(key, index + 1);
             count++;
         }
