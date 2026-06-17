@@ -3,6 +3,10 @@ package lang.system;
 import java.util.Arrays;
 import java.util.Map;
 
+/**
+ * Wrapper 클래스 - 2026 6월 17일
+ * System 클래스
+ */
 public class SystemMain {
 
     public static void main(String[] args) {

@@ -1,5 +1,9 @@
 package lang.wrapper;
 
+/**
+ * Wrapper 클래스 - 2026 6월 17일
+ * 주요 메서드와 성능
+ */
 public class WrapperUtilsMain {
 
     public static void main(String[] args) {
@@ -7,8 +11,8 @@ public class WrapperUtilsMain {
         Integer i2 = Integer.valueOf("10");//문자열, 래퍼 객체 변환
         int intValue = Integer.parseInt("10");//문자열 전용, 기본형 변환
 
-        //비교
-        int compareResult = i1.compareTo(20);
+        //비교 | 작으면 -1 같으면 0 크면 1
+        int compareResult = i1.compareTo(0);
         System.out.println("compareResult = " + compareResult);
 
         //산술 연산

@@ -3,6 +3,11 @@ package lang.clazz;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
+/**
+ * Wrapper 클래스 - 2026 6월 17일
+ * class 클래스
+ * class 패키지 이름은 관행적으로 clazz를 사용한다. class는 예약어라 사용불가
+ */
 public class ClassMetaMain {
     public static void main(String[] args) throws Exception {
         //Class 조회

@@ -1,5 +1,9 @@
 package lang.math;
 
+/**
+ * Wrapper 클래스 - 2026 6월 17일
+ * Math 클래스
+ */
 public class MathMain {
 
     public static void main(String[] args) {
@@ -16,5 +20,6 @@ public class MathMain {
         // 기타 유용한 메서드
         System.out.println("sqrt(4): " + Math.sqrt(4)); //제곱근
         System.out.println("random(): " + Math.random()); //0.0 ~ 1.0 사이의 double 값
+
     }
 }

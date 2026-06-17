@@ -2,6 +2,10 @@ package lang.math.test;
 
 import java.util.Random;
 
+/**
+ * Math 클래스 - 2026 6월 17일
+ * 문제와 풀이
+ */
 public class LottoGenerator {
     private final Random random = new Random();
     private int[] lottoNumbers;

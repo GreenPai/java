@@ -1,5 +1,15 @@
 package lang.wrapper;
 
+/**
+ * Wrapper 클래스 - 2026 6월 17일
+ * 기본형과 Wrapper 클래스의 성능 차이
+ *
+ * sumPrimitive = 499999999500000000
+ * 기본 자료형 long 실행 시간: 248ms
+ *
+ * sumWrapper = 499999999500000000
+ * 래퍼 클래스 Long 실행 시간: 3680ms
+ */
 public class WrapperVsPrimitive {
 
     public static void main(String[] args) {
