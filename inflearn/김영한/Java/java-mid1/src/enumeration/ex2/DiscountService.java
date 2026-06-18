@@ -1,5 +1,10 @@
 package enumeration.ex2;
 
+/**
+ * 열거형 - 2026 6월 18일
+ * ENUM
+ * 클래스를 받음.
+ */
 public class DiscountService {
 
     public int discount(ClassGrade classGrade, int price) {

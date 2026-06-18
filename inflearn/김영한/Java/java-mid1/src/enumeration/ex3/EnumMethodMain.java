@@ -2,6 +2,10 @@ package enumeration.ex3;
 
 import java.util.Arrays;
 
+/**
+ * 열거형 - 2026년 6월 18일
+ * ENUM
+ */
 public class EnumMethodMain {
 
     public static void main(String[] args) {

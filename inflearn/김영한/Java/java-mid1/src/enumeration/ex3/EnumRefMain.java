@@ -1,5 +1,9 @@
 package enumeration.ex3;
 
+/**
+ * 열거형 - 2026년 6월 18일
+ * ENUM
+ */
 public class EnumRefMain {
 
     public static void main(String[] args) {

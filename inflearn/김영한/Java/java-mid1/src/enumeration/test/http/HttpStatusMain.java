@@ -2,6 +2,11 @@ package enumeration.test.http;
 
 import java.util.Scanner;
 
+/**
+ * 열거형 - 2026 6월 18일
+ * ENUM
+ * 문제와 풀이.
+ */
 public class HttpStatusMain {
 
     public static void main(String[] args) {

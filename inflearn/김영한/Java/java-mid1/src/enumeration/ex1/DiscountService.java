@@ -1,5 +1,9 @@
 package enumeration.ex1;
 
+/**
+ * 열거형 - 2026 6월 18일
+ * ENUM
+ */
 public class DiscountService {
 
     //StringGrade를 참고하세요.

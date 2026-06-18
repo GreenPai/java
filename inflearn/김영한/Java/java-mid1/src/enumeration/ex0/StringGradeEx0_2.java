@@ -1,5 +1,9 @@
 package enumeration.ex0;
 
+/**
+ * 열거형 - 2026 6월 18일
+ * ENUM
+ */
 public class StringGradeEx0_2 {
 
     public static void main(String[] args) {

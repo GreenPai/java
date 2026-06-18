@@ -1,5 +1,10 @@
 package enumeration.ref2;
 
+/**
+ * 열거형 - 2026 6월 18일
+ * ENUM
+ * 리팩토링
+ */
 public class EnumRefMain2 {
 
     public static void main(String[] args) {

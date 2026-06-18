@@ -1,5 +1,10 @@
 package enumeration.test.http;
 
+/**
+ * 열거형 - 2026 6월 18일
+ * ENUM
+ * 문제와 풀이.
+ */
 public enum HttpStatus {
 
     OK(200, "OK"),

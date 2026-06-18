@@ -1,5 +1,11 @@
 package enumeration.ex1;
 
+/**
+ * 열거형 - 2026 6월 18일
+ * ENUM
+ *
+ * 개발자가 StringGrade를 사용하지 않고 직접 입력할 수도 있다.
+ */
 public class StringGradeEx1_2 {
 
     public static void main(String[] args) {
