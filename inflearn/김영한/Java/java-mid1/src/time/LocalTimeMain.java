@@ -2,6 +2,9 @@ package time;
 
 import java.time.LocalTime;
 
+/**
+ * 날짜와 시간 - 2026 6월 19일
+ */
 public class LocalTimeMain {
 
     public static void main(String[] args) {
