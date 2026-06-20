@@ -3,6 +3,10 @@ package time;
 import java.time.Duration;
 import java.time.LocalTime;
 
+/**
+ * 날짜와 시간 - 2026 6월 20일
+ * Duration
+ */
 public class DurationMain {
 
     public static void main(String[] args) {

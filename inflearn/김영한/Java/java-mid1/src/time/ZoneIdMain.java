@@ -2,6 +2,9 @@ package time;
 
 import java.time.ZoneId;
 
+/**
+ * 날짜와 시간 - 2026 6월 20일
+ */
 public class ZoneIdMain {
 
     public static void main(String[] args) {

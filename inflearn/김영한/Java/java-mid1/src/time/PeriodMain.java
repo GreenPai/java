@@ -5,6 +5,10 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Period;
 
+/**
+ * 날짜와 시간 - 2026 6월 20일
+ * Instant
+ */
 public class PeriodMain {
 
     public static void main(String[] args) {
