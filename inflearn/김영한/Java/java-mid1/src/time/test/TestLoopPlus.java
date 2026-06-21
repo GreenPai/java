@@ -11,5 +11,6 @@ public class TestLoopPlus {
             LocalDate nextDate = startDate.plus(2 * i, ChronoUnit.WEEKS);
             System.out.println("날짜 " + (i + 1) + ": " + nextDate);
         }
+
     }
 }

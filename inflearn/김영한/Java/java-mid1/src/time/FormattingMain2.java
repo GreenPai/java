@@ -3,6 +3,10 @@ package time;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ *  * 날짜와 시간 - 2026 6월 21일
+ *  * 포맷팅
+ *  */
 public class FormattingMain2 {
 
     public static void main(String[] args) {

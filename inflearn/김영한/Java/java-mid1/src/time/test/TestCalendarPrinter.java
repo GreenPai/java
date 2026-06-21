@@ -4,6 +4,10 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.Scanner;
 
+/**
+ * 날짜와 시간 - 2026 6월 21일
+ * 문제와 풀이
+ */
 public class TestCalendarPrinter {
 
     public static void main(String[] args) {

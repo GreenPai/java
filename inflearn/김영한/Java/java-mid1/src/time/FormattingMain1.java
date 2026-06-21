@@ -3,6 +3,10 @@ package time;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * 날짜와 시간 - 2026 6월 2일
+ * 포맷팅
+ */
 public class FormattingMain1 {
 
     public static void main(String[] args) {
@@ -12,6 +16,10 @@ public class FormattingMain1 {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy년 MM월 dd일");
         String formattedDate = date.format(formatter);
         System.out.println("날짜와 시간 포맷팅 = " + formattedDate);
+
+        DateTimeFormatter fory = DateTimeFormatter.ofPattern("yyyy년");
+        String st = date.format(fory);
+        System.out.println(st);
 
         // 파싱: 문자를 날짜로
         String input = "2030년 01월 01일";

@@ -6,6 +6,10 @@ import java.time.temporal.ChronoField;
 import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.TemporalAdjusters;
 
+/**
+ * 날짜와 시간 - 2026 6월 2일
+ * IsSupported
+ */
 public class ChangeTimeWithMain {
 
     public static void main(String[] args) {
@@ -27,5 +31,9 @@ public class ChangeTimeWithMain {
         //이번 달의 마지막 일요일
         LocalDateTime with2 = dt.with(TemporalAdjusters.lastInMonth(DayOfWeek.SUNDAY));
         System.out.println("같은 달의 마지막 일요일 = " + with2);
+
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println(now.with(TemporalAdjusters.next(DayOfWeek.FRIDAY)));
+
     }
 }
