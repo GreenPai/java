@@ -1,5 +1,8 @@
 package nested.nested;
 
+/**
+ * 정적 중첩 클래스 - 2026 6월 24일
+ */
 public class NestedOuter {
 
     private static int outClassValue = 3;
@@ -16,6 +19,7 @@ public class NestedOuter {
             //System.out.println(outInstanceValue);
 
             // 바깥 클래스의 클래스 멤버에는 접근할 수 있다. private도 접근 가능
+            // public인 NestedOuter에서 안의 private에는 접근 가능
             System.out.println(NestedOuter.outClassValue);
         }
     }
