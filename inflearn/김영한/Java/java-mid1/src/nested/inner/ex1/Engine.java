@@ -1,5 +1,9 @@
 package nested.inner.ex1;
 
+/**
+ * 정적 중첩 클래스 - 2026 6월 24일
+ * 정적 중첩 클래스
+ */
 //Car에서만 사용
 public class Engine {
 
