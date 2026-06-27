@@ -1,5 +1,9 @@
 package nested;
 
+/**
+ * 정적 중첩 클래스 - 2026 6월 26일
+ * 정적 중첩 클래스
+ */
 public class ShdowingMain {
 
     public int value = 1;

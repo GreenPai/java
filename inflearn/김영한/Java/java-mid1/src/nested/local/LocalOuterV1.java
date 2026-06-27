@@ -1,5 +1,9 @@
 package nested.local;
 
+/**
+ * 정적 중첩 클래스 - 2026 6월 27일
+ * 지역 클래스
+ */
 public class LocalOuterV1 {
 
     private int outInstanceVar = 3;

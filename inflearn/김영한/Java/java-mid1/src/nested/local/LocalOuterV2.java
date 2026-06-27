@@ -1,5 +1,11 @@
 package nested.local;
 
+/**
+ * 정적 중첩 클래스 - 2026 6월 27일
+ * 지역 클래스
+ *
+ * 인터페이스도 구현할 수 잇다.
+ */
 public class LocalOuterV2 {
 
     private int outInstanceVar = 3;
