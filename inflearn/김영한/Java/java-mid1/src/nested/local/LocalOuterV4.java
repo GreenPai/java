@@ -2,6 +2,10 @@ package nested.local;
 
 import java.lang.reflect.Field;
 
+/**
+ * 정적 중첩 클래스 - 2026 7월 3일
+ * 지역 클래스
+ */
 public class LocalOuterV4 {
 
     private int outInstanceVar = 3;

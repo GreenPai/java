@@ -3,13 +3,14 @@ package nested.local;
 import java.lang.reflect.Field;
 
 /**
- * 정적 중첩 클래스 - 2026 6월 27일
+ * 정적 중첩 클래스 - 2026 7월 3일
  * 지역 클래스
  */
 public class LocalOuterV3 {
 
     private int outInstanceVar = 3;
 
+    // Printer를 반환
     public Printer process(int paramVar) {
 
         int localVar = 1; //지역 변수는 스택 프레임이 종료되는 순간 함께 제거된다.
@@ -29,7 +30,6 @@ public class LocalOuterV3 {
         }
 
         LocalPrinter printer = new LocalPrinter();
-
         //printer.print();를 여기서 실행하지 않고 Printer 인스턴스만 반환한다.
         return printer;
     }
@@ -47,4 +47,5 @@ public class LocalOuterV3 {
             System.out.println("field = " + field);
         }
     }
+    
 }
