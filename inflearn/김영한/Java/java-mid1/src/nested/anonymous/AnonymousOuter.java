@@ -2,6 +2,9 @@ package nested.anonymous;
 
 import nested.local.Printer;
 
+/**
+ * 익명 클래스 - 2026 7월 4일
+ */
 public class AnonymousOuter {
 
     private int outInstanceVar = 3;

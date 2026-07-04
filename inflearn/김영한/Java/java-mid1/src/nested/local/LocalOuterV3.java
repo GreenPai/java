@@ -46,6 +46,13 @@ public class LocalOuterV3 {
         for (Field field : fields) {
             System.out.println("field = " + field);
         }
+
+        /*
+         * field = int nested.local.LocalOuterV3$1LocalPrinter.value
+         * field = final int nested.local.LocalOuterV3$1LocalPrinter.val$localVar
+         * field = final int nested.local.LocalOuterV3$1LocalPrinter.val$paramVar
+         * field = final nested.local.LocalOuterV3 nested.local.LocalOuterV3$1LocalPrinter.this$0
+         */
     }
-    
+
 }
