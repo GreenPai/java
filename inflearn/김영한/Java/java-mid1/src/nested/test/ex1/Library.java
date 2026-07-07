@@ -1,10 +1,14 @@
 package nested.test.ex1;
 
+/**
+ * 내부 클래스 - 2026년 7월 8일
+ */
 public class Library {
 
     private Book[] books;
     private int bookCount;
 
+    // 생성자
     public Library(int size) {
         books = new Book[size];
         bookCount = 0;
