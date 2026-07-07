@@ -2,6 +2,11 @@ package nested.anonymous.ex;
 
 import java.util.Random;
 
+/**
+ * 익명 클래스 - 2026년 7월 7일
+ *
+ * Process를 활용하면서 코드를 재활용
+ */
 public class Ex1RefMainV1 {
 
     public static void hello(Process process) {

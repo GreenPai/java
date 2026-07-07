@@ -2,6 +2,12 @@ package nested.anonymous.ex;
 
 import java.util.Random;
 
+/**
+ * 익명 클래스 - 2026년 7월 7일
+ * 지역 클래스 활용
+ *
+ * main 밖에 있던 dice와 sum을 안으로 넣음.
+ */
 public class Ex1RefMainV2 {
 
     public static void hello(Process process) {

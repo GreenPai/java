@@ -1,0 +1,35 @@
+package nested.anonymous.ex;
+
+import java.util.Random;
+
+/**
+ * 익명 클래스 - 2026 7월 7일
+ * 리펙토링
+ */
+public class Ex1Ref {
+
+    public static void hello(String str) {
+        System.out.println("프로그램 시작");
+
+        //코드 조각 시작
+        if(str.equals("dice")){
+            int randomValue = new Random().nextInt(6) + 1;
+            System.out.println("주시위 = " + randomValue);
+        }else{
+             //코드 조각 시작
+            for (int i = 0; i < 3; i++) {
+                System.out.println("i = " + i);
+            }
+            //코드 조각 종료
+        }
+
+        System.out.println("프로그램 종료");
+    }
+
+
+    public static void main(String[] args) {
+        hello("dice");
+        hello("sum");
+    }
+
+}

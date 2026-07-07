@@ -2,6 +2,10 @@ package nested.anonymous.ex;
 
 import java.util.Random;
 
+/**
+ * 익명 클래스 - 2026 7월 7일
+ * 리펙토링
+ */
 public class Ex1Main {
 
     public static void helloDice() {

@@ -2,6 +2,12 @@ package nested.anonymous.ex;
 
 import java.util.Random;
 
+/**
+ * 익명 클래스 - 2026년 7월 7일
+ * 지역 클래스 활용
+ *
+ * hello 메서드 안에 new Process를 넣어줌.
+ */
 public class Ex1RefMainV4 {
 
     public static void hello(Process process) {

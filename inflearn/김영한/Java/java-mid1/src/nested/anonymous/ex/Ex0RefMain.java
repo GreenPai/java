@@ -1,5 +1,9 @@
 package nested.anonymous.ex;
 
+/**
+ * 익명 클래스 - 2026 7월 7일
+ * Ex0을 리펙토링
+ */
 public class Ex0RefMain {
 
     public static void hello(String str) {

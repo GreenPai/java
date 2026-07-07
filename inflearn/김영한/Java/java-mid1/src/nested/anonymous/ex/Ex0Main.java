@@ -1,5 +1,10 @@
 package nested.anonymous.ex;
 
+/**
+ * 익명 클래스 - 2026 7월 7일
+ *
+ * 중복이 너무 많음.
+ */
 public class Ex0Main {
 
     public static void helloJava() {
