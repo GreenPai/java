@@ -1,5 +1,10 @@
 package exception.ex2;
 
+/**
+ * 예외 처리 - 2026년 7월 8일
+ * v5 : v4에서는 NetworkClientExceptionV2 에러 말고 다른 에러가 발생 시
+ *      disconnect 하지 않는 오류가 발생했다. 이것을 해결한 것이 v5
+ */
 public class NetworkServiceV2_5 {
 
     public void sendMessage(String data) {

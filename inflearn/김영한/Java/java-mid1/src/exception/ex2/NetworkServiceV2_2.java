@@ -1,5 +1,9 @@
 package exception.ex2;
 
+/**
+ * 예외 처리 - 2026년 7월 8일
+ * v2 : 예외 처리를 받아서 정상 흐름으로 복구
+ */
 public class NetworkServiceV2_2 {
 
     public void sendMessage(String data) {
