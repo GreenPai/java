@@ -2,6 +2,11 @@ package exception.ex0;
 
 import java.util.Scanner;
 
+/**
+ * 예외 처리 - 2026년 7월 8일
+ *
+ * 흐름: Main -> Service -> client
+ */
 public class MainV0 {
 
     public static void main(String[] args) {

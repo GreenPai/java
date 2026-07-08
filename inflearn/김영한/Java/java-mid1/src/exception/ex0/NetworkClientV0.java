@@ -1,5 +1,8 @@
 package exception.ex0;
 
+/**
+ * 예외처리 - 2026년 7월 8일
+ */
 public class NetworkClientV0 {
 
     private final String address;

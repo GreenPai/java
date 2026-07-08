@@ -1,5 +1,8 @@
 package exception.ex0;
 
+/**
+ * 예외 처리 - 2026년 7월 8일
+ */
 public class NetworkServiceV0 {
 
     public void sendMessage(String data) {

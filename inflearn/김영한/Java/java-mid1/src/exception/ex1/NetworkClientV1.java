@@ -1,5 +1,9 @@
 package exception.ex1;
 
+/**
+ * 예외 처리 - 2026년 7월 8일
+ * 데이터를 통신할 때 오류가 발생할 수 있다.
+ */
 public class NetworkClientV1 {
 
     private final String address;
