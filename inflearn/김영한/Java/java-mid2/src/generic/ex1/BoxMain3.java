@@ -1,5 +1,9 @@
 package generic.ex1;
 
+/**
+ * 2026년 7월 9일
+ * 제네릭
+ */
 public class BoxMain3 {
 
     public static void main(String[] args) {
@@ -21,6 +25,8 @@ public class BoxMain3 {
         System.out.println("doubleValue = " + doubleValue);
 
         //타입 추론: 생성하는 제네릭 타입 생략 가능
-        GenericBox<Integer> integerBox2 = new GenericBox<>(); // 타입 추론:     
+        GenericBox<Integer> integerBox2 = new GenericBox<>(); // 타입 추론:
+        integerBox.set(15544);
+        System.out.println("integerBox.get() = " + integerBox.get());
     }
 }
