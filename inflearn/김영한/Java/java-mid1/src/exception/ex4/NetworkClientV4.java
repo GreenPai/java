@@ -3,6 +3,10 @@ package exception.ex4;
 import exception.ex4.exception.ConnectExceptionV4;
 import exception.ex4.exception.SendExceptionV4;
 
+/**
+ * 예외 처리 - 2026년 7월 9일
+ * RuntimeException
+ */
 public class NetworkClientV4 {
 
     private final String address;

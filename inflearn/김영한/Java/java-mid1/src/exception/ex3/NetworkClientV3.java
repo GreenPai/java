@@ -3,6 +3,9 @@ package exception.ex3;
 import exception.ex3.exception.ConnectExceptionV3;
 import exception.ex3.exception.SendExceptionV3;
 
+/**
+ * 예외 처리 - 2026년 7월 9일
+ */
 public class NetworkClientV3 {
 
     private final String address;

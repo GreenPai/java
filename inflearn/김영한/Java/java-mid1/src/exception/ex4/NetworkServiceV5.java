@@ -1,5 +1,11 @@
 package exception.ex4;
 
+/**
+ * 예외 처리 - 2026년 7월 9일
+ * RuntimeException
+ *
+ * Try with resources
+ */
 public class NetworkServiceV5 {
 
     public void sendMessage(String data) {

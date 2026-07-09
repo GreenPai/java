@@ -2,6 +2,9 @@ package exception.ex3;
 
 import java.util.Scanner;
 
+/**
+ * 예외 처리 - 2026년 7월 9일
+ */
 public class MainV3 {
 
     public static void main(String[] args) {

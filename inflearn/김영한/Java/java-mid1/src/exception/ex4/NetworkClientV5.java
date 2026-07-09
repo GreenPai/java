@@ -3,6 +3,13 @@ package exception.ex4;
 import exception.ex4.exception.ConnectExceptionV4;
 import exception.ex4.exception.SendExceptionV4;
 
+/**
+ * 예외 처리 - 2026년 7월 9일
+ * RuntimeException
+ *
+ * Try with resources
+ * : implements AutoCloseable 핵심!
+ */
 public class NetworkClientV5 implements AutoCloseable {
 
     private final String address;
@@ -43,6 +50,8 @@ public class NetworkClientV5 implements AutoCloseable {
         }
     }
 
+    // implements AutoCloseable 
+    // try 구문이 끝날때 자동으로 호출
     @Override
     public void close() {
         System.out.println("NetworkClientV5.close");

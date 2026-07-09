@@ -4,6 +4,11 @@ import exception.ex3.exception.ConnectExceptionV3;
 import exception.ex3.exception.NetworkClientExceptionV3;
 import exception.ex3.exception.SendExceptionV3;
 
+/**
+ * 예외 처리 - 2026년 7월 9일
+ * v3_1 에서와 다르게 
+ * 연결 오류, 네트워크 오류, 알수 없는 오류 3가지로 나눔
+ */
 public class NetworkServiceV3_2 {
 
     public void sendMessage(String data) {

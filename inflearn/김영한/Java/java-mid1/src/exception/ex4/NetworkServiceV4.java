@@ -1,5 +1,9 @@
 package exception.ex4;
 
+/**
+ * 예외 처리 - 2026년 7월 9일
+ * RuntimeException
+ */
 public class NetworkServiceV4 {
 
     public void sendMessage(String data) {
