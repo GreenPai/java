@@ -1,5 +1,9 @@
 package generic.animal;
 
+/**
+ * 2026년 7월 10일
+ * 제네릭
+ */
 public class Animal {
 
     private String name;

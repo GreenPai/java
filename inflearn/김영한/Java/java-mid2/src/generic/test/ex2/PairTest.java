@@ -1,5 +1,9 @@
 package generic.test.ex2;
 
+/**
+ * 2026년 7월 10일
+ * 제네릭
+ */
 public class PairTest {
     public static void main(String[] args) {
         Pair<Integer, String> pair1 = new Pair<>();
