@@ -3,6 +3,15 @@ package generic.ex3;
 import generic.animal.Cat;
 import generic.animal.Dog;
 
+/**
+ * 코드의 방향:
+ * 개 병원에 고양이를 넣을 때 발생하는 코드의 문제점을 해결
+ * 해결:
+ * Animal을 이용해 다형성을 이용한 문제 해결
+ * 문제:
+ * 1. Cat, Dog 구분하지 않고 사이즈를 비교 하기에 컴파일 오류가 발생하지 않는 문제.
+ * 2. 항상 타입 변환 필요
+ */
 public class AnimalHospitalMainV1 {
 
     public static void main(String[] args) {

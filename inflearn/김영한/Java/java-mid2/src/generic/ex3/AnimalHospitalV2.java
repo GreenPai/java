@@ -1,5 +1,11 @@
 package generic.ex3;
 
+/**
+ * 현재 제네릭를 사용하면 T로 타입을 모르기 때문에
+ * animal이 먼지 모른다. -> 메서드를 못쓴다.
+ * 병원을 동물로 제한 하고 싶은데
+ * integer, Object 병원이 가능하다.
+ */
 public class AnimalHospitalV2<T> {
 
     private T animal;

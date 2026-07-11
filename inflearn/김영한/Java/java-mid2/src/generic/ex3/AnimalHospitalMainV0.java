@@ -3,6 +3,14 @@ package generic.ex3;
 import generic.animal.Cat;
 import generic.animal.Dog;
 
+/**
+ * 2026년 7월 10일
+ * 제네릭
+ * 타입 매개변수 제한
+ * 
+ * 문제 코드 재사용 X
+ * 타입 안정성 O : 개 병원에 고양이 넣으면 오류
+ */
 public class AnimalHospitalMainV0 {
 
     public static void main(String[] args) {
