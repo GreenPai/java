@@ -3,6 +3,7 @@ package generic.ex4;
 import generic.animal.Cat;
 import generic.animal.Dog;
 
+// 복합 제네릭
 public class MethodMain3 {
 
     public static void main(String[] args) {

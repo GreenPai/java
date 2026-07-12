@@ -1,5 +1,8 @@
 package generic.ex4;
 
+/**
+ * static : 객체 없이 메서드 사용 가능
+ */
 public class GenericMethod {
 
     public static Object objMethod(Object obj) {
@@ -16,4 +19,6 @@ public class GenericMethod {
         System.out.println("bound print: " + t);
         return t;
     }
+
+
 }

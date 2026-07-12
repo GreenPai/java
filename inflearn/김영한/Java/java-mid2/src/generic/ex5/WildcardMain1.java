@@ -4,6 +4,11 @@ import generic.animal.Animal;
 import generic.animal.Cat;
 import generic.animal.Dog;
 
+/**
+ * 와일드 카드
+ * : 이미 안들어진 제네릭 타입을 활용하기 위한 것이다.
+ * 제네릭 타입으로 햇을 때 T타입으로 반환하기에 들어올 때 타입이 정해진다.
+ */
 public class WildcardMain1 {
 
     public static void main(String[] args) {

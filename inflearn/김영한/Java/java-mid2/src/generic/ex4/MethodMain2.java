@@ -3,6 +3,9 @@ package generic.ex4;
 import generic.animal.Cat;
 import generic.animal.Dog;
 
+/**
+ * static : 객체 없이 메서드 사용 가능
+ */
 public class MethodMain2 {
 
     public static void main(String[] args) {
@@ -14,6 +17,7 @@ public class MethodMain2 {
 
         Dog targetDog = new Dog("큰 멍멍이", 200);
         Dog bigger = AnimalMethod.getBigger(dog, targetDog);
+        
         System.out.println("bigger = " + bigger);
     }
 }

@@ -2,6 +2,10 @@ package generic.ex4;
 
 import generic.animal.Animal;
 
+/**
+ * static : 객체 없이 메서드 사용 가능
+ * AnimalHospitalV3 를 메서드로 만듬
+ */
 public class AnimalMethod {
 
     public static <T extends Animal> void checkup(T t) {
