@@ -2,8 +2,12 @@ package collection.array;
 
 import java.util.Arrays;
 
+/**
+ * 직접 구현하는 배열 리스트
+ */
 public class MyArrayListV1 {
 
+    // 기본 수용량
     private static final int DEFAULT_CAPACITY = 5;
 
     private Object[] elementData;

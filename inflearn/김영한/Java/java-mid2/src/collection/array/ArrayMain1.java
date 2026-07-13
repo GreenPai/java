@@ -2,6 +2,9 @@ package collection.array;
 
 import java.util.Arrays;
 
+/**
+ * 배열의 특징 1 - 배열과 인덱스
+ */
 public class ArrayMain1 {
 
     public static void main(String[] args) {

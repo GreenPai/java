@@ -1,5 +1,9 @@
 package collection.array;
 
+/**
+ * 직접 구현하는 배열 리스트
+ * 동적 배열
+ */
 public class MyArrayListV2Main {
 
     public static void main(String[] args) {

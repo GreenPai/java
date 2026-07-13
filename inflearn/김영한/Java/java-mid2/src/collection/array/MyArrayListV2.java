@@ -2,6 +2,10 @@ package collection.array;
 
 import java.util.Arrays;
 
+/**
+ * 직접 구현하는 배열 리스트
+ * 동적 배열
+ */
 public class MyArrayListV2 {
 
     private static final int DEFAULT_CAPACITY = 5;

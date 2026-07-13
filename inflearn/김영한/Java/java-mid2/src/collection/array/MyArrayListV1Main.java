@@ -1,5 +1,11 @@
 package collection.array;
 
+/**
+ * 직접 구현하는 배열 리스트
+ *
+ * 지정된 사이즈 배열의 문제:
+ * 지정된 사이즈를 넘어가면 에러 발생
+ */
 public class MyArrayListV1Main {
 
     public static void main(String[] args) {

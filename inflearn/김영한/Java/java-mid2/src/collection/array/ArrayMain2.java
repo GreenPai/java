@@ -3,7 +3,7 @@ package collection.array;
 import java.util.Arrays;
 
 /**
- * 배열의 특징
+ * 배열의 특징 2 - 데이터 추가
  */
 public class ArrayMain2 {
 
@@ -17,20 +17,30 @@ public class ArrayMain2 {
         //기본 배열의 데이터를 한 칸씩 뒤로 밀고 배열의 첫번째 위치에 추가
         System.out.println("배열의 첫번째 위치에 3 추가 O(n)");
         int newValue = 3;
+
+        long firstStart = System.nanoTime();
         addFirst(arr, newValue);
-        System.out.println(Arrays.toString(arr));
+        long firstEnd = System.nanoTime();
+        System.out.println("시간은 " + (firstEnd - firstStart));
+        // System.out.println(Arrays.toString(arr));
 
         //index 위치에 추가
         //기본 배열의 데이터를 한 칸씩 뒤로 밀고 배열의 index 위치에 추가
         System.out.println("배열의 index(2) 위치에 4 추가 O(n)");
         int index = 2;
         int value = 4;
+        long indexStart = System.nanoTime();
         addAtIndex(arr, index, value);
-        System.out.println(Arrays.toString(arr));
+        long indexEnd = System.nanoTime();
+        System.out.println("시간은 " + (indexEnd - indexStart));
+        // System.out.println(Arrays.toString(arr));
 
         System.out.println("배열의 마지막 위치에 5 추가 O(1)");
+        long endStart = System.nanoTime();
         addLast(arr, 5);
-        System.out.println(Arrays.toString(arr));
+        long endEnd = System.nanoTime();
+        System.out.println("시간은 " + (endEnd - endStart));
+        // System.out.println(Arrays.toString(arr));
     }
 
     private static void addLast(int[] arr, int newValue) {
