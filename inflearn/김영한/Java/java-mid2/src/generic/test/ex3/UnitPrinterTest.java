@@ -4,6 +4,10 @@ import generic.test.ex3.unit.Marine;
 import generic.test.ex3.unit.Zealot;
 import generic.test.ex3.unit.Zergling;
 
+/**
+ * 제네릭
+ * 문제와 풀이
+ */
 public class UnitPrinterTest {
 
     public static void main(String[] args) {

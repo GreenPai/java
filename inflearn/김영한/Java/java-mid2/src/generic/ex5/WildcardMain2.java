@@ -4,6 +4,10 @@ import generic.animal.Animal;
 import generic.animal.Cat;
 import generic.animal.Dog;
 
+/**
+ * 와일드 카드
+ * 하한 와일드 카드
+ */
 public class WildcardMain2 {
 
     public static void main(String[] args) {

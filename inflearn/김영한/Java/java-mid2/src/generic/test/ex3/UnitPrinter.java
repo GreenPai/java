@@ -2,6 +2,10 @@ package generic.test.ex3;
 
 import generic.test.ex3.unit.BioUnit;
 
+/**
+ * 제네릭
+ * 문제와 풀이
+ */
 public class UnitPrinter {
 
     public static <T extends BioUnit> void printV1(Shuttle<T> t1) {

@@ -3,6 +3,12 @@ package generic.test.ex3;
 import generic.test.ex3.unit.Marine;
 import generic.test.ex3.unit.Zealot;
 
+/**
+ * 제네릭
+ * 문제와 풀이
+ * 
+ * UnitUtil : 제네릭
+ */
 public class UnitUtilTest {
 
     public static void main(String[] args) {

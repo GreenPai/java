@@ -1,5 +1,9 @@
 package generic.test.ex3.unit;
 
+/**
+ * 제네릭
+ * 문제와 풀이
+ */
 public class BioUnit {
 
     private String name;
