@@ -1,5 +1,8 @@
 package collection.link;
 
+/**
+ * 노드와 연결
+ */
 public class MyLinkedListV2Main {
 
     public static void main(String[] args) {

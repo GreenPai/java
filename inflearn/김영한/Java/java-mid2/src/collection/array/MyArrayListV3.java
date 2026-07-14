@@ -2,6 +2,10 @@ package collection.array;
 
 import java.util.Arrays;
 
+/**
+ * 직접 구현하는 배열 리스트
+ * 배열 추가, 삭제
+ */
 public class MyArrayListV3 {
 
     private static final int DEFAULT_CAPACITY = 5;

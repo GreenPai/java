@@ -1,5 +1,8 @@
 package collection.link;
 
+/**
+ * 노드와 연결
+ */
 public class NodeMain3 {
 
     public static void main(String[] args) {
@@ -47,6 +50,7 @@ public class NodeMain3 {
         lastNode.next = new Node(param);
     }
 
+    // 마지막 노드
     private static Node getLastNode(Node node) {
         Node x = node;
         while (x.next != null) {
@@ -55,6 +59,7 @@ public class NodeMain3 {
         return x;
     }
 
+    // 특정 인덱스의 노드 찾기
     private static Node getNode(Node node, int index) {
         Node x = node;
         for (int i = 0; i < index; i++) {

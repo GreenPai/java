@@ -1,5 +1,9 @@
 package collection.array;
 
+/**
+ * 직접 구현하는 배열 리스트
+ * 배열 추가, 삭제
+ */
 public class MyArrayListV3Main {
 
     public static void main(String[] args) {

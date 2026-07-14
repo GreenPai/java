@@ -1,5 +1,10 @@
 package collection.array;
 
+/**
+ * 직접 구현하는 배열 리스트
+ * Object를 받기에
+ * 인덱스 위치에 Integer 을 캐스팅 하는 경우 문제가 발생할 수 있음.
+ */
 public class MyArrayListV3BadMain {
 
     public static void main(String[] args) {

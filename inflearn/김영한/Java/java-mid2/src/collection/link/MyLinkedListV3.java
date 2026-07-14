@@ -1,5 +1,8 @@
 package collection.link;
 
+/**
+ * 노드와 연결
+ */
 public class MyLinkedListV3<E> {
     private Node<E> first;
     private int size = 0;

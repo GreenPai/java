@@ -1,5 +1,11 @@
 package collection.link;
 
+/**
+ * 노드와 연결
+ * ArrayListV1Main의 코드를 들고 와서 사용
+ *
+ * 사용자는 Node인지 List인지 몰라도 됨.
+ */
 public class MyLinkedListV1Main {
 
     public static void main(String[] args) {

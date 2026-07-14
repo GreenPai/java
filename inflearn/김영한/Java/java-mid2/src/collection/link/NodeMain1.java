@@ -1,5 +1,8 @@
 package collection.link;
 
+/**
+ * 노드와 연결
+ */
 public class NodeMain1 {
 
     public static void main(String[] args) {

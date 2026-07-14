@@ -1,5 +1,9 @@
 package collection.link;
 
+/**
+ * 노드와 연결
+ * 추가와 삭제
+ */
 public class MyLinkedListV2 {
     private Node first;
     private int size = 0;
@@ -23,7 +27,8 @@ public class MyLinkedListV2 {
         return x;
     }
 
-    //추가 코드
+    // 추가 코드
+    // 특정 위치에 추가
     public void add(int index, Object e) {
         Node newNode = new Node(e);
         if (index == 0) {

@@ -34,7 +34,8 @@ public class MyArrayListV2 {
         size++;
     }
 
-    //추가
+    // 추가
+    // 용량을 2배로 늘여줌.
     private void grow() {
         int oldCapacity = elementData.length;
         int newCapacity = oldCapacity * 2;
