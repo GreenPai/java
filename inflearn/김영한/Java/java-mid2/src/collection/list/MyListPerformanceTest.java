@@ -1,5 +1,13 @@
 package collection.list;
 
+/**
+ * 컬렉션 프레임워크
+ * 직접 구현한 리스트의 성능 비교
+ *
+ * 검색이나 중간 추가 하는 경우
+ * MyArrayList가 MyLinkedList보다 빠르다.
+ * List는 메모리가 계속 붙어 있기에 빠르게 된다.
+ * */
 public class MyListPerformanceTest {
 
     public static void main(String[] args) {
@@ -38,6 +46,9 @@ public class MyListPerformanceTest {
         search(linkedList, loop, size - 1);
     }
 
+    /**
+     * 앞에 추가 하는 메서드
+     */
     private static void addFirst(MyList<Integer> list, int size) {
         long startTime = System.currentTimeMillis();
         for (int i = 0; i < size; i++) {
@@ -47,6 +58,9 @@ public class MyListPerformanceTest {
         System.out.println("앞에 추가 - 크기: " + size + ", 계산 시간: " + (endTime - startTime) + "ms");
     }
 
+    /**
+     * 중간에 추가 하는 메서드
+     */
     private static void addMid(MyList<Integer> list, int size) {
         long startTime = System.currentTimeMillis();
         for (int i = 0; i < size; i++) {
@@ -56,6 +70,9 @@ public class MyListPerformanceTest {
         System.out.println("평균 추가 - 크기: " + size + ", 계산 시간: " + (endTime - startTime) + "ms");
     }
 
+    /**
+     * 마지막에 추가 하는 메서드
+     */
     private static void addLast(MyList<Integer> list, int size) {
         long startTime = System.currentTimeMillis();
         for (int i = 0; i < size; i++) {
@@ -65,6 +82,9 @@ public class MyListPerformanceTest {
         System.out.println("뒤에 추가 - 크기: " + size + ", 계산 시간: " + (endTime - startTime) + "ms");
     }
 
+    /**
+     * index 위치의 값을 찾기
+     */
     private static void getIndex(MyList<Integer> list, int loop, int index) {
         long startTime = System.currentTimeMillis();
         for (int i = 0; i < loop; i++) {
@@ -74,6 +94,9 @@ public class MyListPerformanceTest {
         System.out.println("index: " + index + ", 반복: " + loop + ", 계산 시간: " + (endTime - startTime) + "ms");
     }
 
+    /**
+     * 값 찾기
+     */
     private static void search(MyList<Integer> list, int loop, int findValue) {
         long startTime = System.currentTimeMillis();
         for (int i = 0; i < loop; i++) {

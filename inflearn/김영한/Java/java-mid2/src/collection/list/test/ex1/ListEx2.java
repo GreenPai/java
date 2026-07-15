@@ -3,6 +3,10 @@ package collection.list.test.ex1;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * 컬렉션 프레임워크
+ * 문제와 풀이2
+ */
 public class ListEx2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

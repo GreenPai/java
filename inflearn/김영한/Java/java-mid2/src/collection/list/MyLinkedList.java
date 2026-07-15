@@ -1,5 +1,10 @@
 package collection.list;
 
+/**
+ * 컬렉션 프레임워크
+ * collection.link.MyLinkedListV3 코드를 복사해서 만든 MyList 인터페이스를
+ * 구현하는 MyLinkedList
+ * */
 public class MyLinkedList<E> implements MyList<E> {
     private Node<E> first;
     private int size = 0;

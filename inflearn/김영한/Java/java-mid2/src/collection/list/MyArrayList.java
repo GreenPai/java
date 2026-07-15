@@ -2,6 +2,11 @@ package collection.list;
 
 import java.util.Arrays;
 
+/**
+ * 컬렉션 프레임워크
+ * collection.array.MyArrayListV4 코드를 복사해서 만든 MyList 인터페이스를
+ * 구현하는 MyArrayList
+ * */
 public class MyArrayList<E> implements MyList<E> {
 
     private static final int DEFAULT_CAPACITY = 5;

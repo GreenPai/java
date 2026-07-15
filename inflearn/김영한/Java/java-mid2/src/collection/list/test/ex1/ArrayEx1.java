@@ -1,5 +1,9 @@
 package collection.list.test.ex1;
 
+/**
+ * 컬렉션 프레임워크
+ * 문제와 풀이1
+ */
 public class ArrayEx1 {
     public static void main(String[] args) {
         int[] students = {90, 80, 70, 60, 50};

@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * 컬렉션 프레임워크
+ * 자바 리스트와 성능 비교
+ * ArrayList
+ * */
 public class JavaListPerformanceTest {
 
     public static void main(String[] args) {

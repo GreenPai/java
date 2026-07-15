@@ -1,5 +1,8 @@
 package collection.list;
 
+/**
+ * 컬렉션 프레임워크
+ * */
 public interface MyList<E> {
 
     int size();

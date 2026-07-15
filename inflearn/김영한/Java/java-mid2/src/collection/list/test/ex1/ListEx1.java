@@ -3,6 +3,10 @@ package collection.list.test.ex1;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 컬렉션 프레임워크
+ * 문제와 풀이1
+ */
 public class ListEx1 {
     public static void main(String[] args) {
         List<Integer> students = new ArrayList<>();
