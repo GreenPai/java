@@ -1,5 +1,9 @@
 package collection.list.test.ex2;
 
+/**
+ * 컬렉션 프레임워크
+ * 문제와 풀이
+ */
 public class Item {
     private String name;
     private int price;

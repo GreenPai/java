@@ -3,6 +3,10 @@ package collection.list.test.ex2;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 컬렉션 프레임워크
+ * 문제와 풀이
+ */
 public class ShoppingCart {
 
     private List<Item> items = new ArrayList<>();
