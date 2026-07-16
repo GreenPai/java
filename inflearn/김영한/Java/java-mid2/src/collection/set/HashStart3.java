@@ -2,6 +2,13 @@ package collection.set;
 
 import java.util.Arrays;
 
+/**
+ * 해시 알고리즘 : 시작
+ * 속도를 위해서 메모리 낭비가 심하다.
+ * 6개의 값의 위치를 찾기 위해서 94개의 메모리를 낭비한다.
+ *
+ * 문제: 메모리 낭비 안쓰는 부분이 많아진다.
+ */
 public class HashStart3 {
 
     public static void main(String[] args) {

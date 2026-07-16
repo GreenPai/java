@@ -2,6 +2,16 @@ package collection.set;
 
 import java.util.Arrays;
 
+/**
+ * 해시 알고리즘 : 시작
+ * 나머지 연산을 사용해서
+ * 저장할 수 있는 배열의 크기에 맞추어 나머지 연산을 사용하는 방식
+ *
+ * 문제: 해시 충돌이 발생한다.
+ * 11 % 1 = 1
+ * 21 % 1 = 1
+ * 둘 다 같은 값이다.
+ */
 public class HashStart4 {
 
     static final int CAPACITY = 10;
@@ -30,6 +40,7 @@ public class HashStart4 {
         System.out.println("searchValue hashIndex = " + hashIndex);
         Integer result = inputArray[hashIndex]; // O(1)
         System.out.println(result);
+
     }
 
     private static void add(Integer[] inputArray, int value) {

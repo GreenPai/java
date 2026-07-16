@@ -2,6 +2,14 @@ package collection.set;
 
 import java.util.Arrays;
 
+/**
+ * 해시 알고리즘 : 시작
+ *
+ * 인덱스 위치에 그 값을 넣어준다.
+ * 5번이면 5번 인덱스에 5를 넣는다.
+ * 
+ * 문제: 메모리 낭비 안쓰는 부분이 많아진다.
+ */
 public class HashStart2 {
 
     public static void main(String[] args) {
@@ -17,5 +25,6 @@ public class HashStart2 {
         int searchValue = 8;
         Integer result = inputArray[searchValue]; // O(1)
         System.out.println(result);
+
     }
 }

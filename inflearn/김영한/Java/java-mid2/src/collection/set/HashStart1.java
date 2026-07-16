@@ -2,6 +2,9 @@ package collection.set;
 
 import java.util.Arrays;
 
+/**
+ * 해시 알고리즘 : 시작
+ */
 public class HashStart1 {
 
     public static void main(String[] args) {

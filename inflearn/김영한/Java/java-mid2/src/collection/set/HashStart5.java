@@ -3,6 +3,13 @@ package collection.set;
 import java.util.Arrays;
 import java.util.LinkedList;
 
+/**
+ * 해시 알고리즘 : 시작
+ * 나머지 연산을 사용해서 
+ * 저장할 수 있는 배열의 크기에 맞추어 나머지 연산을 사용하는 방식
+ *
+ * value % CAPACITY
+ */
 public class HashStart5 {
 
     static final int CAPACITY = 10;

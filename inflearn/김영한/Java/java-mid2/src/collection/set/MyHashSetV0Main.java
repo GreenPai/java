@@ -1,5 +1,10 @@
 package collection.set;
 
+/**
+ * 직접 구현하는 Set0 - 시작
+ *
+ * 현재 문제점: 새로운 값을 추가할 때 값이 있는지 찾아야된다.
+ */
 public class MyHashSetV0Main {
 
     public static void main(String[] args) {
