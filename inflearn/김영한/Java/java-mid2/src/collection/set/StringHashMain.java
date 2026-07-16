@@ -1,5 +1,10 @@
 package collection.set;
 
+/**
+ * 문자열 해시 코드
+ * 
+ * 현재 문제 : AB, BA 같음
+ */
 public class StringHashMain {
 
     static final int CAPATICY = 10;
@@ -15,11 +20,14 @@ public class StringHashMain {
         System.out.println("hash(A) = " + hashCode("A"));
         System.out.println("hash(B) = " + hashCode("B"));
         System.out.println("hash(AB) = " + hashCode("AB"));
+        System.out.println("hash(BA) = " + hashCode("BA"));
 
         //hashIndex
         System.out.println("hashIndex(A) = " + hashIndex(hashCode("A")));
         System.out.println("hashIndex(B) = " + hashIndex(hashCode("B")));
         System.out.println("hashIndex(AB) = " + hashIndex(hashCode("AB")));
+        System.out.println("hashIndex(BA) = " + hashIndex(hashCode("BA")));
+
     }
 
     static int hashCode(String str) {

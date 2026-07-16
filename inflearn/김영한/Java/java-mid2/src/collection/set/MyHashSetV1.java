@@ -3,6 +3,11 @@ package collection.set;
 import java.util.Arrays;
 import java.util.LinkedList;
 
+/**
+ * V0에서는 Contain, add 를 하는 경우
+ * 데이터를 모두 비교해야함으로서 시간이 오래걸렸다.
+ */
+
 public class MyHashSetV1 {
 
     static final int DEFAULT_INITIAL_CAPACITY = 16;
