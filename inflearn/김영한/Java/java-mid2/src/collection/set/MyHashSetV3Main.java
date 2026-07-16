@@ -1,5 +1,10 @@
 package collection.set;
 
+
+/**
+ * 제네릭과 인터페이스 도입
+ * 타입 안정성 추가
+ */
 public class MyHashSetV3Main {
 
     public static void main(String[] args) {

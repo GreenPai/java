@@ -2,6 +2,13 @@ package collection.set.member;
 
 import collection.set.MyHashSetV2;
 
+/**
+ * No HashCode / No Equal
+ * m1.hashCode() -> 참조값
+ * equal 기본 -> ==비교
+ * 
+ * 값이 같아도 중복 저장되는 문제가 발생 -> 객체의 참조값을 사용했기 때문
+ */
 public class HashAndEqualsMain1 {
 
     public static void main(String[] args) {

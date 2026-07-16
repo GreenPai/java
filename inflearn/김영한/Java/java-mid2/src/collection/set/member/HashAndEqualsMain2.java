@@ -2,6 +2,11 @@ package collection.set.member;
 
 import collection.set.MyHashSetV2;
 
+/**
+ * No Equal
+ * MyHashSetV2{buckets=[[], [], [], [], [], [], [MemberOnlyHash{id='A'}, MemberOnlyHash{id='A'}], [], [], []], size=2, capacity=10}
+ * contains 비교 할 때 equals가 사용.
+ */
 public class HashAndEqualsMain2 {
 
     public static void main(String[] args) {

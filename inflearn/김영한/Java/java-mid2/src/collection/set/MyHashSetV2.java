@@ -3,6 +3,9 @@ package collection.set;
 import java.util.Arrays;
 import java.util.LinkedList;
 
+/**
+ * Object 를 받는 HashSet
+ */
 public class MyHashSetV2 {
 
     static final int DEFAULT_INITIAL_CAPACITY = 16;

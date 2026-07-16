@@ -3,6 +3,9 @@ package collection.set;
 import java.util.Arrays;
 import java.util.LinkedList;
 
+/**
+ * 제네릭과 인터페이스 도입
+ */
 public class MyHashSetV3<E> implements MySet<E> {
 
     static final int DEFAULT_INITIAL_CAPACITY = 16;

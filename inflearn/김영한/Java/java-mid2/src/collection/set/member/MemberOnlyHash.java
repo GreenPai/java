@@ -2,6 +2,10 @@ package collection.set.member;
 
 import java.util.Objects;
 
+/**
+ * Only Hash
+ * equals X
+ */
 public class MemberOnlyHash {
 
     private String id;

@@ -2,6 +2,9 @@ package collection.set;
 
 import collection.set.member.Member;
 
+/**
+ * 자바의 HashCode()
+ */
 public class JavaHashCodeMain {
 
     public static void main(String[] args) {

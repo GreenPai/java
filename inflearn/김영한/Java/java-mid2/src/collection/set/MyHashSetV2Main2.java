@@ -2,6 +2,10 @@ package collection.set;
 
 import collection.set.member.Member;
 
+/**
+ * 직접 구현하는 Set
+ * 직접 만든 객체 보관
+ */
 public class MyHashSetV2Main2 {
 
     public static void main(String[] args) {

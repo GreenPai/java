@@ -1,5 +1,9 @@
 package collection.set.member;
 
+/**
+ * No Hash코드
+ * equal 구현 X
+ */
 public class MemberNoHashNoEq {
 
     private String id;

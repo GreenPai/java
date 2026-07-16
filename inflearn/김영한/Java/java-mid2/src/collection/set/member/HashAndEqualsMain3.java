@@ -2,6 +2,10 @@ package collection.set.member;
 
 import collection.set.MyHashSetV2;
 
+
+/**
+ * equals, hashCode의 중요성
+ */
 public class HashAndEqualsMain3 {
 
     public static void main(String[] args) {

@@ -2,6 +2,9 @@ package collection.set.member;
 
 import java.util.Objects;
 
+/**
+ * 자바의 HashCode()
+ */
 public class Member {
 
     private String id;

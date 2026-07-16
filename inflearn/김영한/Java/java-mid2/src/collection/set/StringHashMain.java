@@ -3,7 +3,7 @@ package collection.set;
 /**
  * 문자열 해시 코드
  * 
- * 현재 문제 : AB, BA 같음
+ * 현재 문제 : AB, BA 같음 : 해시 충돌
  */
 public class StringHashMain {
 
@@ -27,6 +27,7 @@ public class StringHashMain {
         System.out.println("hashIndex(B) = " + hashIndex(hashCode("B")));
         System.out.println("hashIndex(AB) = " + hashIndex(hashCode("AB")));
         System.out.println("hashIndex(BA) = " + hashIndex(hashCode("BA")));
+
 
     }
 

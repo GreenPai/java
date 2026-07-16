@@ -1,5 +1,8 @@
 package collection.set;
 
+/**
+ * Object 를 받는 HashSet
+ */
 public class MyHashSetV2Main1 {
 
     public static void main(String[] args) {
