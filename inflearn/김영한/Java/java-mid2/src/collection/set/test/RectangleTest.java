@@ -3,6 +3,11 @@ package collection.set.test;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * 컬렉션 프레임워크 - SET
+ * 문제와 풀이
+ * Equals, HashCode
+ */
 public class RectangleTest {
 
     public static void main(String[] args) {

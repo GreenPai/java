@@ -4,6 +4,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * 컬렉션 프레임워크 - SET 
+ * 문제와 풀이
+ * 합집합, 교집합, 차집합
+ */
 public class SetOperationsTest {
     public static void main(String[] args) {
         Set<Integer> set1 = new HashSet<>(List.of(1, 2, 3, 4, 5));
@@ -21,5 +26,6 @@ public class SetOperationsTest {
         System.out.println("합집합: " + union);
         System.out.println("교집합: " + intersection);
         System.out.println("차집합: " + difference);
+        
     }
 }

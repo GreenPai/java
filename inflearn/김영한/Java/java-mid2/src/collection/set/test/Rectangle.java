@@ -2,6 +2,11 @@ package collection.set.test;
 
 import java.util.Objects;
 
+/**
+ * 컬렉션 프레임워크 - SET
+ * 문제와 풀이
+ * Equals, HashCode
+ */
 public class Rectangle {
 
     private int width;
