@@ -3,6 +3,10 @@ package collection.map;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ *  컬렉션 프레임워크 - Map
+ *  같은 키를 저장하면?
+ */
 public class MapMain2 {
 
     public static void main(String[] args) {

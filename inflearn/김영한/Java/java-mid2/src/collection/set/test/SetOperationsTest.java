@@ -26,6 +26,6 @@ public class SetOperationsTest {
         System.out.println("합집합: " + union);
         System.out.println("교집합: " + intersection);
         System.out.println("차집합: " + difference);
-        
+
     }
 }
