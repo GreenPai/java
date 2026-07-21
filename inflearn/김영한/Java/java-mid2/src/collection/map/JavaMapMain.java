@@ -2,6 +2,9 @@ package collection.map;
 
 import java.util.*;
 
+/**
+ * Map 구현체
+ */
 public class JavaMapMain {
 
     public static void main(String[] args) {

@@ -3,6 +3,10 @@ package collection.map;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ *  컬렉션 프레임워크 - Map
+ *  키가 같지 않을때만 저장.
+ */
 public class MapMain3 {
 
     public static void main(String[] args) {

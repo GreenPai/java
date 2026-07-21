@@ -4,6 +4,9 @@ import java.util.ArrayDeque;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * 큐 자료 구조
+ */
 public class QueueMain {
 
     public static void main(String[] args) {
