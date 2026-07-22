@@ -2,6 +2,9 @@ package collection.map.test;
 
 import java.util.*;
 
+/**
+ * 문제와 풀이1 : Map
+ */
 public class ItemPriceTest {
 
     public static void main(String[] args) {

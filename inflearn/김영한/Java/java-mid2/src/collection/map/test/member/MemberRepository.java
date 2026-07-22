@@ -3,6 +3,9 @@ package collection.map.test.member;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 문제와 풀이2 : Map
+ */
 public class MemberRepository {
 
     private Map<String, Member> memberMap = new HashMap<>();

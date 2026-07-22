@@ -3,6 +3,10 @@ package collection.map.test.cart;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 문제와 풀이2 : Map
+ * 장바구니
+ */
 public class Cart {
 
     private Map<Product, Integer> cartMap = new HashMap<>();

@@ -1,5 +1,8 @@
 package collection.map.test.member;
 
+/**
+ * 문제와 풀이2 : Map
+ */
 public class Member {
     private String id;
     private String name;

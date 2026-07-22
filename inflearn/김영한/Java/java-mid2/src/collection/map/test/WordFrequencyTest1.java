@@ -3,6 +3,9 @@ package collection.map.test;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 문제와 풀이1 : Map
+ */
 public class WordFrequencyTest1 {
     public static void main(String[] args) {
         String text = "orange banana apple apple banana apple";

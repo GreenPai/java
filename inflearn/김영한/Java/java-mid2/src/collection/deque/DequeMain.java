@@ -3,6 +3,9 @@ package collection.deque;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
+/**
+ * Deque 자료 구조
+ */
 public class DequeMain {
 
     public static void main(String[] args) {

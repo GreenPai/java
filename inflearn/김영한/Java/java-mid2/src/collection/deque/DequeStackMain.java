@@ -3,6 +3,9 @@ package collection.deque;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
+/**
+ * Deque와 Stack, Queue 자료 구조
+ */
 public class DequeStackMain {
 
     public static void main(String[] args) {

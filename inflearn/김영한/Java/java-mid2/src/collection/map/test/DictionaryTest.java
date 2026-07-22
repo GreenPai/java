@@ -4,6 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * 문제와 풀이2 : Map
+ * 영어 사전 만들기
+ */
 public class DictionaryTest {
     public static void main(String[] args) {
         Map<String, String> dictionary = new HashMap<>();

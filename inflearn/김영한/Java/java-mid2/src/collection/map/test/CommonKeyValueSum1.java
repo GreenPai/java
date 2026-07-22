@@ -3,6 +3,9 @@ package collection.map.test;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 문제와 풀이1 : Map
+ */
 public class CommonKeyValueSum1 {
     public static void main(String[] args) {
         Map<String, Integer> map1 = new HashMap<>();

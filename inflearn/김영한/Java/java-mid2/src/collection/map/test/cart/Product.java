@@ -2,6 +2,10 @@ package collection.map.test.cart;
 
 import java.util.Objects;
 
+/**
+ * 문제와 풀이2 : Map
+ * 장바구니
+ */
 public class Product {
 
     private String name;
