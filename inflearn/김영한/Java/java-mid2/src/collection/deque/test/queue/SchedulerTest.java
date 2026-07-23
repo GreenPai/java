@@ -1,5 +1,9 @@
 package collection.deque.test.queue;
 
+/**
+ * 문제와 풀이2 : Queue
+ * 프린터 대기
+ */
 public class SchedulerTest {
     public static void main(String[] args) {
         //낮에 작업을 저장

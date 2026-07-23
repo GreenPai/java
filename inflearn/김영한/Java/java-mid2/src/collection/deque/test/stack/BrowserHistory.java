@@ -3,7 +3,12 @@ package collection.deque.test.stack;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
+/**
+ * 문제와 풀이2 : Map
+ * 브라우저 히스토리 관리
+ */
 public class BrowserHistory {
+
     private Deque<String> history = new ArrayDeque<>();
     private String currentPage = null;
     
