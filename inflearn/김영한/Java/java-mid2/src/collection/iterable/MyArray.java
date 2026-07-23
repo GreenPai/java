@@ -2,6 +2,10 @@ package collection.iterable;
 
 import java.util.Iterator;
 
+/**
+ * 순회 1 :
+ * 직접 구현하는  Iterable, Iterator
+ */
 public class MyArray implements Iterable<Integer> {
 
     private int[] numbers;
