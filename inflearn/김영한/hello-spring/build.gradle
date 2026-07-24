@@ -27,6 +27,11 @@ dependencies {
 		exclude group: 'org.junit.vintage', module: 'junit-vintate-engine'
 	}
 
+    //JUnit4 추가
+    testImplementation("org.junit.vintage:junit-vintage-engine") {
+        exclude group: "org.hamcrest", module: "hamcrest-core"
+    }
+
 	// testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	// runtimeOnly('org.springframework.boot:spring-boot-devtools')
 }
