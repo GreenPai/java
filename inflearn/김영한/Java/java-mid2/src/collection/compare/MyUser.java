@@ -1,5 +1,8 @@
 package collection.compare;
 
+/**
+ * 정렬 2 : Comparable, Comparator
+ */
 public class MyUser implements Comparable<MyUser> {
 
     private String id;

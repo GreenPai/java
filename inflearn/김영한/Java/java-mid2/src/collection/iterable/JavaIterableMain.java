@@ -2,6 +2,9 @@ package collection.iterable;
 
 import java.util.*;
 
+/**
+ * 자바가 제공하는 Iterable, Iterator
+ */
 public class JavaIterableMain {
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();
@@ -30,6 +33,7 @@ public class JavaIterableMain {
 
     private static void foreach(Iterable<Integer> iterable) {
         System.out.println("iterable = " + iterable.getClass());
+        System.out.println("iterable = " + iterable);
         for (Integer i : iterable) {
             System.out.println(i);
         }

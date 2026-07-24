@@ -2,6 +2,9 @@ package collection.compare;
 
 import java.util.TreeSet;
 
+/**
+ * 정렬 3 : Comparable, Comparator
+ */
 public class SortMain5 {
 
     public static void main(String[] args) {

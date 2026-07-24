@@ -2,6 +2,9 @@ package collection.compare;
 
 import java.util.*;
 
+/**
+ * 정렬 3 : Comparable, Comparator
+ */
 public class SortMain4 {
 
     public static void main(String[] args) {

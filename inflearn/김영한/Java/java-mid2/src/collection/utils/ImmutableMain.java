@@ -5,6 +5,10 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * 컬렉션 유틸:
+ * 불변을 가변으로
+ */
 public class ImmutableMain {
 
     public static void main(String[] args) {

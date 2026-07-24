@@ -3,6 +3,9 @@ package collection.utils;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * 컬렉션 유틸
+ */
 public class CollectionsSortMain {
 
     public static void main(String[] args) {
@@ -22,6 +25,10 @@ public class CollectionsSortMain {
         System.out.println("list = " + list);
         Collections.shuffle(list);
         System.out.println("shuffle list = " + list);
+
+        Collections.reverse(list);
+        System.out.println("reverse list = " + list);
+
         Collections.sort(list);
         System.out.println("sort list = " + list);
         Collections.reverse(list);

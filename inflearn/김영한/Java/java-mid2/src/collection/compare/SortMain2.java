@@ -3,6 +3,9 @@ package collection.compare;
 import java.util.Arrays;
 import java.util.Comparator;
 
+/**
+ * 정렬 1 : Comparable, Comparator
+ */
 public class SortMain2 {
 
     public static void main(String[] args) {
@@ -18,6 +21,7 @@ public class SortMain2 {
         System.out.println("AscComparator.reversed:" + Arrays.toString(array));
     }
 
+    // 중첩 클래스
     static class AscComparator implements Comparator<Integer> {
         @Override
         public int compare(Integer o1, Integer o2) {
@@ -26,6 +30,7 @@ public class SortMain2 {
         }
     }
 
+    // 최종 결과에 -1을 곱하기
     static class DescComparator implements Comparator<Integer> {
         @Override
         public int compare(Integer o1, Integer o2) {
