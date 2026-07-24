@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+/**
+ * Mvc와 템플릿 엔진
+ * MVC : Model, View, Controller
+ */
 @Controller
 public class HelloController {
     @GetMapping("hello")
@@ -21,12 +25,20 @@ public class HelloController {
         return "hello-template";
     }
 
+    /**
+     *  API 방식 : 데이터를 그대로 내려준다.
+     *  View에 HTML이 없다.
+     */
     @GetMapping("hello-string")
     @ResponseBody
     public String helloString(@RequestParam("name") String name){
         return "hello " + name; //hello spring
     }
 
+    /**
+     * API 방식 : 객체를 넘기기 /
+     * JSON : Key, Value로 이루어진 데이터
+     */
     @GetMapping("hello-api")
     @ResponseBody
     public Hello helloApi(@RequestParam("name") String name){
@@ -35,6 +47,9 @@ public class HelloController {
         return hello;
     }
 
+    /**
+     * get/set : 프로퍼티 방식(자바 빈 방식)
+     */
     static class Hello{
         private String name;
 
