@@ -1,5 +1,8 @@
 package collection.compare.test;
 
+/**
+ * 문제와 풀이
+ */
 public class Card implements Comparable<Card> {
     private final int rank; // 카드의 숫자
     private final Suit suit; // 카드의 마크
