@@ -1,5 +1,8 @@
 package hello.hellospring.controller;
 
+/**
+ * 회원가입에서 데이터를 받을 객체
+ */
 public class MemberForm {
     private String name;
 

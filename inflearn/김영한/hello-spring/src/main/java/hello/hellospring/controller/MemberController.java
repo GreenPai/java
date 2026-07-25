@@ -21,25 +21,32 @@ public class MemberController {
         System.out.println("memberService = " + memberService.getClass());
     }
 
+    /**
+     *  회원가입 페이지 이동
+     */
     @GetMapping(value = "/members/new")
     public String createForm() {
         return "members/createMemberForm";
     }
 
+    /**
+     *  회원가입 로직
+     */
     @PostMapping(value = "/members/new")
     public String create(MemberForm form) {
         Member member = new Member();
         member.setName(form.getName());
         memberService.join(member);
         return "redirect:/";
-
     }
 
+    /**
+     *  회원가입한 유저 출력
+     */
     @GetMapping("/members")
     public String list(Model model){
         List<Member> members = memberService.findMembers();
         model.addAttribute("members", members);
         return "members/memberList";
-
     }
 }
