@@ -10,13 +10,19 @@ import org.springframework.transaction.annotation.Transactional;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+/**
+ * 통합 테스트
+ */
 @SpringBootTest
 @Transactional
 class MemberServiceIntegrationTest {
+
     @Autowired
     MemberService memberService;
+
     @Autowired
     MemberRepository memberRepository;
+
     @Test
     void 회원가입(){
         //Given
@@ -31,6 +37,7 @@ class MemberServiceIntegrationTest {
         assertThat(member.getName()).isEqualTo(findMember.getName());
 
     }
+
     @Test
     public void 중복_회원_예외() throws Exception {
         //Given
