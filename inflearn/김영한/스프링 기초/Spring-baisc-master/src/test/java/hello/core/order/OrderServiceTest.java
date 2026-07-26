@@ -15,13 +15,15 @@ public class OrderServiceTest {
     MemberService memberService;
     OrderService orderService;
 
+    /**
+     * 각 테스트 전에 실행
+     */
     @BeforeEach
     public void beforeEach(){
         AppConfig appConfig = new AppConfig();
         memberService = appConfig.memberService();
         orderService = appConfig.orderService();
     }
-
 
     @Test
     void createOrder() {
