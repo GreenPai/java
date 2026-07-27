@@ -9,8 +9,15 @@ import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import
         org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import static org.assertj.core.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+/**
+ * 빈 조회 테스트
+ */
 class ApplicationContextBasicFindTest {
+
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+
     @Test
     @DisplayName("빈 이름으로 조회")
     void findBeanByName() {
@@ -26,18 +33,25 @@ class ApplicationContextBasicFindTest {
         MemberService memberService = ac.getBean(MemberService.class);
         assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
     }
+
+    /**
+     * 역할에 의존하는 것이 좋다. -> 추상적인 것이 좋다.
+     * ac.getBean("memberService", MemberServiceImpl.class);
+     * 구체적인 클래스도 찾을 수 있으나. 추상적인게 좋다.
+     */
     @Test
     @DisplayName("구체 타입으로 조회")
     void findBeanByName2() {
-        MemberServiceImpl memberService = ac.getBean("memberService",
-                MemberServiceImpl.class);
+        MemberServiceImpl memberService = ac.getBean("memberService", MemberServiceImpl.class);
         assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
     }
+
     @Test
     @DisplayName("빈 이름으로 조회X")
     void findBeanByNameX() {
         //ac.getBean("xxxxx", MemberService.class);
-        Assertions.assertThrows(NoSuchBeanDefinitionException.class, () ->
+        assertThrows(NoSuchBeanDefinitionException.class, () ->
                 ac.getBean("xxxxx", MemberService.class));
     }
+
 }
