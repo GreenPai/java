@@ -12,6 +12,8 @@ public class SingletonTest {
     /**
      * 싱글톤이 적용되지 않았을 때
      * Service1, Service2 요청 할 때 마다 새로운 객체를 생성한다.
+     * 
+     * 100개의 요청 -> 100개의 객체
      */
     @Test
     @DisplayName("스프링 없는 순수한 DI 컨테이너")
@@ -43,14 +45,11 @@ public class SingletonTest {
     @Test
     @DisplayName("스프링 컨테이너와 싱글톤")
     void springContainer() {
-        ApplicationContext ac = new
-                AnnotationConfigApplicationContext(AppConfig.class);
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
         //1. 조회: 호출할 때 마다 같은 객체를 반환
-        MemberService memberService1 = ac.getBean("memberService",
-                MemberService.class);
+        MemberService memberService1 = ac.getBean("memberService", MemberService.class);
         //2. 조회: 호출할 때 마다 같은 객체를 반환
-        MemberService memberService2 = ac.getBean("memberService",
-                MemberService.class);
+        MemberService memberService2 = ac.getBean("memberService", MemberService.class);
         //참조값이 같은 것을 확인
         System.out.println("memberService1 = " + memberService1);
         System.out.println("memberService2 = " + memberService2);

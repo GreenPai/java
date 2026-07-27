@@ -1,4 +1,19 @@
 package hello.core.singleton;
+
+/**
+ * 싱글톤 서비스 :
+ * 기본 AppConfig는 호출될 때 마다 새로운 객체를 생성했기에 
+ * 불필요한 객체가 많이 생성 될 수 있다.
+ */
+
+/**
+ * 인스턴스의 문제점 :
+ * 1. 1~3까지 패턴을 구현하는데 코드가 많이 들어간다.
+ * 2. 구체적인 클래스의 의존하기 DIP 위반
+ * 3. OCP를 위반하기 쉽다.
+ * 4. private 생성자로 자식을 만들기 힘들다.
+ * 5. 유연성이 떨어진다.
+ */
 public class SingletonService {
     //1. static 영역에 객체를 딱 1개만 생성해둔다.
     private static final SingletonService instance = new SingletonService();
