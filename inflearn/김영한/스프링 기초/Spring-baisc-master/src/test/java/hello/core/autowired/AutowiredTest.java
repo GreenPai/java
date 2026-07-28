@@ -9,6 +9,11 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import java.util.Optional;
 
+/**
+ * AutowireTest
+ * : AnnotationConfigApplicationContext(TestBean.class) : 스프링 컨테이너에 등록
+ * Autowired -> 스프링 컨테이너에서 찾아서 주입
+ */
 public class AutowiredTest {
 
     @Test

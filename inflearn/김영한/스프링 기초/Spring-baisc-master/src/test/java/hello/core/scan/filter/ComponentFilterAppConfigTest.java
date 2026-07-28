@@ -10,24 +10,23 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.context.annotation.ComponentScan.Filter;
+
+/**
+ * 필터 테스트
+ */
 public class ComponentFilterAppConfigTest {
     @Test
     void filterScan() {
-        ApplicationContext ac = new
-                AnnotationConfigApplicationContext(ComponentFilterAppConfig.class);
+        ApplicationContext ac = new AnnotationConfigApplicationContext(ComponentFilterAppConfig.class);
         BeanA beanA = ac.getBean("beanA", BeanA.class);
         assertThat(beanA).isNotNull();
         Assertions.assertThrows(
                 NoSuchBeanDefinitionException.class,
                 () -> ac.getBean("beanB", BeanB.class));
     }
+
     @Configuration
-    @ComponentScan(
-            includeFilters = @Filter(type = FilterType.ANNOTATION, classes =
-                    MyIncludeComponent.class),
-            excludeFilters = @Filter(type = FilterType.ANNOTATION, classes =
-                    MyExcludeComponent.class)
-    )
-    static class ComponentFilterAppConfig {
-    }
+    @ComponentScan( includeFilters = @Filter(type = FilterType.ANNOTATION, classes = MyIncludeComponent.class),
+            excludeFilters = @Filter(type = FilterType.ANNOTATION, classes = MyExcludeComponent.class))
+    static class ComponentFilterAppConfig { }
 }

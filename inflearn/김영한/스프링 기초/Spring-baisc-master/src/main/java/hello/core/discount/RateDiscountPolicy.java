@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
  * VVIP는 커스텀. 추가한것.
  */
 @Component
+// @Primary
 @MainDiscountPolicy
 public class RateDiscountPolicy implements DiscountPolicy{
 

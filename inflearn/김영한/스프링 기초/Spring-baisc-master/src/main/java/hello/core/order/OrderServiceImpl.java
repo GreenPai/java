@@ -19,14 +19,29 @@ public class OrderServiceImpl implements OrderService{
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-    @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
-        this.memberRepository = memberRepository;
-        this.discountPolicy = discountPolicy;
-    }
+    /**
+     * Autowire에서 DiscountPolicy가 2개의 Bean이 잡히는 경우
+     * 오류 발생
+     * 
+     * 문제 해결 방법: 
+     * 필드명 매칭, Qualifier, Primary사용(우선순위 지정.)
+     */
+
+    /**
+     *  필드명 매칭
+     *  빈이 2개 일 때 스프링 컨테이너에서 변수의 이름을 보고 검색을 한다.
+     */
+
+//    @Autowired
+//    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy rateDiscountPolicy) {
+//        this.memberRepository = memberRepository;
+//        this.discountPolicy = rateDiscountPolicy;
+//    }
 
 
-    // Qualifier -> 2개가 지정되어 오류가 발생했을 때 이름을 지정해서 들고오는 방식
+    /**
+     * Qualifier -> 2개가 지정되어 오류가 발생했을 때 이름을 지정해서 들고오는 방식
+     */
 
     /*
     @Autowired
@@ -35,6 +50,12 @@ public class OrderServiceImpl implements OrderService{
         this.discountPolicy = discountPolicy;
     }
     */
+
+    @Autowired
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
