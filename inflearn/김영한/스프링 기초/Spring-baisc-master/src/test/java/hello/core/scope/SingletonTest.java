@@ -7,6 +7,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Scope;
 
+/**
+ * 스코프 테스트
+ */
 public class SingletonTest {
 
     @Test

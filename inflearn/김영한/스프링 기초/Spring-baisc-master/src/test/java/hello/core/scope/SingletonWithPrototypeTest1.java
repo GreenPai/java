@@ -11,6 +11,10 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Scope;
 
+/**
+ * 스코프 테스트:
+ * 프로토타입 + 싱글톤
+ */
 public class SingletonWithPrototypeTest1 {
 
     @Test
@@ -38,7 +42,6 @@ public class SingletonWithPrototypeTest1 {
         ClientBean clientBean2 = ac.getBean(ClientBean.class);
         int count2 = clientBean1.logic();
         Assertions.assertThat(count2).isEqualTo(1);
-
 
     }
 

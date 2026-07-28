@@ -7,6 +7,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Scope;
 
+/**
+ * 스코프 테스트
+ * 프로토타입
+ */
 public class PrototypeTest {
 
     @Test
