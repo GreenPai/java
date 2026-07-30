@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 /**
  * http://localhost:8080/response-header
- *
  */
 @WebServlet(name = "responseHeaderServlet", urlPatterns = "/response-header")
 public class ResponseHeaderServlet extends HttpServlet {
