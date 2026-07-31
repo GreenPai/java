@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 import static org.assertj.core.api.Assertions.*;
 class MemberRepositoryTest {
+    // 싱글톤 생성자 들고오기
     MemberRepository memberRepository = MemberRepository.getInstance();
 
     // 테스트가 끝나고 테스트를 초기화
@@ -12,6 +13,9 @@ class MemberRepositoryTest {
         memberRepository.clearStore();
     }
 
+    /**
+     * Member 저장 테스트
+     */
     @Test
     void save() {
         //given
@@ -22,6 +26,10 @@ class MemberRepositoryTest {
         Member findMember = memberRepository.findById(savedMember.getId());
         assertThat(findMember).isEqualTo(savedMember);
     }
+
+    /**
+     * Member 출력 테스트
+     */
     @Test
     void findAll() {
         //given - 주어진 정보

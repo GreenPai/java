@@ -3,17 +3,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%
- // request, response 사용 가능
- // JSP 또한 서블릿으로 변환되어 사용되기에 사용할 수 있다.
- MemberRepository memberRepository = MemberRepository.getInstance();
+     // 저장 페이지
+     // request, response 사용 가능
+     // JSP 또한 서블릿으로 변환되어 사용되기에 사용할 수 있다.
+     MemberRepository memberRepository = MemberRepository.getInstance();
 
- System.out.println("save.jsp");
- String username = request.getParameter("username");
- int age = Integer.parseInt(request.getParameter("age"));
+     System.out.println("save.jsp");
+     String username = request.getParameter("username");
+     int age = Integer.parseInt(request.getParameter("age"));
 
- Member member = new Member(username, age);
- System.out.println("member = " + member);
- memberRepository.save(member);
+     Member member = new Member(username, age);
+     System.out.println("member = " + member);
+     memberRepository.save(member);
 %>
 <html>
 <head>

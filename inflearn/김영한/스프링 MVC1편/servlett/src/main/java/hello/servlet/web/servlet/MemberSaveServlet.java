@@ -11,6 +11,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/**
+ * 회원 저장 서블릿
+ */
 @WebServlet(name = "memberSaveServlet", urlPatterns = "/servlet/members/save")
 public class MemberSaveServlet extends HttpServlet {
     private MemberRepository memberRepository = MemberRepository.getInstance();
@@ -20,9 +23,11 @@ public class MemberSaveServlet extends HttpServlet {
         System.out.println("MemberSaveServlet.service");
         String username = request.getParameter("username");      // request.getParameter은 다 문자.
         int age = Integer.parseInt(request.getParameter("age")); // 인트 타입으로 변환
+
         Member member = new Member(username, age);
         System.out.println("member = " + member);
         memberRepository.save(member);
+
         response.setContentType("text/html");
         response.setCharacterEncoding("utf-8");
         PrintWriter w = response.getWriter();
