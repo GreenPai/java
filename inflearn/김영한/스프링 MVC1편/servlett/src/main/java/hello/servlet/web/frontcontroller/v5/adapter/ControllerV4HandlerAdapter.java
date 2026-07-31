@@ -13,6 +13,7 @@ import java.util.Map;
 
 public class ControllerV4HandlerAdapter implements MyHandlerAdapter {
 
+    // V4 핸들러인지 확인
     @Override
     public boolean supports(Object handler) {
         return (handler instanceof ControllerV4);
@@ -20,6 +21,7 @@ public class ControllerV4HandlerAdapter implements MyHandlerAdapter {
 
     @Override
     public ModelView handle(HttpServletRequest request, HttpServletResponse response, Object handler) throws ServletException, IOException {
+
         ControllerV4 controller = (ControllerV4) handler;
 
         Map<String, String> paramMap = createParamMap(request);

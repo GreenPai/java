@@ -9,6 +9,9 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
+/**
+ * 프론트 컨트롤러 V1
+ */
 public class MemberFormControllerV1 implements ControllerV1 {
 
     // 앞선 서블릿과 큰 차이가 없다.

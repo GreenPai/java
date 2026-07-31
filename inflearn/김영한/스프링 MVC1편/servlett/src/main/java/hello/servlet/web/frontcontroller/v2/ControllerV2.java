@@ -9,7 +9,7 @@ import java.io.IOException;
 
 /**
  * 기존 방식과 동일하지만 반환하는 부분에서 MyView를 반환한다.
- * void -> Myview
+ * void -> MyView
  */
 public interface ControllerV2 {
     MyView process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;

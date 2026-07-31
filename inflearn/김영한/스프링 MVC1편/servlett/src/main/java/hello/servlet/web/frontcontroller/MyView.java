@@ -8,6 +8,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Map;
 
+/**
+ * 뷰 리졸버 역활
+ */
 public class MyView {
 
     private String viewPath;

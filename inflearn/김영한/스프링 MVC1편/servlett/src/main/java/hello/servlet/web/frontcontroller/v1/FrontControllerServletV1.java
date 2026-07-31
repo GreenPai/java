@@ -11,8 +11,14 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+
+/**
+ * 프론트 컨트롤러
+ * 요청을 받아서 뿌려주는 컨트롤러
+ */
 @WebServlet(name = "frontControllerServletV1", urlPatterns ="/front-controller/v1/*")
 public class FrontControllerServletV1 extends HttpServlet {
+
     private Map<String, ControllerV1> controllerMap = new HashMap<>();
     public FrontControllerServletV1() {
         controllerMap.put("/front-controller/v1/members/new-form", new MemberFormControllerV1());

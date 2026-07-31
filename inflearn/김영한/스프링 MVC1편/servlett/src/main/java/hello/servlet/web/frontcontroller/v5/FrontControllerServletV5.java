@@ -22,30 +22,40 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+/**
+ * 어뎁터를 구현한 컨트롤러
+ * V4 -> FrontControllerServletV4에서는
+ */
 @WebServlet(name = "frontControllerServletV5", urlPatterns = "/front-controller/v5/*")
     public class FrontControllerServletV5 extends HttpServlet {
+
+    // 기존에는 Map<String, ControllerV4>
     private final Map<String, Object> handlerMappingMap = new HashMap<>();
     private final List<MyHandlerAdapter> handlerAdapters = new ArrayList<>();
+
     public FrontControllerServletV5() {
-     initHandlerMappingMap();
-     initHandlerAdapters();
- }
-
- private void initHandlerMappingMap() {
-        handlerMappingMap.put("/front-controller/v5/v3/members/new-form", new MemberFormControllerV3());
-        handlerMappingMap.put("/front-controller/v5/v3/members/save", new MemberSaveControllerV3());
-        handlerMappingMap.put("/front-controller/v5/v3/members", new MemberListControllerV3());
-
-        //V4 추가
-        handlerMappingMap.put("/front-controller/v5/v4/members/new-form", new MemberFormControllerV4());
-        handlerMappingMap.put("/front-controller/v5/v4/members/save", new MemberSaveControllerV4());
-        handlerMappingMap.put("/front-controller/v5/v4/members", new MemberListControllerV4());
- }
-
- private void initHandlerAdapters() {
-        handlerAdapters.add(new ControllerV3HandlerAdapter());
-        handlerAdapters.add(new ControllerV4HandlerAdapter());
+        initHandlerMappingMap();
+        initHandlerAdapters();
     }
+
+    // Map 에 다 넣기
+    private void initHandlerMappingMap() {
+            handlerMappingMap.put("/front-controller/v5/v3/members/new-form", new MemberFormControllerV3());
+            handlerMappingMap.put("/front-controller/v5/v3/members/save", new MemberSaveControllerV3());
+            handlerMappingMap.put("/front-controller/v5/v3/members", new MemberListControllerV3());
+
+            //V4 추가
+            handlerMappingMap.put("/front-controller/v5/v4/members/new-form", new MemberFormControllerV4());
+            handlerMappingMap.put("/front-controller/v5/v4/members/save", new MemberSaveControllerV4());
+            handlerMappingMap.put("/front-controller/v5/v4/members", new MemberListControllerV4());
+    }
+
+     private void initHandlerAdapters() {
+            handlerAdapters.add(new ControllerV3HandlerAdapter());
+            handlerAdapters.add(new ControllerV4HandlerAdapter());
+    }
+
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -58,10 +68,15 @@ import java.util.Map;
         }
 
         MyHandlerAdapter adapter = getHandlerAdapter(handler);
+
         ModelView mv = adapter.handle(request, response, handler);
         MyView view = viewResolver(mv.getViewName());
         view.render(mv.getModel(), request, response);
     }
+
+    /**
+     * 매핑 정보로 핸들러 찾긴
+     */
     private Object getHandler(HttpServletRequest request) {
         String requestURI = request.getRequestURI();
         return handlerMappingMap.get(requestURI);
@@ -76,7 +91,9 @@ import java.util.Map;
         }
         throw new IllegalArgumentException("handler adapter를 찾을 수 없습니다. handler=" + handler);
     }
+
     private MyView viewResolver(String viewName) {
  return new MyView("/WEB-INF/views/" + viewName + ".jsp");
     }
- }
+
+}

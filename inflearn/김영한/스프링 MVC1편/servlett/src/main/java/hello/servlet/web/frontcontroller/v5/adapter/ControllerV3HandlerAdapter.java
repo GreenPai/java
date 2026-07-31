@@ -7,6 +7,11 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.util.HashMap;
 import java.util.Map;
+
+
+/**
+ * 어뎁터
+ */
 public class ControllerV3HandlerAdapter implements MyHandlerAdapter {
 
     // 핸들러가 V3의 인스턴스인지 물어보는 것.
@@ -22,6 +27,7 @@ public class ControllerV3HandlerAdapter implements MyHandlerAdapter {
         ModelView mv = controller.process(paramMap);
         return mv;
     }
+
     private Map<String, String> createParamMap(HttpServletRequest request) {
         Map<String, String> paramMap = new HashMap<>();
         request.getParameterNames().asIterator()
