@@ -19,6 +19,9 @@ import java.io.InputStream;
 import java.io.Writer;
 import java.nio.charset.StandardCharsets;
 
+/**
+ * HTTP 요청 메시지  - 단순 텍스트
+ */
 @Slf4j
 @Controller
 public class RequestBodyStringController {
@@ -35,7 +38,6 @@ public class RequestBodyStringController {
 
     /**
      *  바로 InputStream, Writer를 받음.
-     *
      */
     @PostMapping("/request-body-string-v2")
     public void requestBodyStringV2(InputStream inputStream, Writer responseWriter) throws IOException {
@@ -49,11 +51,8 @@ public class RequestBodyStringController {
      * Http 메시지 컨버터를 사용해서
      * 바디에 있는 내용을 String으로 변환시켜줌 -> HttpEntity<String> httpEntity
      */
-
     @PostMapping("/request-body-string-v3")
     public HttpEntity<String> requestBodyStringV3(HttpEntity<String> httpEntity) throws IOException {
-
-
         String messagebody = httpEntity.getBody();
         log.info("messageBody={}", messagebody);
         return new HttpEntity<>("ok");
@@ -70,7 +69,6 @@ public class RequestBodyStringController {
     @ResponseBody
     @PostMapping("/request-body-string-v4")
     public String requestBodyStringV4(@RequestBody String messageBody){
-
         log.info("messageBody={}", messageBody);
         return "ok";
     }

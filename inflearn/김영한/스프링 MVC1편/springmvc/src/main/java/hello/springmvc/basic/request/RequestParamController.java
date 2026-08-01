@@ -19,7 +19,6 @@ public class RequestParamController {
 
     /** V1
      * 과거 기존 HTTP 방식
-     *
      */
     @RequestMapping("/request-param-v1")
     public void requestParamV1(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -63,13 +62,9 @@ public class RequestParamController {
      * @RequestParam
      * String, int 등의 단순 타입이면 RequestParam도 생략 가능
      */
-
     @ResponseBody
     @RequestMapping("/request-param-v4")
-    public String requestParamV4(
-            String username,
-            int age){
-
+    public String requestParamV4(String username, int age){
         log.info("username={}, age={}",username,age);
         return "ok";
     }
@@ -78,6 +73,7 @@ public class RequestParamController {
      * required
      * required 를 사용하여 파라미터 필수 여부를 판단 가능
      * int 대신 Integer 사용한 이유 -> Null이 들어왔을 경우 int는 받아드릴 수 없어 오류 발생
+     * 기본값 - 참
      */
     @ResponseBody
     @RequestMapping("/request-param-required")
@@ -93,8 +89,10 @@ public class RequestParamController {
      * defaultValue
      * 입력을 받지 않았을 때 초기값
      * String의 빈문자열 ""도 default로 처리해준다.
+     *
+     * 둘 다 값을 넣지 않으면 Guest, -1
+     * required = true 설정해도 required = false 처럼 된다
      */
-
     @ResponseBody
     @RequestMapping("/request-param-default")
     public String requestParamDefault(
@@ -109,7 +107,6 @@ public class RequestParamController {
     /** Map
      * 모든 요청을 다 받아드리고 싶을때
      */
-
     @ResponseBody
     @RequestMapping("/request-param-map")
     public String requestParamDefault(

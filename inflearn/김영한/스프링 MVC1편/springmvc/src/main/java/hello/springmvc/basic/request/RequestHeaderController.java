@@ -16,6 +16,11 @@ import java.util.Locale;
 @RestController
 public class RequestHeaderController {
 
+    /**
+     * MultiValueMap는 같은 키에 여러 값을 받을 때
+     * KeyA | 1
+     * KeyA | 2
+     */
     @RequestMapping("/headers")
     public String headers(HttpServletRequest request,
                           HttpServletRequest response,

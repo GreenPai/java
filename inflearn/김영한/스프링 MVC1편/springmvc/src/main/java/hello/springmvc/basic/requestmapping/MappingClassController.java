@@ -14,10 +14,6 @@ public class MappingClassController {
      * 회원 삭제        DELETE
      */
 
-
-
-
-
     @GetMapping
     public String user(){
         return "get users";
@@ -29,7 +25,6 @@ public class MappingClassController {
     }
 
     @GetMapping("/{userId}")
-
     public String findUser(@PathVariable String userId){
         return "get userId=" + userId;
     }
