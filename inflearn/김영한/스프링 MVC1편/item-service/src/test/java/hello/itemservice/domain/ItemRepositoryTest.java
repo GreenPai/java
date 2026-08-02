@@ -41,7 +41,7 @@ class ItemRepositoryTest {
         itemRepository.save(item2);
 
         //when
-        List<Item> result = itemRepository.findALL();
+        List<Item> result = itemRepository.findAll();
         //then
         assertThat(result.size()).isEqualTo(2);
         assertThat(result).contains(item1, item2);
@@ -57,6 +57,7 @@ class ItemRepositoryTest {
         //when
         Item updateParam = new Item("item2", 20000, 30);
         itemRepository.update(itemId,updateParam);
+
         //then
         Item findItem = itemRepository.findById(itemId);
         assertThat(findItem.getItemName()).isEqualTo(updateParam.getItemName());

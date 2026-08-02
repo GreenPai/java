@@ -17,6 +17,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class BasicItemController {
 
+    /**
+     * Autowired 는 생성자가 1개면 생략 가능
+     * 현재는 생략한 상태
+     */
     private final ItemRepository itemRepository;
 
     @GetMapping
@@ -62,13 +66,10 @@ public class BasicItemController {
      *  기능1. Item에 데이터를 담아줌. -> 요청 파라미터의 값을 프로퍼티 접근법으로 넣어줌
      *  기능2. model.addAttribute("item", item); 를 자동으로 추가.
      */
-
     //    @PostMapping("/add")
     public String addItemV2(@ModelAttribute("item") Item item, Model model) {
-
         itemRepository.save(item);
 //      model.addAttribute("item", item); //자동 추가, 생략 가능
-
         return "basic/item";
     }
 
@@ -89,7 +90,6 @@ public class BasicItemController {
      *  자신이 임의로 만든 클래스의 경우
      *  ModelAttribute를 생략하더라도 적용이 된다.
      */
-
     //    @PostMapping("/add")
     public String addItemV4(Item item) {
         itemRepository.save(item);
@@ -97,20 +97,20 @@ public class BasicItemController {
     }
 
 
+    /**
+     * PRG 방식 
+     */
     //    @PostMapping("/add")
     public String addItemV5(Item item) {
         itemRepository.save(item);
         return "redirect:/basic/items/" + item.getId();
     }
 
-
     /**
      *  redirectAttributes를 활용
      *  - 인코딩 작업도 redirectAttributes가 대신해줌.
      *  item.html에서 status 여부에 따라서 h2를 출력해준다.
      */
-
-
     @PostMapping("/add")
     public String addItemV6(Item item, RedirectAttributes redirectAttributes) {
         Item savedItem = itemRepository.save(item);
