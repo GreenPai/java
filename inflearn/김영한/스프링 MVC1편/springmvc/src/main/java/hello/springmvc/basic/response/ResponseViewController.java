@@ -5,14 +5,19 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+/**
+ * 응답 - 정적 리소스, 뷰 템플릿
+ */
 @Controller
 public class ResponseViewController {
+
     @RequestMapping("/response-view-v1")
     public ModelAndView responseViewV1() {
-        ModelAndView mav = new ModelAndView("response/hello")
+        ModelAndView mv = new ModelAndView("response/hello")
                 .addObject("data", "hello!");
-        return mav;
+        return mv;
     }
+
     @RequestMapping("/response-view-v2")
     public String responseViewV2(Model model) {
         model.addAttribute("data", "hello!!");

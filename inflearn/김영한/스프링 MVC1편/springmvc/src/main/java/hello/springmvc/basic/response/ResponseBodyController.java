@@ -16,7 +16,9 @@ import java.io.IOException;
  * Controller + ResponseBody = RestController
  */
 
-
+/**
+ * HTTP API, 메시지 바디에 직접 입력
+ */
 @Slf4j
 @Controller
 //@RestController
@@ -31,10 +33,8 @@ public class ResponseBodyController {
         response.getWriter().write("ok");
     }
 
-
     /**
      * HttpEntity, ResponseEntity(Http Status 추가)
-     *
      */
     @GetMapping("/response-body-string-v2")
     public ResponseEntity<String> responseBodyV2() {
@@ -52,6 +52,9 @@ public class ResponseBodyController {
     }
 
 
+    /**
+     * JSON 처리
+     */
     @GetMapping("/response-body-json-v1")
     public ResponseEntity<HelloData> responseBodyJsonV1() {
         HelloData helloData = new HelloData();
