@@ -13,6 +13,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.*;
 
+/**
+ * 타임 리프 - 스프링 통합과 폼
+ */
 @Slf4j
 @Controller
 @RequestMapping("/form/items")
@@ -21,6 +24,11 @@ public class FormItemController {
 
     private final ItemRepository itemRepository;
 
+    /**
+     *  @ModelAttribute("regions")
+     *  컨트롤러의 모든 Model에 자동으로 담긴다.
+     *  중복 코드 방지
+     */
     @ModelAttribute("regions")
     public Map<String, String> regions(){
         Map<String, String> regions = new LinkedHashMap<>(); //순서 보장
@@ -32,6 +40,7 @@ public class FormItemController {
 
     @ModelAttribute("itemTypes")
     public ItemType[] itemTypes(){
+        log.info("itemTypes 출력 : {}", Arrays.toString(ItemType.values()));
         return ItemType.values();
     }
 
@@ -59,6 +68,9 @@ public class FormItemController {
         return "form/item";
     }
 
+    /**
+     *  등록 페이지
+     */
     @GetMapping("/add")
     public String addForm(Model model)
     {
@@ -88,6 +100,7 @@ public class FormItemController {
 
     @PostMapping("/{itemId}/edit")
     public String edit(@PathVariable Long itemId, @ModelAttribute Item item) {
+        log.info("변경 결과 : {}" , item);
         itemRepository.update(itemId, item);
         return "redirect:/form/items/{itemId}";
     }
