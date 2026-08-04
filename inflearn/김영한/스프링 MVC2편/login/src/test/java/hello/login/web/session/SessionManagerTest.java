@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * 세션 테스트
+ */
 public class SessionManagerTest {
 
     SessionManager sessionManager = new SessionManager();

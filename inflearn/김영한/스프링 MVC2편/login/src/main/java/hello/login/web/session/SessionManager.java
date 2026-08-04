@@ -46,6 +46,9 @@ public class SessionManager {
         return sessionStore.get(sessionCookie.getValue());
     }
 
+    /**
+     * 세션 조회
+     */
     public Cookie findCookie(HttpServletRequest request, String cookieName){
 
         Cookie[] cookies = request.getCookies();
@@ -61,7 +64,8 @@ public class SessionManager {
     }
 
     /**
-     * 세션 조회
+     * 세션 만료
+     * @param request
      */
     public void expire(HttpServletRequest request){
         Cookie sessionCookie = findCookie(request, SESSION_COOKIE_NAME);
