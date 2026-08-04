@@ -42,11 +42,16 @@ public class ValidationItemControllerV1 {
         return "validation/v1/addForm";
     }
 
+    /**
+     * 조건문을 거쳐 Map인 Error를 모델에 넣어서 보내주는 형식 
+     */
     @PostMapping("/add")
     public String addItem(@ModelAttribute Item item, RedirectAttributes redirectAttributes, Model model) {
 
         // 검증 오류 결과를 보관
         Map<String, String> errors = new HashMap<>();
+
+        // 검증 로직
 
         // 문자가 없을 때
         if(!StringUtils.hasText(item.getItemName())){

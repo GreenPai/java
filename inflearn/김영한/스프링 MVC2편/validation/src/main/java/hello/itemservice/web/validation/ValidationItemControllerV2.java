@@ -81,7 +81,7 @@ public class ValidationItemControllerV2 {
 
         if(item.getPrice() == null || item.getPrice() < 1000 || item.getPrice() > 1000000){
             bindingResult.addError(new FieldError("item","price", "가격은 1,000~ 1,000,000 까지 허용합니다."));
-        }
+        }i
 
         if(item.getQuantity() == null || item.getQuantity()>9999){
             bindingResult.addError(new FieldError("item","quantity", "수량은 최대 9,999까지 허용합니다"));
@@ -117,7 +117,6 @@ public class ValidationItemControllerV2 {
      *  V1의 문제점인 이전의 데이터를 담아주는 과정을 추가.
      *  bindingResult.addError(new FieldError("item","price", item.getPrice(), false, null ,null,"상품 이름은 필수입니다."));
      */
-
 
     /*
     @PostMapping("/add")
@@ -235,6 +234,7 @@ public class ValidationItemControllerV2 {
 
 
         if(!StringUtils.hasText(item.getItemName())){
+            // bindingResult.addError(new FieldError("item","itemName", item.getItemName(), false, new String[]{"required.item.itemName"} ,null,null));
             bindingResult.rejectValue("itemName", "required");
         }
 
@@ -290,12 +290,12 @@ public class ValidationItemControllerV2 {
         }
 
         //검증 성공 로직
-
         Item savedItem = itemRepository.save(item);
         redirectAttributes.addAttribute("itemId", savedItem.getId());
         redirectAttributes.addAttribute("status", true);
         return "redirect:/validation/v2/items/{itemId}";
     }
+
 
      */
 
@@ -327,7 +327,6 @@ public class ValidationItemControllerV2 {
         redirectAttributes.addAttribute("status", true);
         return "redirect:/validation/v2/items/{itemId}";
     }
-
 
     @GetMapping("/{itemId}/edit")
     public String editForm(@PathVariable Long itemId, Model model) {

@@ -17,6 +17,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
+/**
+ * Form 전송 객체 분리
+ */
 @Slf4j
 @Controller
 @RequestMapping("/validation/v4/items")
@@ -52,7 +55,7 @@ public class ValidationItemControllerV4 {
      */
 
     @PostMapping("/add")
-    public String addItemV2(@Validated @ModelAttribute("item") ItemSaveForm form, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
+    public String addItem(@Validated @ModelAttribute("item") ItemSaveForm form, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
 
         // 특정 필드가 아닌 복합 룰 검증
         if (form.getPrice() != null && form.getQuantity() != null){

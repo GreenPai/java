@@ -32,6 +32,7 @@ public class ValidationItemControllerV3 {
 
     private final ItemRepository itemRepository;
 
+    // V2 검증기 X
     @GetMapping
     public String items(Model model) {
         List<Item> items = itemRepository.findAll();
@@ -65,9 +66,19 @@ public class ValidationItemControllerV3 {
 
 
 
+    /**
+     * item에서
+     * @ScriptAssert(lang = "javascript", script = "_this.price * _this.quantity >= 10000", message = "총합이 10000원 넘게 입력해주세요.")
+     * 를 사용해서 톡합 룰 검증 할 수 있으나
+     * 자바를 이용해서 하는 것을 더 권장
+     */
+
     /*
+
+
     @PostMapping("/add")
     public String addItem(@Validated @ModelAttribute Item item, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
+
 
         // 특정 필드가 아닌 복합 룰 검증
         if (item.getPrice() != null && item.getQuantity() != null){
@@ -90,8 +101,7 @@ public class ValidationItemControllerV3 {
         return "redirect:/validation/v3/items/{itemId}";
     }
 
-     */
-
+    */
 
     /**
      *  위의 V1의 등록, 수정 시 검증에서 발생하는 문제를 해결 할 수 있습니다.
@@ -166,7 +176,9 @@ public class ValidationItemControllerV3 {
             log.info("errors={}", bindingResult);
             return "validation/v3/editForm";
         }
+
         itemRepository.update(itemId, item);
+
         return "redirect:/validation/v3/items/{itemId}";
     }
 
