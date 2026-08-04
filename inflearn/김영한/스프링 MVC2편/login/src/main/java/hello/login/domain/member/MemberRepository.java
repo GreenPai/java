@@ -33,13 +33,13 @@ public class MemberRepository {
             }
         }
         return Optional.empty();
-
          */
 
 
         // 스트림을 사용한 방법
         // LoginId와 맞는 것을 찾은 뒤 첫번째 값 리턴
 
+        // findFirst -> 처음에 나온 값을 넘긴다.
         return findAll().stream()
                 .filter(m -> m.getLoginId().equals(loginId))
                 .findFirst();

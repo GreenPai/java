@@ -13,11 +13,12 @@ public class LoginService {
 
     private final MemberRepository memberRepository;
 
-    /**
-     * @return null이면 로그인 실패
-     */
-
     public Member login(String loginId, String password){
+
+        // 로직
+        /**
+         * @return null이면 로그인 실패
+         */
 
         // 옵셔널을 사용한 저장 방법
         /*

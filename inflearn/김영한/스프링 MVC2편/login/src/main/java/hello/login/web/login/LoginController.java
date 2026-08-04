@@ -42,6 +42,8 @@ public class LoginController {
     /*
     @PostMapping("/login")
     public String login(@Valid @ModelAttribute LoginForm form, BindingResult bindingResult, HttpServletResponse response){
+
+        // 에러가 잇으면 돌려보내기
         if (bindingResult.hasErrors()){
             return "login/loginForm";
         }
@@ -49,6 +51,7 @@ public class LoginController {
         Member loginMember = loginService.login(form.getLoginId(), form.getPassword());
 
         if (loginMember == null){
+            // reject -> 글로벌 오류
             bindingResult.reject("loginFail", "아이디 또는 비밀번호가 맞지 않습니다");
             return "login/loginForm";
         }

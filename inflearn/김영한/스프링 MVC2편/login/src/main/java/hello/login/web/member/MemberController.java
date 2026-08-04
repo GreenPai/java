@@ -22,6 +22,7 @@ import javax.validation.Valid;
 @RequiredArgsConstructor
 @RequestMapping("/members")
 public class MemberController {
+
     private final MemberRepository memberRepository;
 
     @GetMapping("/add")
