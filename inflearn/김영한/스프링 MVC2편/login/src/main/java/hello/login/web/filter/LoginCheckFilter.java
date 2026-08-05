@@ -12,9 +12,13 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.regex.Pattern;
 
+/**
+ * 로그인 체크 필터 - 순서2
+ */
 @Slf4j
 public class LoginCheckFilter implements Filter {
 
+    // 허용 범위
     private static final String[] whitelist = {"/", "/members/add", "/login", "logout", "/css/*"};
 
     @Override
@@ -27,6 +31,7 @@ public class LoginCheckFilter implements Filter {
 
         try {
             log.info("인증 체크 필터 시작{}",requestURI);
+
             if (isLoginCheckPath(requestURI)){
                 log.info("인증 체크 로직 실행{}", requestURI);
                 HttpSession session = httpRequest.getSession(false);
@@ -37,7 +42,6 @@ public class LoginCheckFilter implements Filter {
                     return;
                 }
             }
-
             chain.doFilter(request, response);
         }catch (Exception e){
             throw e; //예외 로깅 가능하지만, 톰캣까지 예외를 보내줘야됨.
