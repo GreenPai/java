@@ -12,6 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.io.IOException;
 import java.util.Collection;
 
+/**
+ * V1~V3 중 V1
+ * 파일 정보
+ */
 @Slf4j
 @Controller
 @RequestMapping("/servlet/v1")

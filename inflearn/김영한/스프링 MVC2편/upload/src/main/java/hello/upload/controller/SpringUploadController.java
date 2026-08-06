@@ -20,16 +20,27 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Collection;
 
+/**
+ * V1~V3 중 V3 
+ * 스프링에서 지원하는 파일 업로드
+ */
 @Slf4j
 @Controller
 @RequestMapping("/spring")
 public class SpringUploadController {
+
     @Value("${file.dir}")
     private String fileDir;
+
     @GetMapping("/upload")
     public String newFile() {
         return "upload-form";
     }
+
+    /**
+     * 디렉토리 없을 때 오류가 발생할 수 있음.
+     * V2 컨트롤러에 디렉토리 생성하는 코드가 존재.
+     */
     @PostMapping("/upload")
     public String saveFile(@RequestParam("itemName") String itemName,
                            @RequestParam("file") MultipartFile file, HttpServletRequest request) throws IOException {
@@ -39,7 +50,7 @@ public class SpringUploadController {
         if (!file.isEmpty()) {
             String fullPath = fileDir + file.getOriginalFilename();
             log.info("파일 저장 fullPath={}", fullPath);
-            file.transferTo(new File(fullPath));
+            file.transferTo(new File(fullPath)); // 파일저장
         }
         return "upload-form";
     }

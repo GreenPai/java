@@ -17,22 +17,32 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Collection;
 
+/**
+ * V1~V3 중 V2
+ * 파일 업로드
+ */
 @Slf4j
 @Controller
 @RequestMapping("/servlet/v2")
 public class ServletUploadControllerV2 {
+    
+    // application.properties에 주소가 있다.
     @Value("${file.dir}")
     private String fileDir;
+    
+    // 업로드 페이지 이동
     @GetMapping("/upload")
     public String newFile() {
         return "upload-form";
     }
+    
+    // 업로드 실행 로직
     @PostMapping("/upload")
-    public String saveFileV1(HttpServletRequest request) throws
-            ServletException, IOException {
+    public String saveFileV1(HttpServletRequest request) throws ServletException, IOException {
         log.info("request={}", request);
         String itemName = request.getParameter("itemName");
         log.info("itemName={}", itemName);
+        
         Collection<Part> parts = request.getParts();
         log.info("parts={}", parts);
         for (Part part : parts) {
@@ -43,15 +53,18 @@ public class ServletUploadControllerV2 {
                 log.info("header {}: {}", headerName,
                         part.getHeader(headerName));
             }
+            
             //편의 메서드
             //content-disposition; filename
             log.info("submittedFileName={}", part.getSubmittedFileName());
             log.info("size={}", part.getSize()); //part body size
+            
             //데이터 읽기
             InputStream inputStream = part.getInputStream();
             String body = StreamUtils.copyToString(inputStream,
                     StandardCharsets.UTF_8);
             log.info("body={}", body);
+            
             //파일에 저장하기
             if (StringUtils.hasText(part.getSubmittedFileName())) {
                 String fullPath = fileDir + part.getSubmittedFileName();
