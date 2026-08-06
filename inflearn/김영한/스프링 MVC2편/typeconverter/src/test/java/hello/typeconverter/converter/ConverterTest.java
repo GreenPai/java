@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
 
+/**
+ * 컨버터 테스트
+ */
 public class ConverterTest {
 
     @Test

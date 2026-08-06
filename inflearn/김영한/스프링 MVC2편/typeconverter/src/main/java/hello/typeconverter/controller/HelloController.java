@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * 스프링 타입 컨버터
+ */
 @RestController
 public class HelloController {
 

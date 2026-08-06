@@ -3,6 +3,9 @@ package hello.typeconverter.type;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
+/**
+ * ip(Stribng), port(int)
+ */
 @Getter
 @EqualsAndHashCode
 public class IpPort {
