@@ -11,6 +11,7 @@ import java.io.IOException;
 @Controller
 public class ServletExController {
 
+    // 500 에러
     @GetMapping("/error-ex")
     public void errorEx(){
         throw new RuntimeException("예외발생!");
