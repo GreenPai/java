@@ -9,6 +9,7 @@ import java.util.NoSuchElementException;
 
 /**
  * JDBC - DriverManager 사용
+ * JDBC 회원 조회, 생성, 변경, 삭제
  */
 @Slf4j
 public class MemberRepositoryV0 {

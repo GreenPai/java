@@ -14,6 +14,9 @@ import static hello.jdbc.connection.ConnectionConst.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+/**
+ * 커넥션 풀 테스트
+ */
 @Slf4j
 class MemberRepositoryV1Test {
 

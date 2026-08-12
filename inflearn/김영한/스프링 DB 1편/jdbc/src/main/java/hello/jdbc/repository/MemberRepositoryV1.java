@@ -118,6 +118,10 @@ public class MemberRepositoryV1 {
 
     }
 
+    /**
+     * 닫아주는 부분.  
+     * JdbcUtils 사용
+     */
     private void close(Connection con, Statement stmt, ResultSet rs) {
         JdbcUtils.closeResultSet(rs);
         JdbcUtils.closeStatement(stmt);

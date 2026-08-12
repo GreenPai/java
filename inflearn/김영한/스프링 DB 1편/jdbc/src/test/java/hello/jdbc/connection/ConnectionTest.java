@@ -12,9 +12,15 @@ import java.sql.SQLException;
 
 import static hello.jdbc.connection.ConnectionConst.*;
 
+/**
+ * 커넥션 풀 테스트
+ */
 @Slf4j
 public class ConnectionTest {
 
+    /**
+     * 자바로의 JDBC
+     */
     @Test
     void driverManager() throws SQLException {
         Connection con1 = DriverManager.getConnection(URL, USERNAME, PASSWORD);
@@ -30,6 +36,9 @@ public class ConnectionTest {
         useDataSource(dataSource);
     }
 
+    /**
+     * 커넥션 풀 사용
+     */
     @Test
     void dataSourceConnectionPool() throws SQLException, InterruptedException {
         //커넥션 풀링
@@ -41,6 +50,8 @@ public class ConnectionTest {
         dataSource.setPoolName("MyPool");
 
         useDataSource(dataSource);
+
+        // 풀에 추가하는 것을 보기 위해서 대기시간 1초 설정
         Thread.sleep(1000);
     }
 
