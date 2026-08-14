@@ -12,6 +12,11 @@ import java.sql.SQLException;
 
 /**
  * 트랜잭션 - 파라미터 연동, 풀을 고려한 종료
+ * 트랜잭션 - 적용 2
+ * con.setAutoCommit(false);//트랜잭션 시작
+ * con.setAutoCommit(true); //커넥션 풀 고려
+ * 트랜잭션 종료 시에 커넥션을 풀에 다시 돌려놓을때 false로 돌아가게 되면
+ * 다음 로직도 false로 적용함으로서 커밋을 해줘야된다.
  */
 @Slf4j
 @RequiredArgsConstructor
@@ -36,6 +41,9 @@ public class MemberServiceV2 {
 
     }
 
+    /**
+     * 비즈니스 로직
+     */
     private void bizLogic(Connection con, String fromId, String toId, int money) throws SQLException {
         Member fromMember = memberRepository.findById(con, fromId);
         Member toMember = memberRepository.findById(con, toId);

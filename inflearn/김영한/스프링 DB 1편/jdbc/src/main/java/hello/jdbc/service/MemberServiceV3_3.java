@@ -9,6 +9,8 @@ import java.sql.SQLException;
 
 /**
  * 트랜잭션 - @Transactional AOP
+ * 트랜잭션 로직을 @Transactional를 사용함으로서
+ * 서비스 로직과 트랜잭션 부분에 대한 가독성을 늘렸다.
  */
 @Slf4j
 public class MemberServiceV3_3 {

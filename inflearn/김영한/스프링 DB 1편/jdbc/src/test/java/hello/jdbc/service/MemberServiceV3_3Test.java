@@ -70,6 +70,9 @@ class MemberServiceV3_3Test {
         memberRepository.delete(MEMBER_EX);
     }
 
+    /**
+     * 프록시 테스트
+     */
     @Test
     void AopCheck() {
         log.info("memberService class={}", memberService.getClass());

@@ -13,6 +13,8 @@ import java.sql.SQLException;
 
 /**
  * 트랜잭션 - 트랜잭션 매니저
+ *
+ * 아직도 트랜잭션 로직과 비즈니스 로직이 함께 포함되어 있다.
  */
 @Slf4j
 @RequiredArgsConstructor
@@ -25,6 +27,10 @@ public class MemberServiceV3_1 {
         //트랜잭션 시작
         TransactionStatus status = transactionManager.getTransaction(new DefaultTransactionDefinition());
 
+        /**
+         * 성공 시 커밋할 때 커넥션을 닫아줌.
+         * 오류 시 커넥션을 닫아줌.
+         */
         try {
             //비즈니스 로직
             bizLogic(fromId, toId, money);

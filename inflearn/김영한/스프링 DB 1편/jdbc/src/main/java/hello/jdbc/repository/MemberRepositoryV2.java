@@ -10,6 +10,8 @@ import java.util.NoSuchElementException;
 
 /**
  * JDBC - ConnectionParam
+ * 트랜잭션 - 적용 2
+ * 매개변수에 커넥션을 받는 경우
  */
 @Slf4j
 public class MemberRepositoryV2 {
