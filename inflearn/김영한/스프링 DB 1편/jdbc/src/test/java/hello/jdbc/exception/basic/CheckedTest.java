@@ -5,6 +5,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
 
+/**
+ * 체크 예외 테스트
+ */
 @Slf4j
 public class CheckedTest {
 

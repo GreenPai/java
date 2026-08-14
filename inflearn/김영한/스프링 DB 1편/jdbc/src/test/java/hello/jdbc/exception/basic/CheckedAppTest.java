@@ -8,6 +8,9 @@ import java.sql.SQLException;
 
 import static org.assertj.core.api.Assertions.*;
 
+/**
+ * 체크 예외 테스트
+ */
 public class CheckedAppTest {
 
     @Test
