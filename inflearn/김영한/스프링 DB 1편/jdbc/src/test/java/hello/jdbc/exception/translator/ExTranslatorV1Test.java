@@ -19,6 +19,15 @@ import java.util.Random;
 
 import static hello.jdbc.connection.ConnectionConst.*;
 
+/**
+ * 에러가 가진 코드를 이용해서
+ * 에러를 배치하여 오류를 전달
+ *
+ * 데이터베이스마다 오류 코드가 다르기 때문에
+ * 데이터베이스를 변경할 때 마다 에러 코드를 수정해줘야된다.
+ * H2 : 23505
+ * MySQL : 1062
+ */
 @Slf4j
 public class ExTranslatorV1Test {
 
@@ -43,6 +52,9 @@ public class ExTranslatorV1Test {
     static class Service {
         private final Repository repository;
 
+        /**
+         * 생성 과정에서 오류를 찾아서 수행하도록 구현
+         */
         public void create(String memberId) {
             try {
                 repository.save(new Member(memberId, 0));
@@ -81,7 +93,7 @@ public class ExTranslatorV1Test {
                 pstmt.executeUpdate();
                 return member;
             } catch (SQLException e) {
-                //h2 db
+                //h2 db 오류 일 때
                 if (e.getErrorCode() == 23505) {
                     throw new MyDuplicateKeyException(e);
                 }

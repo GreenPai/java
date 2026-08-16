@@ -19,6 +19,9 @@ import java.sql.SQLException;
 import static hello.jdbc.connection.ConnectionConst.*;
 import static org.assertj.core.api.Assertions.*;
 
+/**
+ * 스프릥 예외 추상화 이해
+ */
 @Slf4j
 public class SpringExceptionTranslatorTest {
 

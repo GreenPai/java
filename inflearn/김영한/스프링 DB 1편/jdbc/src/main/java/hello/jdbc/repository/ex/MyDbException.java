@@ -1,5 +1,8 @@
 package hello.jdbc.repository.ex;
 
+/**
+ * RuntimeException 를 받았기에 언체크 에러
+ */
 public class MyDbException extends RuntimeException {
 
     public MyDbException() {

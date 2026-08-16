@@ -1,5 +1,8 @@
 package hello.jdbc.repository.ex;
 
+/**
+ * 원하는 에러 코드를 활용하기 위한 객체
+ */
 public class MyDuplicateKeyException extends MyDbException {
 
     public MyDuplicateKeyException() {
