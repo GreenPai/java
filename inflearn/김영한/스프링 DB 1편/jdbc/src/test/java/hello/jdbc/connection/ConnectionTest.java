@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import static hello.jdbc.connection.ConnectionConst.*;
 
 /**
- * 커넥션 풀 테스트
+ * 커넥션 풀 테스트 - 
  */
 @Slf4j
 public class ConnectionTest {
