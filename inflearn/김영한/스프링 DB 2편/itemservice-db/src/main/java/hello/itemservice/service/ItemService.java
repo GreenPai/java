@@ -7,6 +7,9 @@ import hello.itemservice.repository.ItemUpdateDto;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * 서비스에 인터페이스를 도입하는 경우는 많지않다.
+ */
 public interface ItemService {
 
     Item save(Item item);

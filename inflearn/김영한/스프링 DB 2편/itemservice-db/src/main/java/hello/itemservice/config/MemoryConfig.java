@@ -7,6 +7,9 @@ import hello.itemservice.service.ItemServiceV1;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * 빈을 수동으로 등록했다.
+ */
 @Configuration
 public class MemoryConfig {
 
