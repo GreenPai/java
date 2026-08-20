@@ -4,20 +4,53 @@ import hello.itemservice.repository.ItemRepository;
 import hello.itemservice.repository.ItemSearchCond;
 import hello.itemservice.repository.ItemUpdateDto;
 import hello.itemservice.repository.memory.MemoryItemRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Commit;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.support.DefaultTransactionDefinition;
 
+import java.lang.management.PlatformLoggingMXBean;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.InstanceOfAssertFactories.stream;
 
+
+/**
+ * 1. 자바로 직접 트랜잭션 구현
+ * 2. 애노테이션을 이용한 트랜잭션
+ *      - 트랜잭션 애노테이션 : 전체 적용
+ * 3. 사용하고자 하는 테스트에 애노테이션 및 커밋 적용
+ *
+ * 현재 h2 임베디드 모드를 사용하여 구현을 했기 때문에
+ * Item 테이블이 없다. 테이블 정보를 test/resouces/schema.sql에 넣어준다.
+ */
+
+@Slf4j
+@Transactional
 @SpringBootTest
 class ItemRepositoryTest {
 
     @Autowired
     ItemRepository itemRepository;
+/*
+    // 트랜잭션 코드
+    @Autowired
+    PlatformTransactionManager transactionManager;
+    TransactionStatus status;
+
+    @BeforeEach
+    void beforeEach(){
+        status = transactionManager.getTransaction(new DefaultTransactionDefinition());
+    }
+ */
 
     @AfterEach
     void afterEach() {
@@ -25,8 +58,13 @@ class ItemRepositoryTest {
         if (itemRepository instanceof MemoryItemRepository) {
             ((MemoryItemRepository) itemRepository).clearStore();
         }
+
+        //트랜잭션 롤백
+//        transactionManager.rollback(status);
     }
 
+    // @Commit
+    // @Transactional
     @Test
     void save() {
         //given
@@ -38,6 +76,8 @@ class ItemRepositoryTest {
         //then
         Item findItem = itemRepository.findById(item.getId()).get();
         assertThat(findItem).isEqualTo(savedItem);
+
+        log.info("레포지토리 : {} " + String.valueOf(itemRepository.getClass()));
     }
 
     @Test
