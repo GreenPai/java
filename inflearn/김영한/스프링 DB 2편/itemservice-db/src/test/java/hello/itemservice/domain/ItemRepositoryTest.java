@@ -80,6 +80,13 @@ class ItemRepositoryTest {
         log.info("레포지토리 : {} " + String.valueOf(itemRepository.getClass()));
     }
 
+
+    /**
+     * 강의제외 실험:
+     * update문은 기존에 객체가 달라 졌을 때 update 를 한다.
+     * 만약 값을 바꿨다가 돌렸을 때에도 update문을 할까? -> 하지 않는다.
+     */
+    @Commit
     @Test
     void updateItem() {
         //given
@@ -89,7 +96,9 @@ class ItemRepositoryTest {
 
         //when
         ItemUpdateDto updateParam = new ItemUpdateDto("item2", 20000, 30);
+        // ItemUpdateDto updateParam2 = new ItemUpdateDto("item1", 10000, 10);
         itemRepository.update(itemId, updateParam);
+        // itemRepository.update(itemId, updateParam2);
 
         //then
         Item findItem = itemRepository.findById(itemId).get();
