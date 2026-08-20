@@ -11,7 +11,10 @@ import org.springframework.context.annotation.Profile;
 /**
  * scanBasePackages = "hello.itemservice.web -> 컨트롤러만 스캔 영역에 넣는다.
  */
-@Import(MemoryConfig.class)
+//@Import(MemoryConfig.class)
+// @Import(JdbcTemplateV1Config.class)
+//@Import(JdbcTemplateV2Config.class)
+@Import(JdbcTemplateV3Config.class)
 @SpringBootApplication(scanBasePackages = "hello.itemservice.web")
 public class ItemServiceApplication {
 
