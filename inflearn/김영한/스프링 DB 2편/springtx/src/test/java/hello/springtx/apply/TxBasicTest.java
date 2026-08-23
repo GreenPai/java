@@ -13,6 +13,9 @@ import org.springframework.transaction.support.TransactionSynchronizationManager
 
 import static org.assertj.core.api.Assertions.*;
 
+/**
+ * 트랜잭션 적용 확인
+ */
 @Slf4j
 @SpringBootTest
 public class TxBasicTest {
@@ -24,13 +27,16 @@ public class TxBasicTest {
         log.info("aop class={}", basicService.getClass());
         assertThat(AopUtils.isAopProxy(basicService)).isTrue();
     }
-
+    
     @Test
     void txTest() {
-        basicService.tx();
-        basicService.nonTx();
+        basicService.tx(); //true
+        basicService.nonTx(); //false
     }
 
+    /**
+     * 빈 등록
+     */
     @TestConfiguration
     static class TxApplyBasicConfig {
         @Bean
@@ -46,13 +52,13 @@ public class TxBasicTest {
         public void tx() {
             log.info("call tx");
             boolean txActive = TransactionSynchronizationManager.isActualTransactionActive();
-            log.info("tx active={}", txActive);
+            log.info("tx active={}", txActive); //true
         }
 
         public void nonTx() {
             log.info("call nonTx");
             boolean txActive = TransactionSynchronizationManager.isActualTransactionActive();
-            log.info("tx active={}", txActive);
+            log.info("tx active={}", txActive);  //false
         }
     }
 }
