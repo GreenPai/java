@@ -86,7 +86,7 @@ class ItemRepositoryTest {
      * update문은 기존에 객체가 달라 졌을 때 update 를 한다.
      * 만약 값을 바꿨다가 돌렸을 때에도 update문을 할까? -> 하지 않는다.
      */
-    
+
     @Test
     void updateItem() {
         //given

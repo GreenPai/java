@@ -9,6 +9,17 @@ import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * 롤백 테스트
+ * 런타임 예외 발생: 롤백
+ * 체크 예외 발생: 커밋
+ * 체크 예외 rollbackFor 지정: 롤백
+ *
+ * 체크 예외 : 비즈니스 의미가 있을 때
+ * 런타임 예외 : 복구 불가능한 예외
+ *
+ * 비즈니스 예외 : 계좌 잔고가 부족할 때, 발생하는 에러
+ */
 @SpringBootTest
 public class RollbackTest {
 

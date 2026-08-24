@@ -9,6 +9,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 
+/**
+ * 트랜잭션 적용 위치
+ * 1. 메서드
+ * 2. 클래스
+ * 3. 인터페이스 메서드
+ * 4. 인터페이스
+ */
 @SpringBootTest
 public class TxLevelTest {
 
@@ -16,8 +23,8 @@ public class TxLevelTest {
 
     @Test
     void orderTest() {
-        service.write();
-        service.read();
+        service.write(); // readOnly : false
+        service.read();  // readOnly : true
     }
 
     @TestConfiguration
@@ -29,10 +36,10 @@ public class TxLevelTest {
     }
 
     @Slf4j
-    @Transactional(readOnly = true)
+    @Transactional(readOnly = true) // 읽기 전용 트랜잭션 실행
     static class LevelService {
 
-        @Transactional(readOnly = false)
+        @Transactional(readOnly = false) // Transaction은 false가 기본값. 생략해도 된다.
         public void write() {
             log.info("call write");
             printTxInfo();

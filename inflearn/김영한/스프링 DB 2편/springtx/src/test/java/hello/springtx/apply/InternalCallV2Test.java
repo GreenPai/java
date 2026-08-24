@@ -10,6 +10,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 
+/**
+ * V1에서 생긴 트랜잭션 미적용 문제를
+ * 서비스를 2가지로 나누어 해결
+ */
 @Slf4j
 @SpringBootTest
 public class InternalCallV2Test {

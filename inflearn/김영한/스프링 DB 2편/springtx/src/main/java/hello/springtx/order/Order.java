@@ -20,4 +20,13 @@ public class Order {
 
     private String username; //정상, 예외, 잔고부족
     private String payStatus;//대기, 완료
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", payStatus='" + payStatus + '\'' +
+                '}';
+    }
 }

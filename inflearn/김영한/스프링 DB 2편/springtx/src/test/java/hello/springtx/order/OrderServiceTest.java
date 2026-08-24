@@ -11,6 +11,9 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * 예와와 트랜잭션 커밋, 롤백 활용
+ */
 @Slf4j
 @SpringBootTest
 class OrderServiceTest {
@@ -30,6 +33,8 @@ class OrderServiceTest {
         //then
         Order findOrder = orderRepository.findById(order.getId()).get();
         assertThat(findOrder.getPayStatus()).isEqualTo("완료");
+
+        log.info("Order 객체 : {}", order);
     }
 
     @Test
@@ -37,6 +42,7 @@ class OrderServiceTest {
         //given
         Order order = new Order();
         order.setUsername("예외");
+        log.info("Order 객체 : {}", order);
 
         //when
         Assertions.assertThatThrownBy(() -> orderService.order(order))
@@ -44,6 +50,7 @@ class OrderServiceTest {
 
         //then
         Optional<Order> orderOptional = orderRepository.findById(order.getId());
+        log.info(String.valueOf(orderOptional));
         assertThat(orderOptional.isEmpty()).isTrue();
     }
 

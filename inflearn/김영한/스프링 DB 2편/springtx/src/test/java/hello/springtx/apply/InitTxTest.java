@@ -13,6 +13,10 @@ import org.springframework.transaction.support.TransactionSynchronizationManager
 
 import javax.annotation.PostConstruct;
 
+/**
+ * 스프링 트랜잭션 : 초기화 시점
+ * 초기화 시점에는 트랜잭션이 안된다.
+ */
 @SpringBootTest
 public class InitTxTest {
 
@@ -21,6 +25,8 @@ public class InitTxTest {
     @Test
     void go() {
         //초기화 코드는 스프링이 초기화 시점에 호출한다.
+        //만약 직접 호출한다면 트랜잭션이 되긴한다.
+        //hello.initV1();
     }
 
     @TestConfiguration
@@ -34,6 +40,7 @@ public class InitTxTest {
     @Slf4j
     static class Hello {
 
+        //초기화 시점에는 트랜잭션 X
         @PostConstruct
         @Transactional
         public void initV1() {
@@ -41,6 +48,9 @@ public class InitTxTest {
             log.info("Hello init @PostConstruct tx active={}", isActive);
         }
 
+        /**
+         * 스프링 컨테이너가 다 준비 되었을 때 호출
+         */
         @EventListener(ApplicationReadyEvent.class)
         @Transactional
         public void initV2() {
