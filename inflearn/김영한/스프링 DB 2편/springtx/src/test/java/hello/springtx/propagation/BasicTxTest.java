@@ -18,6 +18,9 @@ import javax.sql.DataSource;
 
 import static org.assertj.core.api.Assertions.*;
 
+/**
+ * 스프링 트랜잭션 전파1 - 기본
+ */
 @Slf4j
 @SpringBootTest
 public class BasicTxTest {
@@ -79,6 +82,11 @@ public class BasicTxTest {
         txManager.rollback(tx2);
     }
 
+    /**
+     * 트랜잭션
+     * isNewTransaction : 새 트랜잭션인가?
+     * outer : true , inner : false
+     */
     @Test
     void inner_commit() {
         log.info("외부 트랜잭션 시작");
@@ -96,13 +104,18 @@ public class BasicTxTest {
 
     }
 
+    /**
+     * 외부 롤백
+     */
     @Test
     void outer_rollback() {
         log.info("외부 트랜잭션 시작");
         TransactionStatus outer = txManager.getTransaction(new DefaultTransactionAttribute());
+        log.info("outer.isNewTransaction()={}", outer.isNewTransaction()); //true
 
         log.info("내부 트랜잭션 시작");
         TransactionStatus inner = txManager.getTransaction(new DefaultTransactionAttribute());
+        log.info("inner.isNewTransaction()={}", inner.isNewTransaction()); //false
         log.info("내부 트랜잭션 커밋");
         txManager.commit(inner);
 
@@ -110,12 +123,15 @@ public class BasicTxTest {
         txManager.rollback(outer);
     }
 
+    /**
+     * 내부 롤백
+     */
     @Test
     void inner_rollback() {
         log.info("외부 트랜잭션 시작");
         TransactionStatus outer = txManager.getTransaction(new DefaultTransactionAttribute());
 
-        log.info("내부 트랜잭션 시작");
+        log.info("내부 트랜잭션 시작"); //Participating in existing transaction -> 현재 존재하는 트랜잭션에 참여
         TransactionStatus inner = txManager.getTransaction(new DefaultTransactionAttribute());
         log.info("내부 트랜잭션 롤백");
         txManager.rollback(inner); //rollback-only 표시
@@ -125,6 +141,15 @@ public class BasicTxTest {
                 .isInstanceOf(UnexpectedRollbackException.class);
     }
 
+    /**
+     * REQUIRES_NEW
+     * 물리 트랜잭션 여러개 만들기
+     * 새 트랜잭션을 사용할 때 Suspending current transaction를 사용함으로서
+     * 기존의 트랜잭션을 미뤄두고, 새 트랜잭션이 끝났을 때 다시 실행
+     *
+     * 결국 커넥션 풀의 커넥션을 2개를 사용하는 것이기 때문에 문제가 생길 수 있기에
+     * 주의해야 된다.
+     */
     @Test
     void inner_rollback_requires_new() {
         log.info("외부 트랜잭션 시작");
