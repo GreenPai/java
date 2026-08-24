@@ -7,6 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+/**
+ * 데이터 베이스에 저장되는 로그
+ */
 @Entity
 @Getter @Setter
 public class Log {

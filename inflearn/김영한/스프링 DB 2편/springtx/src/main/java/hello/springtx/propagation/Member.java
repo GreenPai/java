@@ -7,6 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+/**
+ * 전파를 위한 클래스
+ */
 @Entity
 @Getter @Setter
 public class Member {

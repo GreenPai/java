@@ -13,6 +13,10 @@ public class MemberService {
     private final MemberRepository memberRepository;
     private final LogRepository logRepository;
 
+    /**
+     * 로그 때문에 오류가 생길 수 있다.
+     * 이런 경우가 싫기에 V2를 만든다.
+     */
     @Transactional
     public void joinV1(String username) {
         Member member = new Member(username);
@@ -27,6 +31,10 @@ public class MemberService {
         log.info("== logRepository 호출 종료 ==");
     }
 
+
+    /**
+     * 로그에 오류를 처리하는 부분을 추가.
+     */
     @Transactional
     public void joinV2(String username) {
         Member member = new Member(username);

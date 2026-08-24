@@ -9,6 +9,9 @@ import org.springframework.transaction.UnexpectedRollbackException;
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * 트랜잭션 전파 테스트
+ */
 @Slf4j
 @SpringBootTest
 class MemberServiceTest {
@@ -62,6 +65,8 @@ class MemberServiceTest {
      * memberService    @Transactional:ON
      * memberRepository @Transactional:OFF
      * logRepository    @Transactional:OFF
+     * 
+     * 서비스에만 트랜잭션 적용
      */
     @Test
     void singleTx() {
@@ -117,6 +122,12 @@ class MemberServiceTest {
      * memberService    @Transactional:ON
      * memberRepository @Transactional:ON
      * logRepository    @Transactional:ON Exception
+     *
+     * 런타임 에러를 try-catch로 예외를 잡으면 트랜잭션이 걸리지 않을까?
+     * - 롤백된다.
+     * 에러를 잡았기 때문에 정상 흐름이기에 커밋을 실행한다.
+     * 하지만 로그 트랜잭션에서 rollbackOnly를 등록했기 때문에
+     * 예상치 못한 롤백 오류가 발생한다.
      */
     @Test
     void recoverException_fail() {
@@ -136,6 +147,8 @@ class MemberServiceTest {
      * memberService    @Transactional:ON
      * memberRepository @Transactional:ON
      * logRepository    @Transactional:ON(REQUIRES_NEW) Exception
+     * 
+     * Propagation.REQUIRES_NEW를 사용함으로서 트랜잭션 분리
      */
     @Test
     void recoverException_success() {
