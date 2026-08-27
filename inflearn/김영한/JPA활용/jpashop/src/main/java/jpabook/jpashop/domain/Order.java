@@ -8,6 +8,9 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 주문
+ */
 @Entity
 @Table(name = "orders")
 @Getter @Setter
@@ -17,13 +20,17 @@ public class Order {
     @Column(name = "order_id")
     private Long id;
 
+    // 주문과 회원은 대대일
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
     private Member member; //주문 회원
 
+    // 주문과 아이템은 일대다
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> orderItems = new ArrayList<>();
 
+    // 하나의 주문은 하나의 배달 정보만
+    // 외례키는 많이 참조하는 곳에서 사용.
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "delivery_id")
     private Delivery delivery; //배송정보

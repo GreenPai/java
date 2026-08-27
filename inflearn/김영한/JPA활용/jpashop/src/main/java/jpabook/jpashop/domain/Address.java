@@ -4,6 +4,7 @@ import lombok.Getter;
 
 import jakarta.persistence.Embeddable;
 
+
 @Embeddable
 @Getter
 public class Address {
@@ -12,6 +13,7 @@ public class Address {
     private String street;
     private String zipcode;
 
+    // public 말고 protected를 한 이유. 외부에서 잘 사용 안하기 위해서 
     protected Address() {
     }
 

@@ -7,6 +7,9 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 회원
+ */
 @Entity
 @Getter @Setter
 public class Member {
@@ -21,6 +24,7 @@ public class Member {
     @Embedded
     private Address address;
 
+    //mappedBy : 읽기전용
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
 

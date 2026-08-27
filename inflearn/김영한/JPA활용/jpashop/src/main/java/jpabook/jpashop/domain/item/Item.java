@@ -9,8 +9,11 @@ import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Item 추상 클래스
+ */
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE) // 싱글 테이블 전략
 @DiscriminatorColumn(name = "dtype")
 @Getter @Setter
 public abstract class Item {

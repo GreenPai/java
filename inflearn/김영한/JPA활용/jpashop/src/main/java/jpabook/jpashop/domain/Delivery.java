@@ -5,6 +5,9 @@ import lombok.Setter;
 
 import jakarta.persistence.*;
 
+/**
+ * 배송
+ */
 @Entity
 @Getter @Setter
 public class Delivery {

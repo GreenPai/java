@@ -9,6 +9,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * 회원 기능 테스트
+ */
 @SpringBootTest
 @Transactional
 public class MemberServiceTest {
