@@ -28,6 +28,10 @@ public class OrderRepository {
         return em.find(Order.class, id);
     }
 
+    /**
+     * 동적 쿼리 구현 1번째 방법
+     * JPQL 방식. 잘 안함 
+     */
     public List<Order> findAllByString(OrderSearch orderSearch) {
         //language=JPAQL
         String jpql = "select o From Order o join o.member m";
@@ -67,6 +71,11 @@ public class OrderRepository {
         return query.getResultList();
     }
 
+    /**
+     *  JPA에서 제공하는 JPQL 구현 방법
+     *  이것도 권장 X. 실무에서 잘 안씀
+     *  유지보수성이 너무 안좋다.
+     */
     public List<Order> findAllByCriteria(OrderSearch orderSearch) {
 
         CriteriaBuilder cb = em.getCriteriaBuilder();
