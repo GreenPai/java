@@ -4,34 +4,43 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-
-/**
- * Entity 속성:
- * @Entity가 붙은 클래스는 JPA가 관리한다. 
- * JPA를 사용해서 테이블과 매핑할 클래스는 엔티티 필수
- */
 
 @Entity
-public class Member{
+// @Table(name = "UseRs")
+public class Member {
 
-    @Id @GeneratedValue
-    @Column(name = "MEMBER_ID")
+    public Member(){
+
+    }
+
+    @Id
     private Long id;
 
-    @Column(name = "USERNAME")
+    @Column(name = "name")
     private String username;
 
-    // 기간 Period
-    @Embedded
-    private Period workPeriod;
+    private Integer age;
 
-    // 주소
-    @Embedded
-    private Address address;
+    /**
+     * @Enumerated
+     * EnumType.STRING  : enum 이름을 데이터베이스 저장
+     * EnumType.ORDINAL : enum 순서를 데이터베이스 저장
+     */
+    @Enumerated(EnumType.STRING)
+    private RoleType roleType;
 
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createDate;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lastModifiedDate;
+
+    private LocalDate testLocalDate;
+    private LocalDateTime testLocalDateTime;
+
+    @Lob
+    private String description;
 
     public Long getId() {
         return id;
@@ -49,19 +58,43 @@ public class Member{
         this.username = username;
     }
 
-    public Period getWorkPeriod() {
-        return workPeriod;
+    public Integer getAge() {
+        return age;
     }
 
-    public void setWorkPeriod(Period workPeriod) {
-        this.workPeriod = workPeriod;
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
-    public Address getAddress() {
-        return address;
+    public RoleType getRoleType() {
+        return roleType;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setRoleType(RoleType roleType) {
+        this.roleType = roleType;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
+
+    public Date getLastModifiedDate() {
+        return lastModifiedDate;
+    }
+
+    public void setLastModifiedDate(Date lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
