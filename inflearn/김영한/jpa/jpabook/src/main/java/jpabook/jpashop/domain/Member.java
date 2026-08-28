@@ -8,6 +8,7 @@ import java.util.List;
 @Entity
 public class Member extends BasicEntity {
 
+    // @GeneratedValue 기본이 Auto
     @Id @GeneratedValue
     @Column (name = "MEMBER_ID")
     private Long id;
@@ -17,6 +18,9 @@ public class Member extends BasicEntity {
     @Embedded
     private Address address;
 
+    /**
+     * mappedBy 연관관계 
+     */
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
 
