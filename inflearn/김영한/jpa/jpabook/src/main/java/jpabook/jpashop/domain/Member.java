@@ -19,7 +19,7 @@ public class Member extends BasicEntity {
     private Address address;
 
     /**
-     * mappedBy 연관관계  
+     * mappedBy 연관관계
      */
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
