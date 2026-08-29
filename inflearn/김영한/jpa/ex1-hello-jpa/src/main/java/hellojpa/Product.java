@@ -1,4 +1,4 @@
-package jpabook.jpashop.domain;
+package hellojpa;
 
 import jakarta.persistence.*;
 
@@ -6,23 +6,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Member extends BasicEntity {
+public class Product {
 
-    // @GeneratedValue 기본이 Auto
     @Id @GeneratedValue
-    @Column (name = "MEMBER_ID")
     private Long id;
-    private String name;
 
-    // 값 타입
-    @Embedded
-    private Address address;
+    private String  name;
 
-    /**
-     * mappedBy 연관관계  
-     */
-    @OneToMany(mappedBy = "member")
-    private List<Order> orders = new ArrayList<>();
+    @OneToMany(mappedBy = "product")
+    private List<MemberProduct> memberProducts = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -39,7 +31,4 @@ public class Member extends BasicEntity {
     public void setName(String name) {
         this.name = name;
     }
-
-
-
 }
