@@ -13,7 +13,6 @@ public class Delivery extends BasicEntity{
     // 값 타입
     @Embedded
     private Address address;
-
     private DeliveryStatus status;
 
     @OneToOne(mappedBy = "delivery", fetch = LAZY)
