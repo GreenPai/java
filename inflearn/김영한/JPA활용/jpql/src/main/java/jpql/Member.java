@@ -4,6 +4,10 @@ import jakarta.persistence.*;
 
 import java.util.List;
 
+@NamedQuery(
+        name  = "Member.findByUsername",
+        query = "select m from Member m where m.username = :username"
+)
 @Entity
 public class Member {
 

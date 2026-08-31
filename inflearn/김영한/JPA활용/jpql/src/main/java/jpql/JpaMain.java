@@ -23,19 +23,28 @@ public class JpaMain {
             em.persist(team);
 
             Member member = new Member();
-            member.setUsername("member");
+            member.setUsername("회원1");
             member.setAge(10);
             member.setType(MemberType.ADMIN);
-
             member.setTeam(team);
 
 
-            String query = "select m.username, 'HELLO', true " +
-                    "from Member m where m.type = jpql.MemberType.ADMIN";
+            Member member2 = new Member();
+            member2.setUsername("회원1");
+            member2.setAge(20);
+            member2.setType(MemberType.ADMIN);
+            member2.setTeam(team);
 
-            List<Member> result = em.createQuery(query, Member.class)
-                    .getResultList();
-            System.out.println("memberDTO.getAge() = " + result);
+            em.persist(member2);
+            em.persist(member);
+
+            em.flush();
+            em.clear();
+
+            int i = em.createQuery("update Member m set m.age = 20")
+                    .executeUpdate();
+
+            System.out.println(i);
 
 
 
