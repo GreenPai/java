@@ -18,33 +18,31 @@ public class JpaMain {
 
         try{
 
-            Team team = new Team();
-            team.setUsername("member1");
-            em.persist(team);
-
             Member member = new Member();
             member.setUsername("회원1");
             member.setAge(10);
-            member.setType(MemberType.ADMIN);
-            member.setTeam(team);
-
 
             Member member2 = new Member();
-            member2.setUsername("회원1");
-            member2.setAge(20);
-            member2.setType(MemberType.ADMIN);
-            member2.setTeam(team);
+            member2.setUsername("회원2");
+            member2.setAge(10);
 
-            em.persist(member2);
+
+            Member member3 = new Member();
+            member3.setUsername("회원3");
+            member3.setAge(10);
+
             em.persist(member);
-
-            em.flush();
-            em.clear();
+            em.persist(member2);
+            em.persist(member3);
 
             int i = em.createQuery("update Member m set m.age = 20")
                     .executeUpdate();
 
-            System.out.println(i);
+            em.clear();
+
+            Member newMember  = em.find(Member.class, member.getId());
+            System.out.println(newMember.getAge());
+
 
 
 
