@@ -26,7 +26,7 @@ public class Order {
     // 주문과 회원은 대대일
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
-    private Member member; //주문 회원
+    private Member member ; //주문 회원
 
     // 주문과 아이템은 일대다
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
