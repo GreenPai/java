@@ -54,4 +54,43 @@ public class OrderItem {
         return getOrderPrice() * getCount();
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public Item getItem() {
+        return item;
+    }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public int getOrderPrice() {
+        return orderPrice;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
+    }
+
+    public void setOrderPrice(int orderPrice) {
+        this.orderPrice = orderPrice;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
 }
