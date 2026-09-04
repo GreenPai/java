@@ -2,6 +2,10 @@ package jpabook.jpashop.api;
 
 import jpabook.jpashop.domain.*;
 import jpabook.jpashop.repository.OrderRepository;
+import jpabook.jpashop.repository.order.query.OrderFlatDto;
+import jpabook.jpashop.repository.order.query.OrderItemQueryDto;
+import jpabook.jpashop.repository.order.query.OrderQueryDto;
+import jpabook.jpashop.repository.order.query.OrderQueryRepository;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,12 +19,15 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.*;
+
 @Slf4j
 @RestController
 @RequiredArgsConstructor
 public class OrderApiController {
 
     private final OrderRepository orderRepository;
+    private final OrderQueryRepository orderQueryRepository;
 
     /**
      * 데이터 2개 
@@ -74,8 +81,9 @@ public class OrderApiController {
     }
 
     /**
-     * 페이징 기능 추가
-     * findAllWithMemberDelivery -> 멤버와 주문과 배달은 toOne 관계이므로 쿼리 1번 실행
+     * V3.1 엔티티를 조회해서 DTO로 변환 페이징 고려
+     * - ToOne 관계만 우선 모두 페치 조인으로 최적화
+     * - 컬렉션 관계는 hibernate.default_batch_fetch_size, @BatchSize로 최적화
      */
     @GetMapping("/api/v3.1/orders")
     public List<OrderDto> orderV3_page(@RequestParam(value = "offset", defaultValue = "0")  int offset,
@@ -89,6 +97,46 @@ public class OrderApiController {
 
         return collect;
     }
+
+    /**
+     * toOne 은 findOrders 로 조회
+     * Many는 findOrderItems로 조회
+     * 현재 N+1
+     */
+    @GetMapping("/api/v4/orders")
+    public List<OrderQueryDto> orderV4()
+    {
+        return orderQueryRepository.findOrderQueryDtos();
+    }
+
+    /**
+     * Query 1번 컬렉션 1번
+     */
+    @GetMapping("/api/v5/orders")
+    public List<OrderQueryDto> orderV5()
+    {
+        return orderQueryRepository.findAllByDto_optimization();
+    }
+
+    /**
+     * Order OrderItem 까지 조인하여 데이터가 중복해서 늘어났다.
+     * 페이징이 되지 않는다.
+     * 하지만 쿼리문은 1번만 나간다.
+     *
+     * @return
+     */
+    @GetMapping("/api/v6/orders")
+    public List<OrderQueryDto> ordersV6() {
+        List<OrderFlatDto> flats = orderQueryRepository.findAllByDto_flat();
+
+        return flats.stream()
+                .collect(groupingBy(o -> new OrderQueryDto(o.getOrderId(), o.getName(), o.getOrderDate(), o.getOrderStatus(), o.getAddress()),
+                        mapping(o -> new OrderItemQueryDto(o.getOrderId(), o.getItemName(), o.getOrderPrice(), o.getCount()), toList())
+                )).entrySet().stream()
+                .map(e -> new OrderQueryDto(e.getKey().getOrderId(), e.getKey().getName(), e.getKey().getOrderDate(), e.getKey().getOrderStatus(), e.getKey().getAddress(), e.getValue()))
+                .collect(toList());
+    }
+
 
     @Getter
     static class OrderDto{
