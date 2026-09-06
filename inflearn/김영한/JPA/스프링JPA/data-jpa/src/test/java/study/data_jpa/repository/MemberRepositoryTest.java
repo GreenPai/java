@@ -7,8 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
+import study.data_jpa.dto.MemberDto;
 import study.data_jpa.entity.Member;
+import study.data_jpa.entity.Team;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
@@ -20,6 +23,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class MemberRepositoryTest {
 
     @Autowired MemberRepository memberRepository;
+    @Autowired TeamRepository teamRepository;
 
     @Test
     public void testMember(){
@@ -63,6 +67,116 @@ class MemberRepositoryTest {
         assertThat(deleteCount).isEqualTo(0);
 
     }
+
+    @Test
+    public void findUsernameAndAgeGreaterThan(){
+        Member m1 = new Member("AAA", 10);
+        Member m2 = new Member("AAA", 20);
+
+        memberRepository.save(m1);
+        memberRepository.save(m2);
+
+        List<Member> result = memberRepository.findByUsernameAndAgeGreaterThan("AAA", 15);
+
+        assertThat(result.get(0).getUsername()).isEqualTo("AAA");
+        assertThat(result.get(0).getAge()).isEqualTo(20);
+        assertThat(result.size()).isEqualTo(1);
+    }
+
+    @Test
+    public void findHelloBy(){
+        List<Member> hello = memberRepository.findHelloBy();
+        List<Member> hello1 = memberRepository.findDistinctHelloBy();
+        List<Member> hello2 = memberRepository.findTop3HelloBy();
+
+    }
+
+    @Test
+    public void nameQuery(){
+        Member m1 = new Member("AAA", 10);
+        Member m2 = new Member("BBB", 20);
+        memberRepository.save(m1);
+        memberRepository.save(m2);
+
+        List<Member> result = memberRepository.findByUsername("AAA");
+        Member findMember = result.get(0);
+        assertThat(m1).isEqualTo(findMember);
+    }
+
+    @Test
+    public void testQuery(){
+        Member m1 = new Member("AAA", 10);
+        Member m2 = new Member("BBB", 20);
+        memberRepository.save(m1);
+        memberRepository.save(m2);
+
+        List<Member> result = memberRepository.findUser("AAA", 10);
+        Assertions.assertThat(m1).isEqualTo(result.get(0));
+
+    }
+
+    @Test
+    public void testNamedQuery(){
+        Member m1 = new Member("AAA", 10);
+        Member m2 = new Member("BBB", 20);
+        memberRepository.save(m1);
+        memberRepository.save(m2);
+
+        List<Member> result = memberRepository.findUser("AAA", 10);
+        Member findMember = result.get(0);
+        assertThat(m1).isEqualTo(findMember);
+    }
+
+    @Test
+    public void findUsername(){
+        Member m1 = new Member("AAA", 10);
+        Member m2 = new Member("BBB", 20);
+        memberRepository.save(m1);
+        memberRepository.save(m2);
+
+        List<String> result = memberRepository.findUsernameList();
+
+        for(String name : result){
+            System.out.println("name = " + name);
+        }
+    }
+
+    @Test
+    public void findMemberDto(){
+
+        Team team = new Team("teamA");
+        teamRepository.save(team);
+
+        Member m1 = new Member("AAA", 10);
+        Member m2 = new Member("BBB", 20);
+        m1.setTeam(team);
+        m2.setTeam(team);
+        memberRepository.save(m1);
+        memberRepository.save(m2);
+
+        List<MemberDto> result = memberRepository.findMemberDto();
+
+        for(MemberDto dto : result){
+            System.out.println("MemberDto = " + dto);
+        }
+    }
+
+    @Test
+    public void findByNames(){
+
+        Member m1 = new Member("AAA", 10);
+        Member m2 = new Member("BBB", 20);
+        memberRepository.save(m1);
+        memberRepository.save(m2);
+
+        List<Member> result = memberRepository.findByNames(Arrays.asList("AAA","BBB"));
+
+        for(Member str : result){
+            System.out.println("Member = " + str);
+        }
+    }
+
+
 
 
 }
