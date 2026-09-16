@@ -1,6 +1,8 @@
 package study.data_jpa.repository;
 
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +31,8 @@ class MemberRepositoryTest {
 
     @Autowired MemberRepository memberRepository;
     @Autowired TeamRepository teamRepository;
+    @PersistenceContext
+    EntityManager em;
 
     @Test
     public void testMember(){
@@ -240,9 +244,68 @@ class MemberRepositoryTest {
 
         //when
         int resultCount = memberRepository.bulkAgePlus(20);
+        // em.flush();
+        // em.clear();
+
+        List<Member> result = memberRepository.findByUsername("member5");
+        Member member5 = result.get(0);
 
         // then
         assertThat(resultCount).isEqualTo(3);
+        assertThat(member5.getAge()).isEqualTo(41);
+    }
+
+    @Test
+    public void findMemberLazy(){
+        //given
+        //member1 -> teamA
+        //team2 -> teamB
+
+        Team teamA = new Team("teamA");
+        Team teamB = new Team("teamB");
+        teamRepository.save(teamA);
+        teamRepository.save(teamB);
+        Member member1 = new Member("member1", 10, teamA);
+        Member member2 = new Member("member2", 10, teamB);
+        memberRepository.save(member1);
+        memberRepository.save(member2);
+
+        em.flush();
+        em.clear();
+
+        //when N + 1
+        // select Member -> 1
+        // team 조회 -> N
+        // List<Member> members = memberRepository.findAll();
+
+        // fetch 조인 -> 1번
+//        List<Member> members = memberRepository.findMemberFetchJoin();
+
+        //엔티티 그래프
+        List<Member> members = memberRepository.findEntityGraphByUsername("member1");
+
+        for(Member member : members){
+            System.out.println("member = "  + member.getUsername());
+            System.out.println("member.getTeam().getName() = " + member.getTeam().getName());
+        }
+    }
+
+    /**
+     * readOnly와 같은 설정으로 성능 개선
+     */
+    @Test
+    public void queryHint(){
+        //given
+        Member member = new Member("member1", 10);
+        memberRepository.save(member);
+        em.flush();
+        em.clear();
+
+        //when
+        Member findMember = memberRepository.findReadOnlyByUsername("member1");
+        findMember.setUsername("member2");
+
+        em.flush();
     }
 
 
