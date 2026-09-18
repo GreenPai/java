@@ -31,6 +31,7 @@ class MemberRepositoryTest {
 
     @Autowired MemberRepository memberRepository;
     @Autowired TeamRepository teamRepository;
+    @Autowired MemberQueryRepository memberQueryRepository;
     @PersistenceContext
     EntityManager em;
 
@@ -308,6 +309,18 @@ class MemberRepositoryTest {
         em.flush();
     }
 
+    @Test
+    public void callCustom(){
+        /**
+         * 인터페이스 만든 뒤 impl 구현체 구현
+         */
+        // List<Member> result = memberRepository.findMemberCustom();
+        /**
+         * 직접 구현체를 만들어도 된다.
+         */
+        List<Member> result = memberQueryRepository.findAllMembers();
+
+    }
 
 
 
