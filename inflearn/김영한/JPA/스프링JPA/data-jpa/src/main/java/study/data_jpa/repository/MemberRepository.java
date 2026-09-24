@@ -77,10 +77,19 @@ public interface MemberRepository extends JpaRepository<Member, Long>, MemberRep
     @EntityGraph("Member.all")
     List<Member> findEntityGraphByUsername(@Param("username") String username);
 
-    @QueryHints(value = @QueryHint(name = "org.hibernate.readOnly" , value = "true"))
+    @QueryHints(value = @QueryHint(name = "org.hibernate.readOnly" , value =  "true"))
     Member findReadOnlyByUsername(String username);
 
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     List<Member> findLockByUsername(String username);
 
+    <T>List<T> findProjectionsByUsername(@Param("username") String username, Class<T> type);
+
+    @Query(value = "select * from member where username = ?", nativeQuery = true)
+    Member findByNativeQuery(String usernmae);
+
+    @Query(value = "select m.member_id as id, m.username, t.name as teamName " +
+            "from member m left join team t ",
+            countQuery = "select count(*) from member ", nativeQuery = true)
+    Page<MemberProjection> findByNativeProjection(Pageable pageable);
 }
