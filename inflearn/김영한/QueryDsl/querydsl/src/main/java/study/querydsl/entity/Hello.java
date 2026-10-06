@@ -13,5 +13,4 @@ public class Hello {
     @Id @GeneratedValue
     private Long id;
 
-
 }
